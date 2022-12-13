@@ -1,24 +1,15 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ErrorPage from './pages/Error/ErrorPage';
-import HomePage from './pages/Home/HomePage';
-import LoginPage from './pages/Login/LoginPage';
-import ProfilePage from './pages/Profile/ProfilePage';
-import SignupPage from './pages/Signup/SignupPage';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
+import Theme from './styles/Theme';
+import Router from './routes/Router';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/signup" element={<SignupPage />}></Route>
-          <Route path="/profile" element={<ProfilePage />}></Route>
-          <Route path="/error" element={<ErrorPage />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
     </>
   );
 }
