@@ -15,6 +15,7 @@ const colors = {
   lemonYellow: '#FFF1BC',
   lightGray: '#767676',
   White: '#fff',
+  activeBorderColor: '#DBDBDB',
 };
 
 const Theme = {
