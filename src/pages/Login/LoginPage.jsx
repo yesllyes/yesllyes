@@ -1,32 +1,9 @@
 import React from 'react';
-import StyledLoginSection from './Styled';
-import Button from '../../components/button/Button';
+import FullLogoShadow from '../../assets/image/full-logo-shadow.svg';
+import StyledLoginPage from './Styled';
 
 export default function LoginPage() {
-  return (
-    <StyledLoginSection>
-      <h1>로그인</h1>
-      <form action="" method="">
-        <div className="div-input">
-          <label htmlFor="email">이메일</label>
-          <input type="email" id="email" placeholder="e-mail 입력" required />
-        </div>
-        <div className="div-input">
-          <label htmlFor="password">비밀번호</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호 입력"
-            required
-          />
-        </div>
-        <div className="div-submit">
-          <Button size="lg" status="disabled">
-            로그인
-          </Button>
-          <a href="/signup">이메일로 회원가입</a>
-        </div>
-      </form>
-    </StyledLoginSection>
-  );
+  return <div>LoginPage</div>;
 }
+
+export default LoginPage;

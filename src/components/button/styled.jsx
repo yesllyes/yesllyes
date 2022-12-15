@@ -3,17 +3,17 @@ import styled, { css } from 'styled-components';
 const SIZE = {
   lg: css`
     width: 322px;
-    padding: 14px 0;
+    padding: 13px 0 15px 0;
     border-radius: 44px;
   `,
   md: css`
     width: 120px;
-    padding: 14px 0;
+    padding: 13px 0 15px 0;
     border-radius: 30px;
   `,
   sm: css`
     width: 90px;
-    padding: 8px 0;
+    padding: 9px 0 7px 0;
     border-radius: 32px;
   `,
   xsm: css`
@@ -35,19 +35,18 @@ const StyledButton = styled.button`
 
   ${(props) => SIZE[props.size]}
 
-  ${(props) =>
-    props.status === 'disabled' &&
-    (({ theme }) => css`
+  &:disabled {
+    ${({ theme }) => css`
       background-color: ${theme.colors.lightGreen};
       cursor: not-allowed;
-    `)}
+    `}
+  }
 
   ${(props) =>
-    props.status === 'active' &&
+    props.active &&
     (({ theme }) => css`
-      background-color: ${theme.colors.White};
+      background-color: white;
       color: ${theme.colors.lightGray};
-      border: 1px solid ${theme.colors.activeBorderColor};
       cursor: not-allowed;
     `)}
 `;
