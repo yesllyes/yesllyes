@@ -1,7 +1,7 @@
 import React from 'react';
 import TapMenu from '../../components/tabMenu/TabMenu';
 import LogoGray from '../../assets/image/full-logo-gray.svg';
-import StyledFeedPage from './Styled';
+import StyledFeedPage from './styled';
 import { TopMainNav } from '../../components/navbar/Top-navbar';
 import Button from '../../components/button/Button';
 

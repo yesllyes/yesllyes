@@ -1,6 +1,6 @@
 import React from 'react';
 import FullLogoShadow from '../../assets/image/full-logo-shadow.svg';
-import StyledIntroLoginPage from './Styled';
+import StyledIntroLoginPage from './styled';
 
 function IntroLoginPage() {
   return (

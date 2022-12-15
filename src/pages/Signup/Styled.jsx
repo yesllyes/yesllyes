@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import StyledLoginPage from './../Login/Styled';
+import StyledLoginPage from '../Login/styled';
 
 const StyledSignupPage = styled(StyledLoginPage)``;
 

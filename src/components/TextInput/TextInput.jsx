@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledInput from './Styled';
+import StyledInput from './styled';
 
 const Input = (props) => (
   <StyledInput>

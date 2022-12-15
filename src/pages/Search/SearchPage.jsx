@@ -1,7 +1,7 @@
 import React from 'react';
 import { TopSearchNav } from '../../components/navbar/Top-navbar';
 import TapMenu from '../../components/tabMenu/TabMenu';
-import StyledSearch from './Styled';
+import StyledSearch from './styled';
 
 const SearchPage = () => (
   <StyledSearch>

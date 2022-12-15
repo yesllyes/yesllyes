@@ -1,6 +1,6 @@
 import React from 'react';
 // import styled from 'styled-components';
-import StyledTopBasicNav from './Styled';
+import StyledTopBasicNav from './styled';
 import iconArrowLeft from '../../assets/icon/icon-arrow-left.svg';
 import iconMoreVerticalLarge from '../../assets/icon/icon-more-vertical-large.svg';
 import iconSearch from '../../assets/icon/icon-search.svg';

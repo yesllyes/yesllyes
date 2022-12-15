@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLoginPage from './Styled';
+import StyledLoginPage from './styled';
 import Button from '../../components/button/Button';
 
 export default function LoginPage() {

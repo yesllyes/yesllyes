@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import StartSplash from './../pages/Splash/StartSplash';
 import LoginPage from '../pages/Login/LoginPage';
 import SignupPage from '../pages/Signup/SignupPage';
-import ProfilePage from '../pages/ProfileSignup/ProfileSignupPage';
 import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
+import ProfilePage from '../pages/ProfileSignup/ProfileSignupPage';
 import ErrorPage from '../pages/Error/ErrorPage';
 
 function Router() {
