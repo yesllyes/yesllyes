@@ -25,12 +25,12 @@ function IntroLoginPage() {
           </ul>
           <ul className="login-join-cont">
             <li>
-              <a className="emailLogin" href="/">
+              <a className="emailLogin" href="/login">
                 이메일로 로그인
               </a>
             </li>
             <li>
-              <a className="join" href="/">
+              <a className="join" href="/signup">
                 회원가입
               </a>
             </li>
