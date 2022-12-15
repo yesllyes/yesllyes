@@ -3,7 +3,7 @@ import iconHome from '../../assets/icon/icon-home.svg';
 import iconMessageLarge from '../../assets/icon/icon-message-large.svg';
 import iconEdit from '../../assets/icon/icon-edit.svg';
 import iconUser from '../../assets/icon/icon-user.svg';
-import StyledTabMenu from './Styled';
+import StyledTabMenu from './styled';
 
 const TabMenu = () => (
   <StyledTabMenu>

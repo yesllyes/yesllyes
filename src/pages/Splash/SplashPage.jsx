@@ -1,6 +1,6 @@
 import React from 'react';
 import fullLogo from '../../assets/image/full-logo-shadow.svg';
-import StyledSplashPage from './Styled';
+import StyledSplashPage from './styled';
 
 const SplashPage = () => (
   <StyledSplashPage>
