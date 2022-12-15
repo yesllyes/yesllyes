@@ -1,19 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import HomePage from '../pages/Home/HomePage';
+import SplashPage from './../pages/Splash/SplashPage';
 import LoginPage from '../pages/Login/LoginPage';
 import SignupPage from '../pages/Signup/SignupPage';
+<<<<<<< HEAD
 import ProfilePage from '../pages/ProfileSignup/ProfileSignupPage';
+=======
+import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
+import ProfilePage from '../pages/Profile/ProfilePage';
+>>>>>>> Develop
 import ErrorPage from '../pages/Error/ErrorPage';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<SplashPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
+        <Route path="/homefeed" element={<HomeFeedPage />}></Route>
         <Route path="/profile" element={<ProfilePage />}></Route>
         <Route path="/error" element={<ErrorPage />}></Route>
       </Routes>
