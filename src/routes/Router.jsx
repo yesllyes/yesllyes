@@ -4,8 +4,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SplashPage from './../pages/Splash/SplashPage';
 import LoginPage from '../pages/Login/LoginPage';
 import SignupPage from '../pages/Signup/SignupPage';
+<<<<<<< HEAD
+import ProfilePage from '../pages/ProfileSignup/ProfileSignupPage';
+=======
 import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import ProfilePage from '../pages/Profile/ProfilePage';
+>>>>>>> Develop
 import ErrorPage from '../pages/Error/ErrorPage';
 
 function Router() {

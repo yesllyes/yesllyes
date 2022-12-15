@@ -1,16 +1,13 @@
-import React from 'react'
-import StyledInput  from './Styled';
+import React from 'react';
+import StyledInput from './Styled';
 
-
- const Input = () => (
-  
-    <StyledInput>
+const Input = (props) => (
+  <StyledInput>
     <div>
-        <p>이메일</p>
-        <input type='email' placeholder='이메일을 입력해주세요'></input>
+      <label>{props.title}</label>
+      <input type="email"></input>
     </div>
-    </StyledInput>
-  
+  </StyledInput>
 );
 
 export default Input;
