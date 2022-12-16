@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledWrapper from '../../components/Wrapper/StyledWrapper';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button/Button';
 import StyledInput from '../../components/TextInput/styled';
 import { StyledProfilePage, StyledImgForm, StyledTxtForm } from './styled';
 

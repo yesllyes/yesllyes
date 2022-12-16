@@ -1,9 +1,9 @@
 import React from 'react';
-import TapMenu from '../../components/tabMenu/TabMenu';
+import TapMenu from '../../components/TabMenu/TabMenu';
 import LogoGray from '../../assets/image/full-logo-gray.svg';
 import StyledFeedPage from './styled';
-import { TopMainNav } from '../../components/navbar/Top-navbar';
-import Button from '../../components/button/Button';
+import { TopMainNav } from '../../components/Navbar/TopNavbar';
+import Button from '../../components/Button/Button';
 
 const HomeFeedPage = () => (
   <StyledFeedPage>

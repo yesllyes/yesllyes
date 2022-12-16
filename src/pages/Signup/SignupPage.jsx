@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import StyledSignupPage from './styled';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button/Button';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
