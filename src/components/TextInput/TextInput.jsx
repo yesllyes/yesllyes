@@ -1,12 +1,10 @@
 import React from 'react';
 import StyledInput from './styled';
 
-const TextInput = (props) => (
+const TextInput = ({ label, id, ...attr }) => (
   <StyledInput>
-    <div>
-      <label htmlFor={props.htmlFor}>{props.title}</label>
-      <input type={props.type} />
-    </div>
+    <label htmlFor={id}>{label}</label>
+    <input id={id} {...attr} />
   </StyledInput>
 );
 

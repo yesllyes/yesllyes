@@ -1,17 +1,17 @@
 import React from 'react';
 import StyledWrapper from '../../components/Wrapper/StyledWrapper';
 import Button from '../../components/Button/Button';
-import StyledInput from '../../components/TextInput/styled';
+import TextInput from '../../components/TextInput/TextInput';
 import { StyledProfilePage, StyledImgForm, StyledTxtForm } from './styled';
 
 import IconBasicProfile from '../../assets/icon/icon-basic-profile-large.svg';
 import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
 
 export default function ProfilePage() {
-  const handleChangeStatus = (e) => {
-    console.log(e);
-    console.log('click 이벤트 테스트 중');
-  };
+  // const handleChangeStatus = (e) => {
+  //   console.log(e);
+  //   console.log('click 이벤트 테스트 중');
+  // };
 
   return (
     <StyledWrapper>
@@ -24,33 +24,30 @@ export default function ProfilePage() {
         </StyledImgForm>
 
         <StyledTxtForm>
-          <StyledInput>
-            <label htmlFor="user">사용자 이름</label>
-            <input
-              id="user"
-              type="text"
-              placeholder="2~10자 이내여야 합니다."
-            />
-          </StyledInput>
-          <StyledInput>
-            <label htmlFor="user">계정 ID</label>
-            <input
-              id="user"
-              type="text"
-              placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."
-            />
-          </StyledInput>
-          <StyledInput>
-            <label htmlFor="user">소개</label>
-            <input
-              id="user"
-              type="text"
-              placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
-            />
-          </StyledInput>
-
-          <Button status="" onClick={handleChangeStatus} size="lg">
-            라이프마켓 시작하기
+          <TextInput
+            label="사용자 이름"
+            id="user"
+            type="text"
+            placeholder="2~10자 이내여야 합니다."
+          />
+          <TextInput
+            label="계정 ID"
+            id="user"
+            type="text"
+            placeholder="영문, 숫자, 특수문자(.),(_)만 사용 가능합니다."
+          />
+          <TextInput
+            label="소개"
+            id="user"
+            type="text"
+            placeholder="자신과 판매할 상품에 대해 소개해 주세요!"
+          />
+          <Button
+            status=""
+            // onClick={handleChangeStatus}
+            size="lg"
+          >
+            초록마켓 시작하기
           </Button>
         </StyledTxtForm>
       </StyledProfilePage>

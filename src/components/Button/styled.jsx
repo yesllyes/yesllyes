@@ -2,23 +2,24 @@ import styled, { css } from 'styled-components';
 
 const SIZE = {
   lg: css`
-    width: 322px;
-    padding: 13px 0 15px 0;
+    width: 320px;
+    padding: 14px 0px;
+    margin: 20px 0px;
     border-radius: 44px;
   `,
   md: css`
     width: 120px;
-    padding: 13px 0 15px 0;
+    padding: 13px 0px;
     border-radius: 30px;
   `,
   sm: css`
     width: 90px;
-    padding: 9px 0 7px 0;
+    padding: 8px 0px;
     border-radius: 32px;
   `,
   xsm: css`
     width: 56px;
-    padding: 7px 0;
+    padding: 7px 0px;
     border-radius: 26px;
     font-size: ${({ theme }) => theme.fontSize.small};
   `,
@@ -48,7 +49,10 @@ const StyledButton = styled.button`
       background-color: white;
       color: ${theme.colors.lightGray};
       cursor: not-allowed;
-    `)}
+    `)}/* a {
+    font-size: ${({ theme }) => theme.fontSize.small};
+    color: ${({ theme }) => theme.colors.lightGray};
+  } */
 `;
 
 export default StyledButton;

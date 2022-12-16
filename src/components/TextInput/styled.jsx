@@ -1,19 +1,26 @@
 import styled from 'styled-components';
 
 const StyledInput = styled.div`
+  width: 320px;
   margin: 16px 0;
+
+  & + & {
+    margin-top: 20px;
+  }
+
   label {
     display: block;
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.small};
     color: ${({ theme }) => theme.colors.lightGray};
+    margin-bottom: 10px;
   }
 
   input {
     width: 100%;
     border: none;
-    margin-top: 10px;
     background-color: transparent;
+    line-height: 14px;
     font-size: ${({ theme }) => theme.fontSize.medium};
     border-bottom: 1px solid ${({ theme }) => theme.colors.activeBorderColor};
     padding-bottom: 8px;

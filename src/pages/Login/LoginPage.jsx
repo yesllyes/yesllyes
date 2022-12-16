@@ -8,25 +8,25 @@ export default function LoginPage() {
     <StyledLoginPage>
       <h1>로그인</h1>
       <form action="" method="">
-        <TextInput className="div-input" title="이메일">
-          <label htmlFor="email"></label>
-          <input type="email" id="email" placeholder="e-mail 입력" required />
-        </TextInput>
-        <TextInput className="div-input" title="비밀번호">
-          <label htmlFor="password"></label>
-          <input
-            type="password"
-            id="password"
-            placeholder="비밀번호 입력"
-            required
-          />
-        </TextInput>
-        <div className="div-submit">
-          <Button size="lg" status="disabled">
-            로그인
-          </Button>
-          <a href="/signup">이메일로 회원가입</a>
-        </div>
+        <TextInput
+          label="이메일"
+          id="email"
+          type="email"
+          placeholder="e-mail 입력"
+          required
+        />
+        <TextInput
+          label="비밀번호"
+          id="password"
+          type="password"
+          placeholder="비밀번호 입력"
+          required
+        />
+
+        <Button size="lg" status="disabled">
+          로그인
+        </Button>
+        <a href="/signup">이메일로 회원가입</a>
       </form>
     </StyledLoginPage>
   );
