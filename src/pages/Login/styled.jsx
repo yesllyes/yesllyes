@@ -14,29 +14,16 @@ const StyledLoginPage = styled.section`
     margin-bottom: 40px;
   }
 
-  .div-input {
-    width: 320px;
-    label {
-      margin-bottom: 10px;
-    }
-    input {
-      line-height: 14px;
-    }
-  }
-  .div-submit {
-    width: 320px;
+  form {
     text-align: center;
-    button {
-      margin: 20px 0px;
-    }
-    a {
-      font-size: ${({ theme }) => theme.fontSize.small};
-      color: ${({ theme }) => theme.colors.lightGray};
+    label {
+      text-align: left;
     }
   }
 
-  div + div {
-    padding-top: 20px;
+  a {
+    font-size: ${({ theme }) => theme.fontSize.small};
+    color: ${({ theme }) => theme.colors.lightGray};
   }
 `;
 
