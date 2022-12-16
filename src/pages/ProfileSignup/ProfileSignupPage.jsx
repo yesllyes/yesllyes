@@ -1,7 +1,7 @@
 import React from 'react';
 import StyledWrapper from '../../components/Wrapper/StyledWrapper';
 import Button from '../../components/button/Button';
-import StyledInput from '../../components/textInput/styled';
+import StyledInput from '../../components/TextInput/styled';
 import { StyledProfilePage, StyledImgForm, StyledTxtForm } from './styled';
 
 import IconBasicProfile from '../../assets/icon/icon-basic-profile-large.svg';

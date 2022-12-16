@@ -1,7 +1,7 @@
 import React from 'react';
 import StyledInput from './styled';
 
-const Input = (props) => (
+const TextInput = (props) => (
   <StyledInput>
     <div>
       <label>{props.title}</label>
@@ -10,4 +10,4 @@ const Input = (props) => (
   </StyledInput>
 );
 
-export default Input;
+export default TextInput;
