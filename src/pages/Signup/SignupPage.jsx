@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import StyledSignupPage from './styled';
 import Button from '../../components/Button/Button';
+import TextInput from './../../components/TextInput/TextInput';
+import StyledSignupPage from './styled';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -57,7 +58,7 @@ export default function SignupPage() {
     <StyledSignupPage>
       <h1>이메일로 회원가입</h1>
       <form action="" method="" onSubmit={handleSubmit}>
-        <div className="div-input">
+        <TextInput className="div-input" title="이메일">
           <label htmlFor="email">이메일</label>
           <input
             onChange={handleChange}
@@ -68,9 +69,9 @@ export default function SignupPage() {
             name="email"
             required
           />
-        </div>
-        <div className="div-input">
-          <label htmlFor="password">비밀번호</label>
+        </TextInput>
+        <TextInput className="div-input" title="비밀번호">
+          <label htmlFor="password"></label>
           <input
             value={password}
             onChange={handleChange}
@@ -80,7 +81,7 @@ export default function SignupPage() {
             name="password"
             required
           />
-        </div>
+        </TextInput>
         <div className="div-submit">
           <Button size="lg" status="disabled">
             다음

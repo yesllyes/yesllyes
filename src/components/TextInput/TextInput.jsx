@@ -4,8 +4,8 @@ import StyledInput from './styled';
 const TextInput = (props) => (
   <StyledInput>
     <div>
-      <label>{props.title}</label>
-      <input type="email"></input>
+      <label htmlFor={props.htmlFor}>{props.title}</label>
+      <input type={props.type} />
     </div>
   </StyledInput>
 );

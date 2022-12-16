@@ -1,25 +1,26 @@
 import React from 'react';
-import StyledLoginPage from './styled';
 import Button from '../../components/Button/Button';
+import TextInput from './../../components/TextInput/TextInput';
+import StyledLoginPage from './styled';
 
 export default function LoginPage() {
   return (
     <StyledLoginPage>
       <h1>로그인</h1>
       <form action="" method="">
-        <div className="div-input">
-          <label htmlFor="email">이메일</label>
+        <TextInput className="div-input" title="이메일">
+          <label htmlFor="email"></label>
           <input type="email" id="email" placeholder="e-mail 입력" required />
-        </div>
-        <div className="div-input">
-          <label htmlFor="password">비밀번호</label>
+        </TextInput>
+        <TextInput className="div-input" title="비밀번호">
+          <label htmlFor="password"></label>
           <input
             type="password"
             id="password"
             placeholder="비밀번호 입력"
             required
           />
-        </div>
+        </TextInput>
         <div className="div-submit">
           <Button size="lg" status="disabled">
             로그인

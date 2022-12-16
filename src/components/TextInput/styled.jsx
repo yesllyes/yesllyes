@@ -6,7 +6,7 @@ const StyledInput = styled.div`
     display: block;
     width: 100%;
     font-size: ${({ theme }) => theme.fontSize.small};
-    color: #767676;
+    color: ${({ theme }) => theme.colors.lightGray};
   }
 
   input {
@@ -20,11 +20,18 @@ const StyledInput = styled.div`
 
     ::placeholder {
       font-size: ${({ theme }) => theme.fontSize.medium};
+      color: ${({ theme }) => theme.colors.activeBorderColor};
     }
 
     :focus {
       outline: none;
       border-color: ${({ theme }) => theme.colors.Green};
+    }
+
+    :-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+      box-shadow: 0 0 0 1000px white inset;
+      font-family: inherit;
     }
   }
 `;
