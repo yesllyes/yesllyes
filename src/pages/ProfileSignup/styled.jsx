@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
 
+// form 을 div로 바꿀지 여부:
+// useNavigate을 쓰려면 form이 불편함(옵션 해제해야 함)
+// 어차피 유효성검사 추가해야돼서 form의 기능을 수동으로 우리가 세밀하게 지정해야 함
+
 const StyledProfilePage = styled.section`
   width: 390px;
   margin: 0 auto;

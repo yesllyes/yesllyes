@@ -7,19 +7,19 @@ export default function LoginPage() {
   return (
     <StyledLoginPage>
       <h1>로그인</h1>
-      <form action="" method="">
+      <div>
         <TextInput
           label="이메일"
           id="email"
-          type="email"
           placeholder="e-mail 입력"
+          type="email"
           required
         />
         <TextInput
           label="비밀번호"
           id="password"
-          type="password"
           placeholder="비밀번호 입력"
+          type="password"
           required
         />
 
@@ -27,7 +27,7 @@ export default function LoginPage() {
           로그인
         </Button>
         <a href="/signup">이메일로 회원가입</a>
-      </form>
+      </div>
     </StyledLoginPage>
   );
 }
