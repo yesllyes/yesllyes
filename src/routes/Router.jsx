@@ -7,6 +7,7 @@ import SignupPage from '../pages/Signup/SignupPage';
 import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import ProfileSignupPage from '../pages/ProfileSignup/ProfileSignupPage';
 import ErrorPage from '../pages/Error/ErrorPage';
+import ParticipationList from '../pages/ParticipationList/ParticipationList';
 
 function Router() {
   return (
@@ -17,6 +18,8 @@ function Router() {
       <Route path="/homefeed" element={<HomeFeedPage />}></Route>
       <Route path="/profilesignup" element={<ProfileSignupPage />}></Route>
       <Route path="/error" element={<ErrorPage />}></Route>
+      <Route path="/participation" element={<ParticipationList />}></Route>
+
     </Routes>
   );
 }
