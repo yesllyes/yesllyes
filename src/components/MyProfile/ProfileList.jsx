@@ -1,5 +1,5 @@
 import React from 'react';
-import { IngProduct, PreProduct, EndProduct  } from '../../components/Product/Product'
+import { IngProduct, PreProduct, EndProduct  } from '../Product/Product'
 import { ParticipateWrapper,  StyledParticipate} from './styled';
 
 
