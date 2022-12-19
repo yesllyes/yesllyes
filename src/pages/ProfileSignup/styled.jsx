@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
 
-// form 을 div로 바꿀지 여부:
-// useNavigate을 쓰려면 form이 불편함(옵션 해제해야 함)
-// 어차피 유효성검사 추가해야돼서 form의 기능을 수동으로 우리가 세밀하게 지정해야 함
-
 const StyledProfilePage = styled.section`
   width: 390px;
   margin: 0 auto;
@@ -32,7 +28,7 @@ const StyledProfilePage = styled.section`
   }
 `;
 
-const StyledImgForm = styled.form`
+const StyledImg = styled.div`
   text-align: center;
   position: relative;
   &::after {
@@ -50,10 +46,10 @@ const StyledImgForm = styled.form`
   }
 `;
 
-const StyledTxtForm = styled.form`
+const StyledTxt = styled.div`
   margin-top: 30px;
   margin-right: 34px;
   margin-left: 34px;
 `;
 
-export { StyledProfilePage, StyledImgForm, StyledTxtForm };
+export { StyledProfilePage, StyledImg, StyledTxt };

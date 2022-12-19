@@ -2,7 +2,7 @@ import React from 'react';
 import StyledWrapper from '../../components/Wrapper/StyledWrapper';
 import Button from '../../components/Button/Button';
 import TextInput from '../../components/TextInput/TextInput';
-import { StyledProfilePage, StyledImgForm, StyledTxtForm } from './styled';
+import { StyledProfilePage, StyledImg, StyledTxt } from './styled';
 
 import IconBasicProfile from '../../assets/icon/icon-basic-profile-large.svg';
 import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
@@ -19,11 +19,11 @@ export default function ProfilePage() {
         <h3>프로필 설정</h3>
         <strong>나중에 언제든지 변경할 수 있습니다.</strong>
 
-        <StyledImgForm src={IconImgButton}>
+        <StyledImg src={IconImgButton}>
           <img src={IconBasicProfile} alt="" />
-        </StyledImgForm>
+        </StyledImg>
 
-        <StyledTxtForm>
+        <StyledTxt>
           <TextInput
             label="사용자 이름"
             id="user"
@@ -49,7 +49,7 @@ export default function ProfilePage() {
           >
             초록마켓 시작하기
           </Button>
-        </StyledTxtForm>
+        </StyledTxt>
       </StyledProfilePage>
     </StyledWrapper>
   );
