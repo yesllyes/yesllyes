@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import TextInput from './../../components/TextInput/TextInput';
 import StyledLoginPage from './styled';
@@ -26,7 +27,7 @@ export default function LoginPage() {
         <Button size="lg" status="disabled">
           로그인
         </Button>
-        <a href="/signup">이메일로 회원가입</a>
+        <Link to="/signup">이메일로 회원가입</Link>
       </form>
     </StyledLoginPage>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FullLogoShadow from '../../assets/image/full-logo-shadow.svg';
 import StyledIntroLoginPage from './styled';
 
@@ -25,14 +26,14 @@ function IntroLoginPage() {
           </ul>
           <ul className="login-join-cont">
             <li>
-              <a className="emailLogin" href="/login">
+              <Link to="/login" className="emailLogin">
                 이메일로 로그인
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="join" href="/signup">
+              <Link to="/signup" className="join">
                 회원가입
-              </a>
+              </Link>
             </li>
           </ul>
         </section>
