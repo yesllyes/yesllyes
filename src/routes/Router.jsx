@@ -8,6 +8,8 @@ import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import ProfileSignupPage from '../pages/ProfileSignup/ProfileSignupPage';
 import ErrorPage from '../pages/Error/ErrorPage';
 import ParticipationList from '../pages/ParticipationList/ParticipationList';
+import Campaign from '../pages/Campaign/Campaign';
+import PostUpload from './../pages/PostUpload/PostUpload';
 
 function Router() {
   return (
@@ -19,7 +21,8 @@ function Router() {
       <Route path="/profilesignup" element={<ProfileSignupPage />}></Route>
       <Route path="/error" element={<ErrorPage />}></Route>
       <Route path="/participation" element={<ParticipationList />}></Route>
-
+      <Route path="/campaign" element={<Campaign />}></Route>
+      <Route path="/upload" element={<PostUpload />}></Route>
     </Routes>
   );
 }

@@ -29,14 +29,12 @@ const StyledTopBasicNav = styled.nav`
     bottom: 8px;
   }
   button {
-    width: 90px;
-    height: 32px;
-    border-radius: 32px;
     background-color: ${({ theme }) => theme.colors.lightGreen};
+    color: white;
     position: absolute;
     right: 16px;
     bottom: 8px;
-    color: white;
+    height: 32px;
   }
 `;
 
