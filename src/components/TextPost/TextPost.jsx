@@ -37,7 +37,6 @@ const TextPost = () => (
         <span>2020년 10월 21일</span>
       </StyledPostMessage>
     </StyledTextPost>
-    <UserInfo />
   </>
 );
 
