@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
- const ProductWrapper = styled.div`
- position: relative;
+const ProductWrapper = styled.div`
+  position: relative;
   cursor: pointer;
   width: 140px;
   list-style: none;
-  /* border : 1px solid black; */
 
   > img {
     height: 90px;
@@ -16,7 +15,7 @@ import styled from "styled-components";
     line-height: 15px;
     margin: 8px 0px 4px;
     font-size: ${({ theme }) => theme.fontSize.medium};
-    
+
     span {
       font-size: ${({ theme }) => theme.fontSize.small};
       line-height: 13px;
