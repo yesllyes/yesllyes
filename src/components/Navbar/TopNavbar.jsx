@@ -4,6 +4,7 @@ import StyledTopBasicNav from './styled';
 import iconArrowLeft from '../../assets/icon/icon-arrow-left.svg';
 import iconMoreVerticalLarge from '../../assets/icon/icon-more-vertical-large.svg';
 import iconSearch from '../../assets/icon/icon-search.svg';
+import Button from '../Button/Button';
 
 const TopBasicNav = (props) => (
   <StyledTopBasicNav>
@@ -27,10 +28,10 @@ const TopMainNav = (props) => (
   </StyledTopBasicNav>
 );
 
-const TopUploadNav = () => (
+const TopUploadNav = (props) => (
   <StyledTopBasicNav>
     <img src={iconArrowLeft} alt="뒤로가기" />
-    <button type="button">저장</button>
+    <Button size="sm">{props.value}</Button>
   </StyledTopBasicNav>
 );
 
