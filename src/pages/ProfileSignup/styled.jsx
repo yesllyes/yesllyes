@@ -28,7 +28,7 @@ const StyledProfilePage = styled.section`
   }
 `;
 
-const StyledImgForm = styled.form`
+const StyledImg = styled.div`
   text-align: center;
   position: relative;
   &::after {
@@ -46,10 +46,10 @@ const StyledImgForm = styled.form`
   }
 `;
 
-const StyledTxtForm = styled.form`
+const StyledTxt = styled.div`
   margin-top: 30px;
   margin-right: 34px;
   margin-left: 34px;
 `;
 
-export { StyledProfilePage, StyledImgForm, StyledTxtForm };
+export { StyledProfilePage, StyledImg, StyledTxt };
