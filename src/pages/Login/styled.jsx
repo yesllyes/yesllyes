@@ -14,7 +14,7 @@ const StyledLoginPage = styled.section`
     margin-bottom: 40px;
   }
 
-  form {
+  div {
     text-align: center;
     label {
       text-align: left;
