@@ -6,8 +6,8 @@ const StyledUserInfo = styled.article`
   gap: 12px;
   width: 358px;
   .basic-profile {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
   }
 
   div {

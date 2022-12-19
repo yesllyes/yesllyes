@@ -6,7 +6,7 @@ const StyledTopBasicNav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 13px 16px;
-  border: 1px solid black;
+  border: 0.5px solid ${({ theme }) => theme.colors.lightGray};
   position: relative;
 
   img {

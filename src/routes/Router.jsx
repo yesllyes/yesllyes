@@ -10,6 +10,8 @@ import ErrorPage from '../pages/Error/ErrorPage';
 import ParticipationList from '../pages/ParticipationList/ParticipationList';
 import Campaign from '../pages/Campaign/Campaign';
 import PostUpload from './../pages/PostUpload/PostUpload';
+import MyProfilePage from '../pages/MyProfile/MyProfilePage';
+
 
 function Router() {
   return (
@@ -23,6 +25,7 @@ function Router() {
       <Route path="/participation" element={<ParticipationList />}></Route>
       <Route path="/campaign" element={<Campaign />}></Route>
       <Route path="/upload" element={<PostUpload />}></Route>
+      <Route path="/myprofile" element={<MyProfilePage />}></Route>
     </Routes>
   );
 }
