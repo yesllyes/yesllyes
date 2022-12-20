@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import iconHome from '../../assets/icon/icon-home.svg';
 import iconMessageLarge from '../../assets/icon/icon-message-large.svg';
 import iconEdit from '../../assets/icon/icon-edit.svg';
@@ -9,27 +10,27 @@ const TabMenu = () => (
   <StyledTabMenu>
     <ul>
       <li>
-        <a href="/">
+        <Link to="/">
           <img src={iconHome} alt="" />홈
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/">
+        <Link to="/">
           <img src={iconMessageLarge} alt="" />
           채팅
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/">
+        <Link to="/">
           <img src={iconEdit} alt="" />
           게시물 작성
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/">
+        <Link to="/">
           <img src={iconUser} alt="" />
           프로필
-        </a>
+        </Link>
       </li>
     </ul>
   </StyledTabMenu>
