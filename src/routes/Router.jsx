@@ -7,11 +7,9 @@ import SignupPage from '../pages/Signup/SignupPage';
 import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import ProfileSignupPage from '../pages/ProfileSignup/ProfileSignupPage';
 import ErrorPage from '../pages/Error/ErrorPage';
-import ParticipationList from '../pages/ParticipationList/ParticipationList';
 import Campaign from '../pages/Campaign/Campaign';
 import PostUpload from './../pages/PostUpload/PostUpload';
 import MyProfilePage from '../pages/MyProfile/MyProfilePage';
-
 
 function Router() {
   return (
@@ -22,7 +20,6 @@ function Router() {
       <Route path="/homefeed" element={<HomeFeedPage />}></Route>
       <Route path="/profilesignup" element={<ProfileSignupPage />}></Route>
       <Route path="/error" element={<ErrorPage />}></Route>
-      <Route path="/participation" element={<ParticipationList />}></Route>
       <Route path="/campaign" element={<Campaign />}></Route>
       <Route path="/upload" element={<PostUpload />}></Route>
       <Route path="/myprofile" element={<MyProfilePage />}></Route>
