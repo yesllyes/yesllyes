@@ -1,5 +1,5 @@
 import React from 'react';
-import { IngProduct, PreProduct, EndProduct } from '../Product/Product';
+import { ImgProduct, PreProduct, EndProduct } from '../Product/Product';
 import { ParticipateWrapper, StyledParticipate } from './styled';
 
 const ParticipationList = () => {
@@ -8,7 +8,7 @@ const ParticipationList = () => {
     <ParticipateWrapper>
       <p className="title">참여한 가제 활동</p>
       <StyledParticipate>
-        <IngProduct />
+        <ImgProduct />
         <PreProduct />
         <EndProduct />
       </StyledParticipate>

@@ -11,14 +11,14 @@ const ProfileInfo = () => (
     <TopBasicNav />
 
     <div className="ProfileHeader">
-      <p className="follwers">
+      <p className="followers">
         2950
         <span>followers</span>
       </p>
       <img src={BasicProfileImg} alt="프로필 사진" />
       <p className="followings">
         128
-        <span>fllowings</span>
+        <span>followings</span>
       </p>
     </div>
 
