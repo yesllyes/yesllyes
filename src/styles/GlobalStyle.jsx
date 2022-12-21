@@ -5,16 +5,17 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   * {
-        box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   html {
-      font-size: 62.5%;
+    font-size: 62.5%;
   }
 
   body {
-        font-family: "NexonGothic";
-        width: 390px;
+    font-family: "NexonGothic";
+    width: 390px;
+    margin: 0 auto;
   }
 
   button {
@@ -48,6 +49,18 @@ const GlobalStyle = createGlobalStyle`
   
   ol, ul {
     list-style: none;
+  }
+
+  /* 유틸리티 */
+  .ir {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    overflow: clip;
+    white-space: nowrap;
   }
 `;
 
