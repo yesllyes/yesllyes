@@ -11,8 +11,6 @@ export default function LoginPage() {
   const [isEmail, setIsEmail] = useState(true);
   const [emailMessage, setEmailMessage] = useState('');
 
-  console.log(isEmail);
-
   const data = {
     email,
     password,
@@ -52,7 +50,7 @@ export default function LoginPage() {
     });
     const result = await login.json();
 
-    console.log('결과', result);
+    console.log(isEmail, result);
   };
 
   return (
