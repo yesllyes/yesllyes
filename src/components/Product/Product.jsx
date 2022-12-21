@@ -6,18 +6,15 @@ import ProductImage3 from '../../assets/image/홍보3.png';
 
 import ProductWrapper from './styled';
 
-const ImgProduct = () => {
-  console.log('');
-  return (
-    <ProductWrapper>
-      <img src={ProductImage} alt="" />
-      <p>플라스틱 챌린지</p>
-      <p>
-        <span>현재 진행 중</span>
-      </p>
-    </ProductWrapper>
-  );
-};
+const ImgProduct = () => (
+  <ProductWrapper>
+    <img src={ProductImage} alt="" />
+    <p>플라스틱 챌린지</p>
+    <p>
+      <span>현재 진행 중</span>
+    </p>
+  </ProductWrapper>
+);
 
 const PreProduct = () => (
   <ProductWrapper>
