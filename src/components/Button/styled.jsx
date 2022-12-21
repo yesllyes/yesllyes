@@ -42,6 +42,9 @@ const StyledButton = styled.button`
       cursor: not-allowed;
     `}
   }
+  &:hover {
+    filter: saturate(2);
+  }
 
   ${(props) =>
     props.active &&

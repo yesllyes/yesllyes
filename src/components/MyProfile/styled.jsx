@@ -1,17 +1,30 @@
 import styled from 'styled-components';
 
-export const ProfileWrapper = styled.div`
+const ProfileWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
 `;
 
-export const StyledParticipate = styled.li`
+const StyledParticipate = styled.ul`
   display: flex;
   gap: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.lightGreen};
+    border-radius: 10px;
+  }
 `;
 
-export const ParticipateWrapper = styled.div`
+const ParticipateWrapper = styled.div`
   width: 390px;
   height: 208px;
   padding-left: 16px;
@@ -23,7 +36,7 @@ export const ParticipateWrapper = styled.div`
   }
 `;
 
-export const StyledProfileInfo = styled.div`
+const StyledProfileInfo = styled.div`
   height: 362px;
   width: 100%;
   position: relative;
@@ -40,7 +53,7 @@ export const StyledProfileInfo = styled.div`
     margin-top: 30px;
     gap: 35px;
 
-    .follwers {
+    .followers {
       font-weight: 700;
       font-size: ${({ theme }) => theme.fontSize.xlarge};
       text-align: center;
@@ -98,14 +111,14 @@ export const StyledProfileInfo = styled.div`
   }
 `;
 
-export const CircleBtn = styled.button`
+const CircleBtn = styled.button`
   width: 34px;
   height: 34px;
   border: 1px solid #dbdbdb;
   border-radius: 30px;
 `;
 
-export const StyledPostList = styled.section`
+const StyledPostList = styled.section`
   > div {
     display: flex;
     align-items: center;
@@ -115,3 +128,12 @@ export const StyledPostList = styled.section`
     width: 350px;
   }
 `;
+
+export {
+  ProfileWrapper,
+  StyledParticipate,
+  ParticipateWrapper,
+  StyledProfileInfo,
+  CircleBtn,
+  StyledPostList,
+};
