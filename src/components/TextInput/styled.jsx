@@ -40,6 +40,10 @@ const StyledInput = styled.div`
       box-shadow: 0 0 0 1000px white inset;
       font-family: inherit;
     }
+
+    &.error {
+      border-color: ${({ theme }) => theme.colors.Orange};
+    }
   }
 `;
 
