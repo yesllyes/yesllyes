@@ -8,6 +8,11 @@ import StyledLoginPage from './styled';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isEmail, setIsEmail] = useState(true);
+  const [emailMessage, setEmailMessage] = useState('');
+
+  console.log(isEmail);
+
   const data = {
     email,
     password,
@@ -15,7 +20,22 @@ export default function LoginPage() {
 
   const handleonChange = (event) => {
     if (event.target.name === 'email') {
-      setEmail(event.target.value);
+      const currentEmail = event.target.value;
+
+      setEmail(currentEmail);
+      const emailRegExp =
+        /^[A-Za-z0-9_]+[A-Za-z0-9]*[@]{1}[A-Za-z0-9]+[A-Za-z0-9]*[.]{1}[A-Za-z]{1,3}$/;
+
+      if (event.target.value === '') {
+        setIsEmail(false);
+        setEmailMessage('입력해주세요');
+      } else if (!emailRegExp.test(currentEmail) && currentEmail !== '') {
+        setIsEmail(false);
+        setEmailMessage('이메일의 형식이 올바르지 않습니다!');
+      } else {
+        setIsEmail(true);
+        setEmailMessage('');
+      }
     } else if (event.target.name === 'password') {
       setPassword(event.target.value);
     }
@@ -60,6 +80,7 @@ export default function LoginPage() {
           type="password"
           required
         />
+        <p className="message">{emailMessage}</p>
 
         <Button size="lg" status="disabled" onClick={onSubmit}>
           로그인
