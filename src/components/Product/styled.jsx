@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
-const ProductWrapper = styled.div`
+const ProductWrapper = styled.li`
   position: relative;
   cursor: pointer;
   width: 140px;
   list-style: none;
 
-  > img {
+  img {
     height: 90px;
     border: 0.5px solid #bdbdbd;
     border-radius: 8px;
   }
+
   p {
     line-height: 15px;
     margin: 8px 0px 4px;

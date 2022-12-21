@@ -6,7 +6,7 @@ import ProductImage3 from '../../assets/image/홍보3.png';
 
 import ProductWrapper from './styled';
 
-export const IngProduct = () => {
+const ImgProduct = () => {
   console.log('');
   return (
     <ProductWrapper>
@@ -19,7 +19,7 @@ export const IngProduct = () => {
   );
 };
 
-export const PreProduct = () => (
+const PreProduct = () => (
   <ProductWrapper>
     <img src={ProductImage2} alt="" />
     <p>플로깅 데이</p>
@@ -29,7 +29,7 @@ export const PreProduct = () => (
   </ProductWrapper>
 );
 
-export const EndProduct = () => (
+const EndProduct = () => (
   <ProductWrapper>
     <img src={ProductImage3} alt="" />
     <p>포스트</p>
@@ -38,4 +38,5 @@ export const EndProduct = () => (
     </p>
   </ProductWrapper>
 );
-// export default { IngProduct, PreProduct, EndProduct} ;
+
+export { ImgProduct, PreProduct, EndProduct };
