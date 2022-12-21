@@ -49,10 +49,7 @@ const StyledButton = styled.button`
       background-color: white;
       color: ${theme.colors.lightGray};
       cursor: not-allowed;
-    `)}/* a {
-    font-size: ${({ theme }) => theme.fontSize.small};
-    color: ${({ theme }) => theme.colors.lightGray};
-  } */
+    `)}
 `;
 
 export default StyledButton;
