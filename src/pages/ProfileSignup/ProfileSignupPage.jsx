@@ -84,12 +84,12 @@ export default function ProfilePage() {
 
       const json = await res.json();
 
-      console.log(json);
-      console.log(json.filename);
+      // console.log(json);
+      // console.log(json.filename);
       // 이미지 파일형식이 아닌 경우 에러 처리 ex) .svg
       if (!json.filename) {
         setPreImage(null);
-        console.log(json.message);
+
         return;
       }
       setPreImage(`${BASEURL}/${json.filename}`);
@@ -119,10 +119,8 @@ export default function ProfilePage() {
     const result = await signup.json();
 
     if (result.status === 422) {
-      console.log('결과', result);
-      return;
+      console.log(result.message);
     }
-    console.log('결과', result);
   };
 
   // console.log('username', isValidUserName);
