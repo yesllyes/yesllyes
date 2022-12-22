@@ -8,7 +8,6 @@ const Button = ({ size, children, disabled, active, onClick }) => (
     active={active}
     onClick={onClick}
   >
-    {console.log(disabled)}
     {children}
   </StyledButton>
 );
