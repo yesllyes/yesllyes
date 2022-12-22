@@ -100,6 +100,7 @@ export default function SignupPage() {
           placeholder="e-mail 주소를 입력해 주세요."
           // API 통신, 로직에 필요한 속성
           name="email"
+          value={email}
           onChange={onChangeEmail}
           // validation 에 필요한 속성 (로직 추가후 삭제예정)
           type="email"
@@ -115,6 +116,7 @@ export default function SignupPage() {
           name="password"
           onChange={onChangePassword}
           type="password"
+          value={password}
           error={passwordMessage ? 'error' : undefined}
           required
         />
