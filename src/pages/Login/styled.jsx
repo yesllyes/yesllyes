@@ -25,6 +25,11 @@ const StyledLoginPage = styled.section`
     font-size: ${({ theme }) => theme.fontSize.small};
     color: ${({ theme }) => theme.colors.lightGray};
   }
+
+  p {
+    width: 320px;
+    height: 10px;
+  }
 `;
 
 export default StyledLoginPage;

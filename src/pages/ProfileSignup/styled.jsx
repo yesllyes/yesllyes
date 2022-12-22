@@ -29,24 +29,34 @@ const StyledProfilePage = styled.section`
 `;
 
 const StyledImg = styled.div`
-  text-align: center;
   position: relative;
-  &::after {
+
+  > img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  label {
+    position: absolute;
+    cursor: pointer;
+    bottom: 0px;
+    right: 140px;
     background: url(${IconImgButton});
     background-size: 100% 100%;
-    bottom: 0;
-    content: '';
-    cursor: pointer;
-    display: block;
     height: 36px;
-    position: absolute;
-    right: 138px;
     width: 36px;
     z-index: 10;
   }
 `;
 
 const StyledTxt = styled.div`
+  > div,
+  p {
+    color: ${({ theme }) => theme.colors.Orange};
+    font-size: ${({ theme }) => theme.fontSize.small};
+    text-align: left;
+  }
   margin-top: 30px;
   margin-right: 34px;
   margin-left: 34px;

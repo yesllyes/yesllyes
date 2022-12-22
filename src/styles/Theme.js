@@ -14,7 +14,8 @@ const colors = {
   Green: '#6A9C78',
   lemonYellow: '#FFF1BC',
   lightGray: '#767676',
-  White: '#fff',
+  White: '#FFF',
+  Orange: '#EB5757',
 };
 
 const Theme = {

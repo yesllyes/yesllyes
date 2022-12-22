@@ -10,6 +10,7 @@ import ErrorPage from '../pages/Error/ErrorPage';
 import Campaign from '../pages/Campaign/Campaign';
 import PostUpload from './../pages/PostUpload/PostUpload';
 import MyProfilePage from '../pages/MyProfile/MyProfilePage';
+import FollowPage from '../pages/FollowPage/FollowPage';
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/campaign" element={<Campaign />}></Route>
       <Route path="/upload" element={<PostUpload />}></Route>
       <Route path="/myprofile" element={<MyProfilePage />}></Route>
+      <Route path="/followers" element={<FollowPage />}></Route>
     </Routes>
   );
 }

@@ -8,6 +8,11 @@ const StyledTopBasicNav = styled.nav`
   padding: 13px 16px;
   position: relative;
 
+  div {
+    width: 22px;
+    height: 22px;
+  }
+
   img {
     width: 22px;
     height: 22px;

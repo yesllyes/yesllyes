@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button/Button';
+import { authContext } from '../../context/Auth';
 import TextInput from './../../components/TextInput/TextInput';
 import StyledLoginPage from './styled';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isEmail, setIsEmail] = useState(true);
+  const [isEmail, setIsEmail] = useState(false);
   const [emailMessage, setEmailMessage] = useState('');
+  const [isPassword, setIsPassword] = useState(false);
+  const navigate = useNavigate();
+  const passed = isEmail && isPassword;
+
+  const auth = useContext(authContext);
 
   const data = {
     email,
@@ -36,6 +42,16 @@ export default function LoginPage() {
       }
     } else if (event.target.name === 'password') {
       setPassword(event.target.value);
+      if (event.target.value === '') {
+        setIsPassword(false);
+      } else {
+        setIsPassword(true);
+      }
+
+      if (emailMessage === '이메일 또는 비밀번호가 일치하지 않습니다.') {
+        setIsEmail(true);
+        setEmailMessage('');
+      }
     }
   };
 
@@ -51,7 +67,17 @@ export default function LoginPage() {
     const result = await login.json();
 
     console.log(isEmail, result);
+    if (result.status === 422) {
+      setEmailMessage(result.message);
+      setIsEmail(false);
+    } else {
+      auth.action.setLocalToken(result.user.token);
+      navigate('/homefeed', { replace: true });
+    }
   };
+
+  console.log('isEmail:', isEmail);
+  console.log('isPassword:', isPassword);
 
   return (
     <StyledLoginPage>
@@ -64,6 +90,7 @@ export default function LoginPage() {
           placeholder="e-mail 입력"
           // API 통신, 로직에 필요한 속성
           name="email"
+          value={email}
           onChange={handleonChange}
           // validation 에 필요한 속성 (로직 추가후 삭제예정)
           type="email"
@@ -74,13 +101,14 @@ export default function LoginPage() {
           id="password"
           placeholder="비밀번호 입력"
           name="password"
+          value={password}
           onChange={handleonChange}
           type="password"
           required
         />
         <p className="message">{emailMessage}</p>
 
-        <Button size="lg" status="disabled" onClick={onSubmit}>
+        <Button size="lg" disabled={!passed} onClick={onSubmit}>
           로그인
         </Button>
         <Link to="/signup">이메일로 회원가입</Link>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ProfileWrapper = styled.div`
+const StyledProfileWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
 `;
@@ -24,7 +24,7 @@ const StyledParticipate = styled.ul`
   }
 `;
 
-const ParticipateWrapper = styled.div`
+const StyledParticipateWrapper = styled.div`
   width: 390px;
   height: 208px;
   padding-left: 16px;
@@ -70,11 +70,21 @@ const StyledProfileInfo = styled.div`
       font-size: ${({ theme }) => theme.fontSize.xsmall};
       color: ${({ theme }) => theme.colors.lightGray};
     }
+
+    img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+    }
   }
 
   .ProfileMain {
     margin: 18px 0px;
     font-size: ${({ theme }) => theme.fontSize.large};
+
+    p {
+      text-align: center;
+    }
 
     span {
       padding-top: 6px;
@@ -130,9 +140,9 @@ const StyledPostList = styled.section`
 `;
 
 export {
-  ProfileWrapper,
+  StyledProfileWrapper,
   StyledParticipate,
-  ParticipateWrapper,
+  StyledParticipateWrapper,
   StyledProfileInfo,
   CircleBtn,
   StyledPostList,
