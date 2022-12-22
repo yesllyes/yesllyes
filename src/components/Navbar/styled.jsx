@@ -9,6 +9,11 @@ const StyledTopBasicNav = styled.nav`
   border: 0.5px solid ${({ theme }) => theme.colors.lightGray};
   position: relative;
 
+  div {
+    width: 22px;
+    height: 22px;
+  }
+
   img {
     width: 22px;
     height: 22px;

@@ -10,7 +10,7 @@ const TopBasicNav = (props) => (
   <StyledTopBasicNav>
     <img src={iconArrowLeft} alt="뒤로가기" />
     <span>{props.value}</span>
-    <img src={iconMoreVerticalLarge} alt="메뉴" />
+    {props.value ? <div></div> : <img src={iconMoreVerticalLarge} alt="메뉴" />}
   </StyledTopBasicNav>
 );
 
