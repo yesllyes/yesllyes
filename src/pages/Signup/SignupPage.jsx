@@ -13,10 +13,10 @@ export default function SignupPage() {
   const [passwordMessage, setPasswordMessage] = useState('');
   const [emailMessage, setEmailMessage] = useState('');
 
-  const [isPassword, setIsPassword] = useState(true);
-  const [isEmail, setIsEmail] = useState(true);
+  const [isPassword, setIsPassword] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
 
-  console.log(isEmail, isPassword);
+  const passed = isEmail && isPassword;
 
   const onChangeEmail = (e) => {
     const currentEmail = e.target.value;
@@ -55,14 +55,6 @@ export default function SignupPage() {
     }
   };
 
-  // const handleonChange = (event) => {
-  //   if (event.target.name === 'email') {
-  //     setEmail(event.target.value);
-  //   } else if (event.target.name === 'password') {
-  //     setPassword(event.target.value);
-  //   }
-  // };
-
   const nextPage = async () => {
     const emailValid = await fetch(
       `https://mandarin.api.weniv.co.kr/user/emailvalid`,
@@ -93,7 +85,7 @@ export default function SignupPage() {
       setEmailMessage('이미 가입된 이메일 주소 입니다.');
     } else {
       setIsEmail(false);
-      alert('올바른 이메일과 비밀번호를 입력해 주세요.');
+      // alert('올바른 이메일과 비밀번호를 입력해 주세요.');
     }
   };
 
@@ -111,6 +103,7 @@ export default function SignupPage() {
           onChange={onChangeEmail}
           // validation 에 필요한 속성 (로직 추가후 삭제예정)
           type="email"
+          error={emailMessage ? 'error' : undefined}
           required
         />
         <p className="message">{emailMessage}</p>
@@ -122,12 +115,13 @@ export default function SignupPage() {
           name="password"
           onChange={onChangePassword}
           type="password"
+          error={passwordMessage ? 'error' : undefined}
           required
         />
         <p className="message">{passwordMessage}</p>
       </div>
 
-      <Button size="lg" status="disabled" onClick={nextPage}>
+      <Button size="lg" disabled={!passed} onClick={nextPage}>
         다음
       </Button>
     </StyledSignupPage>
