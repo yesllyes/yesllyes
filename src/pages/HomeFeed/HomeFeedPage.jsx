@@ -13,7 +13,7 @@ const HomeFeedPage = () => (
       <p>유저를 검색해 팔로우 해보세요!</p>
       <Button size="md">검색하기</Button>
     </main>
-    <TapMenu></TapMenu>
+    <TapMenu />
   </StyledFeedPage>
 );
 
