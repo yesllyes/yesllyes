@@ -6,11 +6,14 @@ import postListOnIcon from '../../assets/icon/icon-post-list-on.svg';
 import postListOffIcon from '../../assets/icon/icon-post-list-off.svg';
 
 import { StyledPostList } from './styled';
+import useAuthContext from '../../hooks/useAuthContext';
 
 function PostList() {
   const [showDisplay, setShowDisplay] = useState('list');
   const [postData, setPostData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const { auth } = useAuthContext();
 
   const handleShowDisplay = (e) => {
     const currentDisplay = e.currentTarget.name;
@@ -19,25 +22,29 @@ function PostList() {
   };
 
   useEffect(() => {
-    fetch('https://mandarin.api.weniv.co.kr/post/test111.2341/userpost', {
-      method: 'GET',
-      headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODU5NWY4MTdhZTY2NjU4MWJmMjgzZCIsImV4cCI6MTY3NjUzMjI5NCwiaWF0IjoxNjcxMzQ4Mjk0fQ.596JRIY0hJXUG1Mgy3I2a3v_bddUdJEQoUVvAO4K85g',
-        'Content-type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setPostData(res.post);
-        setLoading(false);
-      });
-  }, []);
+    if (auth.accountName) {
+      fetch(
+        `https://mandarin.api.weniv.co.kr/post/${auth.accountName}/userpost`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+            'Content-type': 'application/json',
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          setPostData(res.post);
+          setLoading(false);
+        })
+        .catch((e) => e);
+    }
+  }, [auth]);
 
-  console.log(postData);
   return (
     <StyledPostList>
-      <h3>게시물 작성 리스트목록</h3>
+      <h3 className="ir">게시물 작성 리스트목록</h3>
       <div>
         <button name="list" onClick={handleShowDisplay}>
           {showDisplay === 'list' ? (

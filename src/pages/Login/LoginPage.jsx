@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button/Button';
-import { authContext } from '../../context/Auth';
+
+import useAuthContext from '../../hooks/useAuthContext';
+
 import TextInput from './../../components/TextInput/TextInput';
 import StyledLoginPage from './styled';
 
@@ -15,12 +17,9 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const passed = isEmail && isPassword;
 
-  const auth = useContext(authContext);
+  const { login } = useAuthContext();
 
-  const data = {
-    email,
-    password,
-  };
+  const data = useMemo(() => ({ email, password }), [email, password]);
 
   const handleonChange = (event) => {
     if (event.target.name === 'email') {
@@ -55,28 +54,32 @@ export default function LoginPage() {
     }
   };
 
-  const onSubmit = async () => {
+  const onSubmit = useCallback(async () => {
     const userData = { user: data };
-    const login = await fetch(`https://mandarin.api.weniv.co.kr/user/login`, {
+    const result = await fetch(`https://mandarin.api.weniv.co.kr/user/login`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
       body: JSON.stringify(userData),
     });
-    const result = await login.json();
+    const { user, message } = await result.json();
 
-    if (result.status === 422) {
-      setEmailMessage(result.message);
+    if (!user) {
+      setEmailMessage(message);
       setIsEmail(false);
     } else {
-      auth.action.setLocalToken(result.user.token);
+      const localData = {
+        token: user.token,
+        accountName: user.accountname,
+        image: user.image,
+      };
+
+      localStorage.setItem('data', JSON.stringify(localData));
+      login(user.token, user.accountname, user.image);
       navigate('/homefeed', { replace: true });
     }
-  };
-
-  console.log('isEmail:', isEmail);
-  console.log('isPassword:', isPassword);
+  }, [data, navigate, login]);
 
   return (
     <StyledLoginPage>
