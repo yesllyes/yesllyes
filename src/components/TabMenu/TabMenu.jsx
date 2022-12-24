@@ -10,7 +10,7 @@ const TabMenu = () => (
   <StyledTabMenu>
     <ul>
       <li>
-        <Link to="/">
+        <Link to="/homefeed">
           <img src={iconHome} alt="" />홈
         </Link>
       </li>
@@ -27,7 +27,7 @@ const TabMenu = () => (
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/myprofile">
           <img src={iconUser} alt="" />
           프로필
         </Link>
