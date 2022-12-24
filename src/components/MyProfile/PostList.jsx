@@ -34,7 +34,7 @@ function PostList() {
       });
   }, []);
 
-  console.log(postData);
+  // console.log(postData);
   return (
     <StyledPostList>
       <h3>게시물 작성 리스트목록</h3>

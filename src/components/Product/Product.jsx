@@ -31,7 +31,7 @@ const EndProduct = () => (
     <img src={ProductImage3} alt="" />
     <p>포스트</p>
     <p>
-      <span> 참여 완료</span>
+      <span>참여 완료</span>
     </p>
   </ProductWrapper>
 );

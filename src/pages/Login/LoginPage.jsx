@@ -66,6 +66,7 @@ export default function LoginPage() {
     });
     const result = await login.json();
 
+    console.log(isEmail, result);
     if (result.status === 422) {
       setEmailMessage(result.message);
       setIsEmail(false);
