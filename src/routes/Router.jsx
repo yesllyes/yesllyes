@@ -8,7 +8,7 @@ import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import ProfileSignupPage from '../pages/ProfileSignup/ProfileSignupPage';
 import NotFoundPage from '../pages/NotFound/NotFoundPage';
 import CampaignPage from '../pages/Campaign/CampaignPage';
-import PostUpload from '../pages/PostUpload/PostUploadPage';
+import PostUploadPage from '../pages/PostUpload/PostUploadPage';
 import MyProfilePage from '../pages/MyProfile/MyProfilePage';
 import FollowersPage from '../pages/Follow/FollowersPage';
 
@@ -22,7 +22,7 @@ function Router() {
       <Route path="/profilesignup" element={<ProfileSignupPage />}></Route>
       <Route path="/notfound" element={<NotFoundPage />}></Route>
       <Route path="/campaign" element={<CampaignPage />}></Route>
-      <Route path="/postupload" element={<PostUpload />}></Route>
+      <Route path="/postupload" element={<PostUploadPage />}></Route>
       <Route path="/myprofile" element={<MyProfilePage />}></Route>
       <Route path="/followers" element={<FollowersPage />}></Route>
     </Routes>
