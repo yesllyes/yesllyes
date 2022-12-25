@@ -10,7 +10,7 @@ import IconBasicProfile from '../../assets/icon/icon-basic-profile-large.svg';
 const BASEURL = 'https://mandarin.api.weniv.co.kr';
 const BASICPROFILE = `${BASEURL}/1671610059003.png`;
 
-export default function ProfilePage() {
+export default function ProfileSignupPage() {
   const location = useLocation();
   const email = location.state.email;
   const password = location.state.password;

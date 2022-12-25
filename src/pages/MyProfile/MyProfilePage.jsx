@@ -4,7 +4,7 @@ import ProfileInfo from '../../components/MyProfile/ProfileInfo';
 import PostList from '../../components/MyProfile/PostList';
 import StyledMyProfile from './styled';
 
-const MainProfile = () => (
+const MyProfilePage = () => (
   <StyledMyProfile>
     <ProfileInfo />
     <ProfileList />
@@ -12,4 +12,4 @@ const MainProfile = () => (
   </StyledMyProfile>
 );
 
-export default MainProfile;
+export default MyProfilePage;

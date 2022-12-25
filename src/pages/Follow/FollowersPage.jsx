@@ -1,5 +1,4 @@
 import React, { Children } from 'react';
-import styled from 'styled-components';
 import Button from '../../components/Button/Button';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import TabMenu from '../../components/TabMenu/TabMenu';
@@ -12,10 +11,10 @@ import {
   TabMenuWrap,
 } from './styled';
 
-const FollowPage = () => (
+const FollowersPage = () => (
   <FollowerWrap>
     <FollowerTit>Follower</FollowerTit>
-    <TopBasicNav value="Followers"  />
+    <TopBasicNav value="Followers" />
     <FollowerList>
       <List>
         <li className="Follow">
@@ -51,4 +50,4 @@ const FollowPage = () => (
   </FollowerWrap>
 );
 
-export default FollowPage;
+export default FollowersPage;

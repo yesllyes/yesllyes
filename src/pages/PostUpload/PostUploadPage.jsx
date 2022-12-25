@@ -3,7 +3,7 @@ import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import iconbasicprofilesmall from '../../assets/icon/icon-basic-profile-small.svg';
 import { PostUploadMain, PostUploadHeader } from './styled';
 
-const PostUpload = () => (
+const PostUploadPage = () => (
   <>
     <PostUploadHeader>
       <h1 className="ir">게시글 작성 페이지</h1>
@@ -30,4 +30,4 @@ const PostUpload = () => (
   </>
 );
 
-export default PostUpload;
+export default PostUploadPage;

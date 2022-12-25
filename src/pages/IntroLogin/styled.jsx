@@ -17,6 +17,7 @@ const StyledIntroLoginPage = styled.main`
   }
 
   .login-join-section {
+    width: 100%;
     position: absolute;
     bottom: 0;
     border-top-left-radius: 20px;

@@ -3,7 +3,7 @@ import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
 import { StyledCamoaignHeader, StyledCampaignInput } from './styled';
 
-const Campaign = () => (
+const CampaignPage = () => (
   <>
     <StyledCamoaignHeader>
       <h2 className="ir">캠페인 등록 페이지</h2>
@@ -42,4 +42,4 @@ const Campaign = () => (
   </>
 );
 
-export default Campaign;
+export default CampaignPage;
