@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import iconimgbuttongreen from '../../assets/icon/icon-img-button-green.svg';
 
-const PostUploadHeader = styled.header`
+export const PostUploadHeader = styled.header`
   .ir {
     display: block;
     overflow: hidden;
@@ -11,7 +11,7 @@ const PostUploadHeader = styled.header`
   }
 `;
 
-const PostUploadMain = styled.main`
+export const PostUploadMain = styled.main`
   height: 796px;
   padding: 20px 16px;
   border: 1px solid black;
@@ -56,5 +56,3 @@ const PostUploadMain = styled.main`
     cursor: pointer;
   }
 `;
-
-export { PostUploadHeader, PostUploadMain };
