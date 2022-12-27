@@ -53,6 +53,10 @@ const StyledProfileInfo = styled.div`
     margin-top: 30px;
     gap: 35px;
 
+    span {
+      margin-top: 7px;
+    }
+
     .followers {
       font-weight: 700;
       font-size: ${({ theme }) => theme.fontSize.xlarge};
@@ -133,10 +137,27 @@ const StyledPostList = styled.section`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 16px;
-    margin: 0 auto;
-    width: 350px;
+    gap: 1.6rem;
+    width: 100%;
   }
+
+  section {
+    margin-bottom: 44px;
+  }
+`;
+
+const StyledSelectDisplay = styled.div`
+  padding: 0.5rem 1.6rem 1.4rem 1.6rem;
+  border-bottom: 0.5px solid #dbdbdb;
+  margin-bottom: 1.6rem;
+`;
+
+const StyledAlbumWrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 16px;
 `;
 
 export {
@@ -146,4 +167,6 @@ export {
   StyledProfileInfo,
   CircleBtn,
   StyledPostList,
+  StyledSelectDisplay,
+  StyledAlbumWrapper,
 };

@@ -5,13 +5,19 @@ import postAlbumOffIcon from '../../assets/icon/icon-post-album-off.svg';
 import postListOnIcon from '../../assets/icon/icon-post-list-on.svg';
 import postListOffIcon from '../../assets/icon/icon-post-list-off.svg';
 
-import { StyledPostList } from './styled';
+import {
+  StyledAlbumWrapper,
+  StyledPostList,
+  StyledSelectDisplay,
+} from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
+import AlbumPost from '../AlbumPost/AlbumPost';
 
 function PostList() {
   const [showDisplay, setShowDisplay] = useState('list');
   const [postData, setPostData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const { auth } = useAuthContext();
 
@@ -22,6 +28,7 @@ function PostList() {
   };
 
   useEffect(() => {
+    setLoading(true);
     if (auth.accountName) {
       fetch(
         `https://mandarin.api.weniv.co.kr/post/${auth.accountName}/userpost`,
@@ -38,35 +45,43 @@ function PostList() {
           setPostData(res.post);
           setLoading(false);
         })
-        .catch((e) => e);
+        .catch((e) => setError(e));
     }
   }, [auth]);
+
+  if (loading) {
+    return <div>Loading중입니다..</div>;
+  }
+
+  if (error) {
+    return <div>Error메세지: {error}</div>;
+  }
 
   return (
     <StyledPostList>
       <h3 className="ir">게시물 작성 리스트목록</h3>
-      <div>
+      <StyledSelectDisplay>
         <button name="list" onClick={handleShowDisplay}>
-          {showDisplay === 'list' ? (
-            <img src={postListOnIcon} alt="" />
-          ) : (
-            <img src={postListOffIcon} alt="" />
-          )}
+          <img
+            src={showDisplay === 'list' ? postListOnIcon : postListOffIcon}
+            alt="목록형아이템이미지"
+          />
         </button>
         <button name="album" onClick={handleShowDisplay}>
-          {showDisplay === 'album' ? (
-            <img src={postAlbumOnIcon} alt="" />
-          ) : (
-            <img src={postAlbumOffIcon} alt="" />
-          )}
+          <img
+            src={showDisplay === 'album' ? postAlbumOnIcon : postAlbumOffIcon}
+            alt="앨범형아이템이미지"
+          />
         </button>
-      </div>
-
-      {loading && <div>loading!!!!</div>}
+      </StyledSelectDisplay>
       {!loading && showDisplay === 'list' ? (
         postData.map((post) => <TextPost key={post.id} postData={post} />)
       ) : (
-        <div>앨범형</div>
+        <StyledAlbumWrapper>
+          {postData.map(
+            (post) => post.image && <AlbumPost key={post.id} postData={post} />
+          )}
+        </StyledAlbumWrapper>
       )}
     </StyledPostList>
   );

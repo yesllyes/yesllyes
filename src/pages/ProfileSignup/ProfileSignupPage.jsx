@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import StyledWrapper from '../../components/Wrapper/StyledWrapper';
 import Button from '../../components/Button/Button';
 import TextInput from '../../components/TextInput/TextInput';
@@ -12,6 +12,7 @@ const BASICPROFILE = `${BASEURL}/1671610059003.png`;
 
 export default function ProfileSignupPage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const email = location.state.email;
   const password = location.state.password;
   const [username, setUserName] = useState('');
@@ -118,8 +119,11 @@ export default function ProfileSignupPage() {
     });
     const result = await signup.json();
 
-    if (result.status === 422) {
-      console.log(result.message);
+    if (result.user) {
+      navigate('/login', { replace: true });
+    } else {
+      // 해당 로직은 에러로 처리를 하는 것을 권장
+      setCheckAccountNameMsg(result.message);
     }
   };
 
