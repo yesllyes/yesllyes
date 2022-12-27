@@ -1,8 +1,8 @@
-import React, { Children } from 'react';
+import React from 'react';
 import Button from '../../components/Button/Button';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import TabMenu from '../../components/TabMenu/TabMenu';
-import UserInfo from '../../components/User/UserInfo';
+import UserInfo from '../../components/UserInfo/UserInfo';
 import {
   FollowerList,
   FollowerWrap,

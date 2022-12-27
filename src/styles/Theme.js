@@ -16,6 +16,7 @@ const colors = {
   lightGray: '#767676',
   White: '#FFF',
   Orange: '#EB5757',
+  ActiveborderColor: '#DBDBDB',
 };
 
 const Theme = {
