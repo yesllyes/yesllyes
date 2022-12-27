@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledTextPost = styled.section`
@@ -12,26 +13,26 @@ export const StyledTextPost = styled.section`
 
 export const StyledPostMessage = styled.section`
   padding-left: 54px;
+`;
+
+export const StyledPostLink = styled(Link)`
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 16px;
   p {
     margin-top: 16px;
     font-size: ${({ theme }) => theme.fontSize.medium};
   }
-`;
-
-export const StyledHeartChat = styled.div`
-  display: flex;
-  gap: 18px;
-  margin: 16px 0;
-
-  color: ${({ theme }) => theme.colors.lightGray};
-
-  div {
-    img {
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-    span {
-      font-size: ${({ theme }) => theme.fontSize.small};
-    }
+  & > img {
+    display: inline-block;
+    font-size: ${({ theme }) => theme.fontSize.xlarge};
+    font-weight: 700;
+    width: 100%;
+    height: 228px;
+    object-fit: cover;
+    text-align: center;
+    border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border-radius: 4px;
   }
 `;
