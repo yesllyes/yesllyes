@@ -1,38 +1,61 @@
 import React from 'react';
-// import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import StyledTopBasicNav from './styled';
 import iconArrowLeft from '../../assets/icon/icon-arrow-left.svg';
 import iconMoreVerticalLarge from '../../assets/icon/icon-more-vertical-large.svg';
 import iconSearch from '../../assets/icon/icon-search.svg';
 import Button from '../Button/Button';
 
-const TopBasicNav = (props) => (
-  <StyledTopBasicNav>
-    <img src={iconArrowLeft} alt="뒤로가기" />
-    <span>{props.value}</span>
-    {props.value ? <div></div> : <img src={iconMoreVerticalLarge} alt="메뉴" />}
-  </StyledTopBasicNav>
-);
+export function TopBasicNav(props) {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
-const TopSearchNav = () => (
-  <StyledTopBasicNav>
-    <img src={iconArrowLeft} alt="뒤로가기" />
-    <input type="text" placeholder="계정 검색" />
-  </StyledTopBasicNav>
-);
+  return (
+    <StyledTopBasicNav>
+      <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
+      <span>{props.value}</span>
+      {props.value ? (
+        <div></div>
+      ) : (
+        <img src={iconMoreVerticalLarge} alt="메뉴" />
+      )}
+    </StyledTopBasicNav>
+  );
+}
 
-const TopMainNav = (props) => (
+export function TopSearchNav() {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
+  return (
+    <StyledTopBasicNav>
+      <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
+      <input type="text" placeholder="계정 검색" />
+    </StyledTopBasicNav>
+  );
+}
+
+export function TopMainNav(props) {
   <StyledTopBasicNav>
     <span>{props.value}</span>
     <img src={iconSearch} alt="검색" />
-  </StyledTopBasicNav>
-);
+  </StyledTopBasicNav>;
+}
 
-const TopUploadNav = (props) => (
-  <StyledTopBasicNav>
-    <img src={iconArrowLeft} alt="뒤로가기" />
-    <Button size="sm">{props.value}</Button>
-  </StyledTopBasicNav>
-);
+export function TopUploadNav(props) {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
-export { TopBasicNav, TopSearchNav, TopMainNav, TopUploadNav };
+  return (
+    <StyledTopBasicNav>
+      <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
+      <Button size="sm">{props.value}</Button>
+    </StyledTopBasicNav>
+  );
+}
