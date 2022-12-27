@@ -6,27 +6,40 @@ import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import Share from '../../assets/icon/icon-share.svg';
 import Message from '../../assets/icon/icon-message-small.svg';
 import { StyledProfileInfo, CircleBtn } from './styled';
+import useAuthContext from '../../hooks/useAuthContext';
 
 function ProfileInfo() {
+  const { auth } = useAuthContext();
+
   const [userInfo, setUserInfo] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
+    setLoading(true);
     fetch('https://mandarin.api.weniv.co.kr/user/myinfo', {
       method: 'GET',
       headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTZjYjUyMTdhZTY2NjU4MWMzMzQ0MyIsImV4cCI6MTY3NjgxMjYwNCwiaWF0IjoxNjcxNjI4NjA0fQ._xUP-5Fet9fwZ8I6XPtJ1waxYx_XXMgnFR9rl_kohuk',
+        Authorization: `Bearer ${auth.token}`,
       },
     })
       .then((res) => res.json())
       .then((res) => {
         setUserInfo(res.user);
         setLoading(false);
+      })
+      .catch((e) => {
+        setError(e);
       });
-  }, []);
-  // loading 시 조건부 렌더링, 예외 처리 필요
-  console.log(userInfo, loading);
+  }, [auth]);
+
+  if (loading) {
+    return <div>Loading중입니다...</div>;
+  }
+
+  if (error) {
+    return <div>Error메세지: {error}</div>;
+  }
 
   return (
     <StyledProfileInfo>
@@ -61,8 +74,24 @@ function ProfileInfo() {
             <img src={Message} alt="메시지 보내기" />
           </CircleBtn>
         </Link>
-        <Button size="sm">프로필 수정</Button>
-        <Button size="sm">활동 등록</Button>
+        <Button
+          size="md"
+          active={true}
+          onClick={() => {
+            console.log('프로필 수정 페이지로 이동');
+          }}
+        >
+          프로필 수정
+        </Button>
+        <Button
+          size="md"
+          active={true}
+          onClick={() => {
+            console.log('할동 등록 페이지로 이동');
+          }}
+        >
+          활동 등록
+        </Button>
         <CircleBtn>
           <img src={Share} alt="공유하기" />
         </CircleBtn>
