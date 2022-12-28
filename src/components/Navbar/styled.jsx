@@ -34,7 +34,6 @@ const StyledTopBasicNav = styled.nav`
     bottom: 8px;
   }
   button {
-    background-color: ${({ theme }) => theme.colors.lightGreen};
     color: white;
     position: absolute;
     right: 16px;

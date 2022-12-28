@@ -64,7 +64,9 @@ export function TopUploadNav(props) {
   return (
     <StyledTopBasicNav>
       <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
-      <Button size="sm">{props.value}</Button>
+      <Button size="sm" disabled={props.disabled} onClick={props.onClick}>
+      {props.value}
+    </Button>
     </StyledTopBasicNav>
   );
 }
