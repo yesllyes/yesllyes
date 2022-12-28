@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledHomeFeedPage = styled.div`
   width: 390px;
   height: 820px;
-  border: 1px solid black;
+  border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
 

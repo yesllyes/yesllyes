@@ -25,14 +25,34 @@ export const StyledPostLink = styled(Link)`
     font-size: ${({ theme }) => theme.fontSize.medium};
   }
   & > img {
+    width: 304px;
+    height: 228px;
     display: inline-block;
     font-size: ${({ theme }) => theme.fontSize.xlarge};
     font-weight: 700;
-    width: 100%;
-    height: 228px;
     object-fit: cover;
     text-align: center;
-    border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border: 0.5px solid #dbdbdb;
     border-radius: 4px;
+    /* padding: 15px 0px;
+    margin-left: -54px; */
+  }
+`;
+
+export const StyledHeartChat = styled.div`
+  display: flex;
+  gap: 18px;
+  margin: 16px 0;
+
+  color: ${({ theme }) => theme.colors.lightGray};
+
+  div {
+    img {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    span {
+      font-size: ${({ theme }) => theme.fontSize.small};
+    }
   }
 `;

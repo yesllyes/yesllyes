@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const StyledComment = styled.section`
+export const StyledCommentInput = styled.section`
   width: 100%;
   height: 61px;
-  border: 1px solid black;
+  border-top: 0.5px solid #dbdbdb;
   display: flex;
   vertical-align: center;
   justify-content: space-between;
@@ -20,15 +20,38 @@ const StyledComment = styled.section`
 
   input {
     width: 280px;
-    border-style: none;
+    border: none;
+    background-color: transparent;
+    line-height: 14px;
+    font-size: ${({ theme }) => theme.fontSize.medium};
     margin-left: 55px;
     margin-right: 13px;
-  }
 
-  button {
-    width: 25px;
-    height: 27px;
+    ::placeholder {
+      font-size: ${({ theme }) => theme.fontSize.small};
+      color: #dbdbdb;
+    }
+
+    :focus {
+      outline: none;
+      border-color: ${({ theme }) => theme.colors.Green};
+    }
   }
 `;
 
-export default StyledComment;
+export const StyledCommentList = styled.ul`
+  width: 100%;
+  padding: 16px 20px;
+
+  li {
+    width: 358px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-size: ${({ theme }) => theme.fontSize.xsmall};
+      color: ${({ theme }) => theme.colors.lightGray};
+    }
+  }
+`;
