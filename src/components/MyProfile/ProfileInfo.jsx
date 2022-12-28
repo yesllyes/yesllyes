@@ -74,24 +74,16 @@ function ProfileInfo() {
             <img src={Message} alt="메시지 보내기" />
           </CircleBtn>
         </Link>
-        <Button
-          size="md"
-          active={true}
-          onClick={() => {
-            console.log('프로필 수정 페이지로 이동');
-          }}
-        >
-          프로필 수정
-        </Button>
-        <Button
-          size="md"
-          active={true}
-          onClick={() => {
-            console.log('할동 등록 페이지로 이동');
-          }}
-        >
-          활동 등록
-        </Button>
+        <Link to="/profilemodify">
+          <Button size="md" active={true}>
+            프로필 수정
+          </Button>
+        </Link>
+        <Link to="/campaign">
+          <Button size="md" active={true}>
+            활동 등록
+          </Button>
+        </Link>
         <CircleBtn>
           <img src={Share} alt="공유하기" />
         </CircleBtn>
