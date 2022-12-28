@@ -1,29 +1,17 @@
 import styled from 'styled-components';
 import iconimgbutton from '../../assets/icon/icon-img-button-gray.svg';
 
-const StyledCamoaignHeader = styled.header`
-  .ir {
-    display: block;
-    overflow: hidden;
-    font-size: 1px;
-    line-height: 0;
-    text-indent: -9999px;
-  }
-`;
+const StyledCamoaignHeader = styled.header``;
 
 const StyledCampaignInput = styled.main`
   height: 796px;
   border: 1px solid black;
 
-  .ir {
-    display: block;
-    overflow: hidden;
-    font-size: 1px;
-    line-height: 0;
-    text-indent: -9999px;
+  #campaignImg {
+    display: none;
   }
 
-  h3 {
+  h2 {
     line-height: 14px;
     font-size: ${({ theme }) => theme.fontSize.small};
     color: ${({ theme }) => theme.colors.lightGray};
@@ -39,10 +27,16 @@ const StyledCampaignInput = styled.main`
     width: 322px;
     height: 204px;
     position: relative;
-    background-color: #f2f2f2;
+    background: #f2f2f2;
     border: 0.5 solid #dbdbdb;
     border-radius: 10px;
     cursor: pointer;
+  }
+
+  .campaign-img-label img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
 
   .campaign-img-label::after {
@@ -61,6 +55,10 @@ const StyledCampaignInput = styled.main`
 
   input::placeholder {
     color: #dbdbdb;
+  }
+
+  .error-message {
+    color: ${({ theme }) => theme.colors.Orange};
   }
 `;
 
