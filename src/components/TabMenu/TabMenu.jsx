@@ -15,13 +15,13 @@ const TabMenu = () => (
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/chatlist">
           <img src={iconMessageLarge} alt="" />
           채팅
         </Link>
       </li>
       <li>
-        <Link to="/">
+        <Link to="/postupload">
           <img src={iconEdit} alt="" />
           게시물 작성
         </Link>
