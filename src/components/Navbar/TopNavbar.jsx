@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StyledTopBasicNav from './styled';
 import iconArrowLeft from '../../assets/icon/icon-arrow-left.svg';
@@ -11,7 +11,9 @@ export function TopBasicNav(props) {
   const handleGoBack = () => {
     navigate(-1);
   };
+  const [modalToggle, setModalToggle] = useState(false);
 
+  console.log(props);
   return (
     <StyledTopBasicNav>
       <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
@@ -19,8 +21,15 @@ export function TopBasicNav(props) {
       {props.value ? (
         <div></div>
       ) : (
-        <img src={iconMoreVerticalLarge} alt="메뉴" />
+        <img
+          src={iconMoreVerticalLarge}
+          alt="메뉴"
+          onClick={() => {
+            setModalToggle(!modalToggle);
+          }}
+        />
       )}
+      {!modalToggle ? props.children : null}
     </StyledTopBasicNav>
   );
 }
