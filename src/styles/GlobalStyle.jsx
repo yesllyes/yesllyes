@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "NexonGothic";
     width: 390px;
     margin: 0 auto;
+    position: relative;
   }
 
   button {

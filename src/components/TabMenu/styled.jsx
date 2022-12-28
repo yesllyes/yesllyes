@@ -4,8 +4,9 @@ const StyledTabMenu = styled.nav`
   width: 100%;
   height: 60px;
   /* border: 1px solid black; */
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 0px 6px;
+  position: absolute;
+  bottom: 10px;
 
   ul {
     display: flex;
