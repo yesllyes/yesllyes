@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 
 const StyledHomeFeedPage = styled.div`
-  width: 390px;
-  height: 820px;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  height: 826px;
 
   main {
+    width: 390px;
+    height: 712px;
+
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 220px;
-    margin-bottom: 294px;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   p {
@@ -23,4 +28,8 @@ const StyledHomeFeedPage = styled.div`
   }
 `;
 
-export default StyledHomeFeedPage;
+const TabMenuWrap = styled.div`
+  bottom: 0px;
+`;
+
+export { StyledHomeFeedPage, TabMenuWrap };
