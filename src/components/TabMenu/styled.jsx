@@ -1,30 +1,42 @@
-import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
-const StyledTabMenu = styled.nav`
+const StyledTabMenu = styled.article`
   width: 100%;
   height: 60px;
-  /* border: 1px solid black; */
-  padding-left: 6px;
-  padding-right: 6px;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid lightgray;
+`;
 
-  ul {
-    display: flex;
-    justify-content: space-around;
-  }
+const StlyedNavLink = styled(NavLink)`
+  display: block;
+  width: 84px;
+  text-align: center;
 
   img {
-    margin-bottom: 4px;
+    width: 18px;
+    height: 20px;
+    margin-top: 6px;
+  }
+  p {
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    margin-top: 6px;
   }
 
-  a {
-    padding-top: 12px;
-    padding-bottom: 6px;
-    color: #767676;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  &.active {
+    img {
+      width: 18px;
+      height: 20px;
+    }
+    p {
+      color: ${({ theme }) => theme.colors.Green};
+    }
   }
 `;
 
-export default StyledTabMenu;
+export { StyledTabMenu, StlyedNavLink };

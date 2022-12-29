@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledTextPost = styled.section`
@@ -12,9 +13,29 @@ export const StyledTextPost = styled.section`
 
 export const StyledPostMessage = styled.section`
   padding-left: 54px;
+`;
+
+export const StyledPostLink = styled(Link)`
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 16px;
   p {
     margin-top: 16px;
     font-size: ${({ theme }) => theme.fontSize.medium};
+  }
+  & > img {
+    width: 304px;
+    height: 228px;
+    display: inline-block;
+    font-size: ${({ theme }) => theme.fontSize.xlarge};
+    font-weight: 700;
+    object-fit: cover;
+    text-align: center;
+    border: 0.5px solid #dbdbdb;
+    border-radius: 4px;
+    /* padding: 15px 0px;
+    margin-left: -54px; */
   }
 `;
 

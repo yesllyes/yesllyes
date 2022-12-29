@@ -7,6 +7,7 @@ const StyledTopBasicNav = styled.nav`
   justify-content: space-between;
   padding: 13px 16px;
   position: relative;
+  border-bottom: 0.5px solid #dbdbdb;
 
   div {
     width: 22px;
@@ -34,7 +35,6 @@ const StyledTopBasicNav = styled.nav`
     bottom: 8px;
   }
   button {
-    background-color: ${({ theme }) => theme.colors.lightGreen};
     color: white;
     position: absolute;
     right: 16px;

@@ -31,7 +31,7 @@ const StyledButton = styled.button`
     background-color: ${theme.colors.Green};
     font-size: ${theme.fontSize.medium};
     font-weight: 400;
-    color: white;
+    color: ${theme.colors.White};
   `}
 
   ${(props) => SIZE[props.size]}
@@ -49,9 +49,9 @@ const StyledButton = styled.button`
   ${(props) =>
     props.active &&
     (({ theme }) => css`
-      background-color: white;
+      border: 1px solid ${theme.colors.ActiveborderColor};
+      background-color: ${theme.colors.White};
       color: ${theme.colors.lightGray};
-      cursor: not-allowed;
     `)}
 `;
 
