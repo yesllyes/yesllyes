@@ -6,7 +6,6 @@ import homeIconActive from '../../assets/icon/icon-home-fill.svg';
 import chatIcon from '../../assets/icon/icon-message-large.svg';
 import chatIconActive from '../../assets/icon/icon-message-green.svg';
 import uploadIcon from '../../assets/icon/icon-edit.svg';
-
 import profileIcon from '../../assets/icon/icon-user.svg';
 import profileIconActive from '../../assets/icon/icon-user-fill.svg';
 import useAuthContext from '../../hooks/useAuthContext';
@@ -21,18 +20,21 @@ const TabMenu = () => {
       <StlyedNavLink to="/homefeed">
         <img
           src={pathname === '/homefeed' ? homeIconActive : homeIcon}
-          alt=""
+          alt="홈페이지 이동 이미지 버튼"
         />
         <p>홈</p>
       </StlyedNavLink>
       <StlyedNavLink to="/chatlist">
-        <img src={pathname === '/' ? chatIconActive : chatIcon} alt="" />
+        <img
+          src={pathname === '/chatlist' ? chatIconActive : chatIcon}
+          alt="채팅 이동 이미지 버튼"
+        />
         <p>채팅</p>
       </StlyedNavLink>
       <StlyedNavLink to="/postupload">
         <img
-          src={pathname === '/postupload' ? uploadIcon : uploadIcon}
-          alt=""
+          src={pathname === '/postupload' ? ' ' : uploadIcon}
+          alt="게시물 작성 이동 이미지 버튼"
         />
         <p>게시물 작성</p>
       </StlyedNavLink>
@@ -43,7 +45,7 @@ const TabMenu = () => {
               ? profileIconActive
               : profileIcon
           }
-          alt=""
+          alt="프로필 정보 이동 이미지 버튼"
         />
         <p>프로필</p>
       </StlyedNavLink>
