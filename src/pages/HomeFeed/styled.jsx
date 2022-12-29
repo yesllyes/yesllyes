@@ -15,7 +15,7 @@ const StyledHomeFeedPage = styled.div`
     margin-bottom: 294px;
   }
 
-  p {
+  span {
     display: block;
     margin: 20px 0px;
     font-size: ${({ theme }) => theme.fontSize.medium};
