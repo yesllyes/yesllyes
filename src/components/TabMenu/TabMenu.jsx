@@ -25,7 +25,7 @@ const TabMenu = () => {
         />
         <p>홈</p>
       </StlyedNavLink>
-      <StlyedNavLink to="/">
+      <StlyedNavLink to="/chatlist">
         <img src={pathname === '/' ? chatIconActive : chatIcon} alt="" />
         <p>채팅</p>
       </StlyedNavLink>
@@ -36,7 +36,7 @@ const TabMenu = () => {
         />
         <p>게시물 작성</p>
       </StlyedNavLink>
-      <StlyedNavLink to={`/profile${auth.accountName}`}>
+      <StlyedNavLink to={`/profile/${auth.accountName}`}>
         <img
           src={
             pathname === `/profile/${auth.accountName}`
