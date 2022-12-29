@@ -11,6 +11,7 @@ import CampaignPage from '../pages/Campaign/CampaignPage';
 import PostUploadPage from '../pages/PostUpload/PostUploadPage';
 import MyProfilePage from '../pages/MyProfile/MyProfilePage';
 import FollowersPage from '../pages/Follow/FollowersPage';
+import SearchPage from '../pages/Search/SearchPage';
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/postupload" element={<PostUploadPage />}></Route>
       <Route path="/myprofile" element={<MyProfilePage />}></Route>
       <Route path="/followers" element={<FollowersPage />}></Route>
+      <Route path="/search" element={<SearchPage />}></Route>
     </Routes>
   );
 }
