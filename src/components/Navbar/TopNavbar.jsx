@@ -14,17 +14,26 @@ const TopBasicNav = (props) => (
   </StyledTopBasicNav>
 );
 
-const TopSearchNav = () => (
+const TopSearchNav = ({ onChange, value }) => (
   <StyledTopBasicNav>
     <img src={iconArrowLeft} alt="뒤로가기" />
-    <input type="text" placeholder="계정 검색" />
+    <input
+      type="text"
+      placeholder="계정 검색"
+      onChange={onChange}
+      value={value}
+    />
   </StyledTopBasicNav>
 );
+
+const goSearch = () => {
+  window.location.href = '/search';
+};
 
 const TopMainNav = (props) => (
   <StyledTopBasicNav>
     <span>{props.value}</span>
-    <img src={iconSearch} alt="검색" />
+    <img src={iconSearch} alt="검색" onClick={goSearch} />
   </StyledTopBasicNav>
 );
 

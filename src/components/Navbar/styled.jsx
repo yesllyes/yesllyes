@@ -17,6 +17,7 @@ const StyledTopBasicNav = styled.nav`
     width: 22px;
     height: 22px;
     vertical-align: middle;
+    cursor: pointer;
   }
   span {
     font-size: ${({ theme }) => theme.fontSize.xlarge};
