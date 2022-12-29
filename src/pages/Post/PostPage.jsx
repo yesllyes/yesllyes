@@ -10,36 +10,39 @@ import useAuthContext from '../../hooks/useAuthContext';
 export default function PostPage() {
   const { postId } = useParams();
   const { auth } = useAuthContext();
-  const [loading, setLoading] = useState(true);
   const [postData, setPostData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  console.log(postData);
 
   useEffect(() => {
-    console.log("시작");
-    if (auth.accountName) {
-      console.log("조건문 시작");
-      fetch(`https://mandarin.api.weniv.co.kr/post/${postId}`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-          'Content-type': 'application/json',
-        },
+    setLoading(true);
+    fetch(`https://mandarin.api.weniv.co.kr/post/${postId}`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+        'Content-type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setPostData([res.post]);
+        setLoading(false);
       })
-        .then((res) => res.json())
-        .then((res) => {
-          setPostData(res.post);
-          setLoading(false);
-        })
-        .catch((e) => e);
-    }
-  }, [auth, postId]);
+      .catch((e) => new Error(e));
+  }, [postId, auth]);
 
-  // console.log(postData);
+  if (loading) {
+    <div>Loading중입니다.</div>;
+  }
 
   return (
     <StyledWrapper>
       <TopBasicNav />
-      <TextPost postData={postData} />
-      <CommentList></CommentList>
+      {postData.map((post) => (
+        <TextPost key={post.id} postData={post}></TextPost>
+      ))}
+      <CommentList />
       <CommentInput />
     </StyledWrapper>
   );
