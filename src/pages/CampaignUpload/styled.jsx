@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import iconimgbutton from '../../assets/icon/icon-img-button-gray.svg';
 
-const StyledCamoaignHeader = styled.header``;
+const StyledCampaignHeader = styled.header``;
 
 const StyledCampaignInput = styled.main`
   height: 796px;
@@ -62,4 +62,4 @@ const StyledCampaignInput = styled.main`
   }
 `;
 
-export { StyledCamoaignHeader, StyledCampaignInput };
+export { StyledCampaignHeader, StyledCampaignInput };

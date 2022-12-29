@@ -6,13 +6,20 @@ const StyledHomeFeedPage = styled.div`
   border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
+  height: 826px;
 
   main {
+    width: 390px;
+    height: 712px;
+
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 220px;
-    margin-bottom: 294px;
+    overflow: scroll;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   span {
@@ -23,4 +30,8 @@ const StyledHomeFeedPage = styled.div`
   }
 `;
 
-export default StyledHomeFeedPage;
+const TabMenuWrap = styled.div`
+  bottom: 0px;
+`;
+
+export { StyledHomeFeedPage, TabMenuWrap };

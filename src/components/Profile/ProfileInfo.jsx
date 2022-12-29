@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
-// import BasicProfileImg from '../../assets/icon/icon-basic-profile-large.svg';
 import Share from '../../assets/icon/icon-share.svg';
 import Message from '../../assets/icon/icon-message-small.svg';
 import { StyledProfileInfo, CircleBtn } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 
-function ProfileInfo() {
+function ProfileInfo({ accountName }) {
   const { auth } = useAuthContext();
 
   const [userInfo, setUserInfo] = useState({});
@@ -17,21 +16,23 @@ function ProfileInfo() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://mandarin.api.weniv.co.kr/user/myinfo', {
+
+    fetch(`https://mandarin.api.weniv.co.kr/profile/${accountName}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${auth.token}`,
+        'Content-type': 'application/json',
       },
     })
       .then((res) => res.json())
       .then((res) => {
-        setUserInfo(res.user);
+        setUserInfo(res.profile);
         setLoading(false);
       })
       .catch((e) => {
         setError(e);
       });
-  }, [auth]);
+  }, [auth, accountName]);
 
   if (loading) {
     return <div>Loading중입니다...</div>;
@@ -79,7 +80,7 @@ function ProfileInfo() {
             프로필 수정
           </Button>
         </Link>
-        <Link to="/campaign">
+        <Link to="/campaignupload">
           <Button size="md" active={true}>
             활동 등록
           </Button>

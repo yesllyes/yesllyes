@@ -5,7 +5,19 @@ const StyledProfileWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const StyledParticipate = styled.ul`
+const StyledCampaginWrapper = styled.div`
+  width: 390px;
+  height: 208px;
+  padding-left: 16px;
+
+  .title {
+    margin: 22px 0px 16px;
+    font-size: ${({ theme }) => theme.fontSize.large};
+    line-height: 18px;
+  }
+`;
+
+const StyledCampaginList = styled.ul`
   display: flex;
   gap: 10px;
   overflow-x: auto;
@@ -21,18 +33,6 @@ const StyledParticipate = styled.ul`
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.lightGreen};
     border-radius: 10px;
-  }
-`;
-
-const StyledParticipateWrapper = styled.div`
-  width: 390px;
-  height: 208px;
-  padding-left: 16px;
-
-  .title {
-    margin: 22px 0px 16px;
-    font-size: ${({ theme }) => theme.fontSize.large};
-    line-height: 18px;
   }
 `;
 
@@ -132,6 +132,7 @@ const CircleBtn = styled.button`
   border-radius: 30px;
 `;
 
+// PostList 스타일
 const StyledPostList = styled.section`
   > div {
     display: flex;
@@ -152,6 +153,22 @@ const StyledSelectDisplay = styled.div`
   margin-bottom: 1.6rem;
 `;
 
+const StyledListWrapper = styled.section`
+  height: 443px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.lightGreen};
+    border-radius: 10px;
+  }
+`;
+
 const StyledAlbumWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -162,11 +179,12 @@ const StyledAlbumWrapper = styled.section`
 
 export {
   StyledProfileWrapper,
-  StyledParticipate,
-  StyledParticipateWrapper,
+  StyledCampaginWrapper,
+  StyledCampaginList,
   StyledProfileInfo,
   CircleBtn,
   StyledPostList,
   StyledSelectDisplay,
+  StyledListWrapper,
   StyledAlbumWrapper,
 };

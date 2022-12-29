@@ -7,13 +7,14 @@ import postListOffIcon from '../../assets/icon/icon-post-list-off.svg';
 
 import {
   StyledAlbumWrapper,
+  StyledListWrapper,
   StyledPostList,
   StyledSelectDisplay,
 } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import AlbumPost from '../AlbumPost/AlbumPost';
 
-function PostList() {
+function PostList({ accountName }) {
   const [showDisplay, setShowDisplay] = useState('list');
   const [postData, setPostData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,25 +30,21 @@ function PostList() {
 
   useEffect(() => {
     setLoading(true);
-    if (auth.accountName) {
-      fetch(
-        `https://mandarin.api.weniv.co.kr/post/${auth.accountName}/userpost`,
-        {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-            'Content-type': 'application/json',
-          },
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          setPostData(res.post);
-          setLoading(false);
-        })
-        .catch((e) => setError(e));
-    }
-  }, [auth]);
+
+    fetch(`https://mandarin.api.weniv.co.kr/post/${accountName}/userpost`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${auth.token}`,
+        'Content-type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        setPostData(res.post);
+        setLoading(false);
+      })
+      .catch((e) => setError(e));
+  }, [accountName, auth.token]);
 
   if (loading) {
     return <div>Loading중입니다..</div>;
@@ -74,8 +71,13 @@ function PostList() {
           />
         </button>
       </StyledSelectDisplay>
+
       {!loading && showDisplay === 'list' ? (
-        postData.map((post) => <TextPost key={post.id} postData={post} />)
+        <StyledListWrapper>
+          {postData.map((post) => (
+            <TextPost key={post.id} postData={post} />
+          ))}
+        </StyledListWrapper>
       ) : (
         <StyledAlbumWrapper>
           {postData.map(

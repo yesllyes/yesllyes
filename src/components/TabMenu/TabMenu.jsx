@@ -11,9 +11,9 @@ import profileIconActive from '../../assets/icon/icon-user-fill.svg';
 import useAuthContext from '../../hooks/useAuthContext';
 
 const TabMenu = () => {
+  const { auth } = useAuthContext();
   const location = useLocation();
   const { pathname } = location;
-  const { auth } = useAuthContext();
 
   return (
     <StyledTabMenu>

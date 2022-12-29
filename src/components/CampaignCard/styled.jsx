@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ProductWrapper = styled.li`
+const CampaignCardWrapper = styled.li`
   position: relative;
   cursor: pointer;
   width: 140px;
@@ -27,4 +27,4 @@ const ProductWrapper = styled.li`
   }
 `;
 
-export default ProductWrapper;
+export default CampaignCardWrapper;
