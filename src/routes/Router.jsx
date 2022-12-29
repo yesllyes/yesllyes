@@ -13,6 +13,7 @@ import ChatListPage from '../pages/Chat/ChatListPage';
 import ChatRoomPage from '../pages/Chat/ChatRoomPage';
 import MyProfilePage from '../pages/MyProfile/MyProfilePage';
 import FollowersPage from '../pages/Follow/FollowersPage';
+import SearchPage from '../pages/Search/SearchPage';
 import NotFoundPage from '../pages/NotFound/NotFoundPage';
 
 function Router() {
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/chatroom" element={<ChatRoomPage />}></Route>
       <Route path="/myprofile" element={<MyProfilePage />}></Route>
       <Route path="/followers" element={<FollowersPage />}></Route>
+      <Route path="/search" element={<SearchPage />}></Route>
       <Route path="*" element={<NotFoundPage />}></Route>
     </Routes>
   );
