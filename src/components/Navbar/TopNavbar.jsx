@@ -13,7 +13,6 @@ export function TopBasicNav(props) {
   };
   const [modalToggle, setModalToggle] = useState(false);
 
-  console.log(props);
   return (
     <StyledTopBasicNav>
       <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
@@ -34,7 +33,7 @@ export function TopBasicNav(props) {
   );
 }
 
-export function TopSearchNav() {
+export function TopSearchNav({ onChange, value }) {
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
@@ -43,16 +42,27 @@ export function TopSearchNav() {
   return (
     <StyledTopBasicNav>
       <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
-      <input type="text" placeholder="계정 검색" />
+      <input
+        type="text"
+        placeholder="계정 검색"
+        onChange={onChange}
+        value={value}
+      />
     </StyledTopBasicNav>
   );
 }
 
 export function TopMainNav(props) {
-  <StyledTopBasicNav>
-    <span>{props.value}</span>
-    <img src={iconSearch} alt="검색" />
-  </StyledTopBasicNav>;
+  const goSearch = () => {
+    window.location.href = '/search';
+  };
+
+  return (
+    <StyledTopBasicNav>
+      <span>{props.value}</span>
+      <img src={iconSearch} alt="검색" onClick={goSearch} />
+    </StyledTopBasicNav>
+  );
 }
 
 export function TopUploadNav(props) {
@@ -65,8 +75,8 @@ export function TopUploadNav(props) {
     <StyledTopBasicNav>
       <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
       <Button size="sm" disabled={props.disabled} onClick={props.onClick}>
-      {props.value}
-    </Button>
+        {props.value}
+      </Button>
     </StyledTopBasicNav>
   );
 }

@@ -1,42 +1,52 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import iconHome from '../../assets/icon/icon-home.svg';
-import iconMessageLarge from '../../assets/icon/icon-message-large.svg';
-import iconEdit from '../../assets/icon/icon-edit.svg';
-import iconUser from '../../assets/icon/icon-user.svg';
-import StyledTabMenu from './styled';
+import { useLocation } from 'react-router-dom';
+import { StyledTabMenu, StlyedNavLink } from './styled';
+import homeIcon from '../../assets/icon/icon-home.svg';
+import homeIconActive from '../../assets/icon/icon-home-fill.svg';
+import chatIcon from '../../assets/icon/icon-message-large.svg';
+import chatIconActive from '../../assets/icon/icon-message-green.svg';
+import uploadIcon from '../../assets/icon/icon-edit.svg';
+
+import profileIcon from '../../assets/icon/icon-user.svg';
+import profileIconActive from '../../assets/icon/icon-user-fill.svg';
 import useAuthContext from '../../hooks/useAuthContext';
 
 const TabMenu = () => {
   const { auth } = useAuthContext();
+  const location = useLocation();
+  const { pathname } = location;
 
   return (
     <StyledTabMenu>
-      <ul>
-        <li>
-          <Link to="/homefeed">
-            <img src={iconHome} alt="" />홈
-          </Link>
-        </li>
-        <li>
-          <Link to="/chatlist">
-            <img src={iconMessageLarge} alt="" />
-            채팅
-          </Link>
-        </li>
-        <li>
-          <Link to="/postupload">
-            <img src={iconEdit} alt="" />
-            게시물 작성
-          </Link>
-        </li>
-        <li>
-          <Link to={`/profile/${auth.accountName}`}>
-            <img src={iconUser} alt="" />
-            프로필
-          </Link>
-        </li>
-      </ul>
+      <StlyedNavLink to="/homefeed">
+        <img
+          src={pathname === '/homefeed' ? homeIconActive : homeIcon}
+          alt=""
+        />
+        <p>홈</p>
+      </StlyedNavLink>
+      <StlyedNavLink to="/">
+        <img src={pathname === '/' ? chatIconActive : chatIcon} alt="" />
+        <p>채팅</p>
+      </StlyedNavLink>
+      <StlyedNavLink to="/postupload">
+        <img
+          src={pathname === '/postupload' ? uploadIcon : uploadIcon}
+          alt=""
+        />
+        <p>게시물 작성</p>
+      </StlyedNavLink>
+      <StlyedNavLink to={`/profile${auth.accountName}`}>
+        <img
+          src={
+            pathname === `/profile/${auth.accountName}`
+              ? profileIconActive
+              : profileIcon
+          }
+          alt=""
+        />
+        <p>프로필</p>
+      </StlyedNavLink>
     </StyledTabMenu>
   );
 };

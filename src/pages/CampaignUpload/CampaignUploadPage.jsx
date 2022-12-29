@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
-import { StyledCamoaignHeader, StyledCampaignInput } from './styled';
+import { StyledCampaignHeader, StyledCampaignInput } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 
 const BASEURL = 'https://mandarin.api.weniv.co.kr';

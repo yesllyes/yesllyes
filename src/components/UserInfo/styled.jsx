@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledUserInfo = styled.article`
-  margin-top: 20px;
   padding: 0px 16px;
   display: flex;
   font-size: ${({ theme }) => theme.fontSize.medium};
