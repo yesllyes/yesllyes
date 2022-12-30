@@ -4,7 +4,11 @@ import styled from 'styled-components';
 export const StyledTextPost = styled.section`
   width: 358px;
   margin: 0 auto;
-
+  .upload-user-box {
+    position: relative;
+    display: flex;
+    right: 16px;
+  }
   span {
     font-size: ${({ theme }) => theme.fontSize.xsmall};
     color: ${({ theme }) => theme.colors.lightGray};
@@ -34,7 +38,7 @@ export const StyledPostLink = styled(Link)`
     object-fit: cover;
     text-align: center;
     border: 0.5px solid #dbdbdb;
-    border-radius: 4px;
+    border-radius: 10px;
 
     /* padding: 15px 0px;
     margin-left: -54px; */

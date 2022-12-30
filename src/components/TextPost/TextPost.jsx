@@ -1,9 +1,7 @@
 import React, { useCallback } from 'react';
-
+import { Link } from 'react-router-dom';
 import { StyledTextPost, StyledPostMessage, StyledPostLink } from './styled';
-
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
-
 import UserInfo from '../UserInfo/UserInfo';
 import UserPost from '../UserPost/UserPost';
 import LikeCommentButton from '../LikeCommentButton/LikeCommentButton';
@@ -20,10 +18,14 @@ const TextPost = ({ postData }) => {
     <>
       <StyledTextPost>
         <UserPost>
-          <UserInfo user={postData.author} />
-          <button onClick={handlePostModal}>
-            <img src={MoreVertical} alt="더보기 이미지" />
-          </button>
+          <div className="upload-user-box">
+            <Link to="profile">
+              <UserInfo user={postData.author} />
+            </Link>
+            <button onClick={handlePostModal} className="moreBtn">
+              <img src={MoreVertical} alt="더보기 이미지" />
+            </button>
+          </div>
         </UserPost>
         <StyledPostMessage>
           <StyledPostLink to={`/post/${postData.id}`}>
