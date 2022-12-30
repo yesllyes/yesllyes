@@ -8,6 +8,7 @@ const StyledTopBasicNav = styled.nav`
   padding: 13px 16px;
   position: relative;
   border-bottom: 0.5px solid #dbdbdb;
+  align-items: center;
 
   div {
     width: 22px;
@@ -17,11 +18,11 @@ const StyledTopBasicNav = styled.nav`
   img {
     width: 22px;
     height: 22px;
-    vertical-align: middle;
     cursor: pointer;
   }
   span {
     font-size: ${({ theme }) => theme.fontSize.xlarge};
+    margin: 0px;
   }
   input {
     width: 316px;
