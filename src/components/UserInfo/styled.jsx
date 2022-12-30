@@ -6,6 +6,7 @@ const StyledUserInfo = styled.article`
   font-size: ${({ theme }) => theme.fontSize.medium};
   gap: 12px;
   width: 358px;
+  height: 42px;
 
   .profile-box {
     width: 42px;
@@ -21,7 +22,7 @@ const StyledUserInfo = styled.article`
   }
 
   .user-name {
-    margin-top: 4px;
+    padding-top: 7px;
   }
 
   span {
