@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { Link } from 'react-router-dom';
+
+import BasicProfile from '../../assets/icon/icon-basic-profile-small.svg';
+
 import StyledUserInfo from './styled';
-// import BasicProfile from '../../assets/icon/icon-basic-profile-small.svg';
 
 function UserInfo({ user }) {
+  const handleImage = useCallback((e) => {
+    e.target.src = BasicProfile;
+  }, []);
+
   return (
     <StyledUserInfo>
-      <img className="basic-profile" src={user.image} alt="유저프로필이미지" />
+      <Link to={`/profile/${user.accountname}`}>
+        <img
+          className="basic-profile"
+          src={user.image}
+          alt="프로필이미지"
+          onError={handleImage}
+        />
+      </Link>
       <div>
         <h3>{user.username}</h3>
         <span>{user.accountname}</span>
