@@ -27,8 +27,8 @@ const TextPost = ({ postData }) => {
         </UserPost>
         <StyledPostMessage>
           <StyledPostLink to={`/post/${postData.id}`}>
-            {postData.image && <img src={postData.image} alt="게시물 이미지" />}
             <p>{postData.content}</p>
+            {postData.image && <img src={postData.image} alt="게시물 이미지" />}
           </StyledPostLink>
           <LikeCommentButton postData={postData} />
           <span>{newDate}</span>
