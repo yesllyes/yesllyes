@@ -6,7 +6,6 @@ const StyledHomeFeedPage = styled.div`
   border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
-  height: 826px;
 
   main {
     width: 390px;
