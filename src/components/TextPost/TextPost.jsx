@@ -3,6 +3,7 @@ import React, { useCallback } from 'react';
 import { StyledTextPost, StyledPostMessage, StyledPostLink } from './styled';
 
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
+import ImageError from '../../assets/image/image-upload-fail.png';
 
 import UserInfo from '../UserInfo/UserInfo';
 import UserPost from '../UserPost/UserPost';
@@ -16,6 +17,10 @@ const TextPost = ({ postData }) => {
     console.log(`게시글 ${postData.id} 게시글 보여주기`);
   }, [postData.id]);
 
+  const handleImage = useCallback((e) => {
+    e.target.src = ImageError;
+  }, []);
+
   return (
     <>
       <StyledTextPost>
@@ -27,7 +32,13 @@ const TextPost = ({ postData }) => {
         </UserPost>
         <StyledPostMessage>
           <StyledPostLink to={`/post/${postData.id}`}>
-            {postData.image && <img src={postData.image} alt="게시물 이미지" />}
+            {postData.image && (
+              <img
+                src={postData.image}
+                alt="게시물 이미지"
+                onError={handleImage}
+              />
+            )}
             <p>{postData.content}</p>
           </StyledPostLink>
           <LikeCommentButton postData={postData} />
