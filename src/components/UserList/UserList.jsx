@@ -10,11 +10,11 @@ function UserList({
   username,
   accountname,
 }) {
-  // const itemId = searchList.accountname.slice(2);
+  const newaccountname = accountname.slice(2);
 
   return (
     <StyledUserList>
-      <Link to={`/myprofile`}>
+      <Link to={`/profile/${newaccountname}`}>
         <li className="userList" key={userkey}>
           <img src={image} alt="" />
           <div className="userInfo">
