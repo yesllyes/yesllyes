@@ -11,6 +11,7 @@ const StyledWrapper = styled.div`
   padding-right: calc(${Gutter.X} * 0.5);
   padding-left: calc(${Gutter.X} * 0.5);
   /* background-color: #d1c7c7; */
+  border: 1px solid black;
 `;
 
 export default StyledWrapper;
