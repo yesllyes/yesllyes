@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { StyledTextPost, StyledPostMessage, StyledPostLink } from './styled';
 
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
@@ -12,6 +12,8 @@ import changeDate from '../../services/changeDate';
 
 const TextPost = ({ postData }) => {
   const newDate = changeDate(postData.createdAt);
+  const { postId } = useParams();
+  const navigate = useNavigate();
 
   const handlePostModal = useCallback(() => {
     console.log(`게시글 ${postData.id} 게시글 보여주기`);
@@ -30,7 +32,18 @@ const TextPost = ({ postData }) => {
               <UserInfo user={postData.author} />
             </Link>
             <button onClick={handlePostModal} className="moreBtn">
-              <img src={MoreVertical} alt="더보기 이미지" />
+              <img
+                src={MoreVertical}
+                alt="더보기 이미지"
+                onClick={() => {
+                  navigate(`/post/${postId}/postedit`, {
+                    state: {
+                      content: postData.content,
+                      image: postData.image,
+                    },
+                  });
+                }}
+              />
             </button>
           </div>
         </UserPost>

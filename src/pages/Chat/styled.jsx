@@ -5,7 +5,7 @@ import { StyledCommentInput } from '../../components/Comment/styled';
 export const StyledChatPage = styled.div`
   width: 100%;
   height: 820px;
-  border: 1px solid #dbdbdb;
+  border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
 `;
