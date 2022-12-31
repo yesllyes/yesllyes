@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { Link } from 'react-router-dom';
 
 import BasicProfile from '../../assets/icon/icon-basic-profile-small.svg';
 
@@ -12,15 +11,15 @@ function UserInfo({ user }) {
 
   return (
     <StyledUserInfo>
-      <Link to={`/profile/${user.accountname}`}>
+      <div className="profile-box">
         <img
           className="basic-profile"
           src={user.image}
-          alt="프로필이미지"
+          alt="유저프로필이미지"
           onError={handleImage}
         />
-      </Link>
-      <div>
+      </div>
+      <div className="user-name">
         <h3>{user.username}</h3>
         <span>{user.accountname}</span>
       </div>

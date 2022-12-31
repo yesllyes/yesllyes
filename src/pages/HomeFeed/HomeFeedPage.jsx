@@ -26,7 +26,6 @@ function HomeFeedPage() {
         .then((res) => res.json())
         .then((res) => {
           setUserFeed(res.posts || []);
-          console.log(res.posts);
         });
     }
     getUserFeed();
@@ -45,9 +44,9 @@ function HomeFeedPage() {
           ))}
         </main>
       ) : (
-        <main>
-          <div />
-          <p>유저를 검색해 팔로우 해보세요!</p>
+        <main className='non-post'>
+          <img src={LogoGray} alt="회색이미지" />
+          <span>유저를 검색해 팔로우 해보세요!</span>
           <Button size="md" onClick={goSearch}>
             검색하기
           </Button>

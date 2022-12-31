@@ -1,16 +1,16 @@
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const StyledTabMenu = styled.article`
   width: 100%;
   height: 60px;
-  position: relative;
+  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
-  border-top: 1px solid lightgray;
+  /* background-color: white; */
+  border-top: 0.5px solid #dbdbdb;
 `;
 
 const StlyedNavLink = styled(NavLink)`

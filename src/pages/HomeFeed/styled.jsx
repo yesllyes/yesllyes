@@ -6,12 +6,10 @@ const StyledHomeFeedPage = styled.div`
   border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
-  height: 826px;
 
   main {
     width: 390px;
     height: 712px;
-
     padding: 20px 16px;
     display: flex;
     flex-direction: column;
@@ -21,9 +19,11 @@ const StyledHomeFeedPage = styled.div`
       display: none;
     }
   }
-
-  p {
-    display: block;
+  .non-post {
+    padding-top: 220px;
+  }
+  span {
+    /* display: block; */
     margin: 20px 0px;
     font-size: ${({ theme }) => theme.fontSize.medium};
     color: #767676;

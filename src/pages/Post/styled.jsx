@@ -12,15 +12,8 @@ export const StyledUploadContents = styled.main`
   padding: 20px 16px;
   display: flex;
   height: 796px;
+  position: relative;
 
-  input,
-  .ir {
-    display: block;
-    overflow: hidden;
-    font-size: 1px;
-    line-height: 0;
-    text-indent: -9999px;
-  }
   img {
     width: 42px;
     height: 42px;
@@ -40,6 +33,12 @@ export const StyledUploadContents = styled.main`
 
   article {
     position: relative;
+
+    span {
+      float: right;
+      margin-right: 20px;
+      color: ${({ theme }) => theme.colors.Green};
+    }
   }
 
   .campaign-img-label {
@@ -50,5 +49,29 @@ export const StyledUploadContents = styled.main`
     height: 50px;
     background-image: url(${iconimgbuttongreen});
     cursor: pointer;
+  }
+`;
+
+export const StyledUploadImg = styled.div`
+  position: absolute;
+  bottom: 410px;
+  left: 63px;
+  cursor: pointer;
+
+  ul > li {
+    width: 140px;
+    height: 90px;
+    border: 0.5px solid #dbdbdb;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      font-size: ${({ theme }) => theme.fontSize.xlarge};
+      font-weight: 700;
+      object-fit: cover;
+      text-align: center;
+      border-radius: 8px;
+    }
   }
 `;
