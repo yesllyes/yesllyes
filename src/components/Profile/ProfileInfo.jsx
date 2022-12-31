@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import Share from '../../assets/icon/icon-share.svg';
@@ -9,7 +9,7 @@ import useAuthContext from '../../hooks/useAuthContext';
 
 function ProfileInfo({ accountName }) {
   const { auth } = useAuthContext();
-
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -48,7 +48,17 @@ function ProfileInfo({ accountName }) {
 
       <div className="ProfileHeader">
         <p className="followers">
-          {userInfo.followerCount}
+          <button
+            onClick={() => {
+              navigate('./followers/', {
+                state: {
+                  accountName,
+                },
+              });
+            }}
+          >
+            {userInfo.followerCount}
+          </button>
           <span>followers</span>
         </p>
         <img src={userInfo.image} alt="프로필 사진" />
