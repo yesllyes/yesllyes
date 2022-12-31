@@ -56,7 +56,7 @@ function LikeCommentButton({ postData }) {
   }, [auth.token, postData.id]);
 
   const handleClickCount = useCallback(
-    async (e) => {
+    (e) => {
       if (e.currentTarget.name === 'like') {
         if (!isLike) {
           LikeAPI();
