@@ -33,8 +33,10 @@ function Router() {
       <Route path="/postupload" element={<PostUploadPage />}></Route>
       <Route path="/chatlist" element={<ChatListPage />}></Route>
       <Route path="/chatroom" element={<ChatRoomPage />}></Route>
-      <Route path="/profile/:userId" element={<ProfilePage />}></Route>
-      <Route path="/followers" element={<FollowersPage />}></Route>
+      <Route path="/profile/:userId/" element={<Outlet />}>
+        <Route path="" element={<ProfilePage />} />
+        <Route path="followers/" element={<FollowersPage />} />
+      </Route>
       <Route path="/search" element={<SearchPage />}></Route>
       <Route path="*" element={<NotFoundPage />}></Route>
     </Routes>

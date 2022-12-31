@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { StyledCommentList } from './styled';
+import { useNavigate, useParams } from 'react-router-dom';
+import { StyledCommentList, Scrollwrap } from './styled';
 import { StyledPostMessage } from '../TextPost/styled';
 import StyledUserInfo from './../UserInfo/styled';
 import useAuthContext from '../../hooks/useAuthContext';
@@ -11,6 +11,7 @@ export default function CommentList() {
   const { auth } = useAuthContext();
   const [loading, setLoading] = useState(true);
   const [commentData, setCommentData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (auth.accountName) {
@@ -30,36 +31,46 @@ export default function CommentList() {
     }
   }, [auth]);
 
+  const goProfile = () => {
+    navigate('/profile');
+  };
+
   return (
-    <StyledCommentList>
-      <li>
+    <Scrollwrap>
+      <StyledCommentList>
         {loading && <div>loading!!!</div>}
         {!loading && commentData !== undefined ? (
           commentData.map((comment) => (
             <>
-              <StyledUserInfo>
-                <strong>{comment.author.username}</strong>
-                <img
-                  src={comment.author.image}
-                  className="basic-profile"
-                  alt=""
-                />
-                <img
-                  src={MoreVertical}
-                  alt=""
-                  // onClick={삭제, 신고모달 토글}
-                />
-              </StyledUserInfo>
-              <StyledPostMessage key={comment.id}>
-                {comment.content}
-              </StyledPostMessage>
+              <li key={comment.id}>
+                <div className="comment-info">
+                  <div className="profile-box">
+                    <img
+                      src={comment.author.image}
+                      className="basic-profile"
+                      alt="유저프로필이미지"
+                      onClick={goProfile}
+                    />
+                  </div>
+                  <div className="user-name">
+                    <p onClick={goProfile}>{comment.author.username}</p>
+                    <span className="comment-time">· 댓글단시간</span>
+                  </div>
+                  <button className="moreBtn">
+                    {/* // onClick={삭제, 신고모달 토글 */}
+                    <img src={MoreVertical} alt="더보기 이미지" />
+                  </button>
+                </div>
+                <StyledPostMessage key={comment.id}>
+                  <div className="coment-cont">{comment.content}</div>
+                </StyledPostMessage>
+              </li>
             </>
           ))
         ) : (
           <div>loading!!!</div>
         )}
-        <span>댓글단시간</span>
-      </li>
-    </StyledCommentList>
+      </StyledCommentList>
+    </Scrollwrap>
   );
 }
