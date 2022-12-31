@@ -11,7 +11,8 @@ export const StyledPostUploadPage = styled.div`
 export const StyledUploadContents = styled.main`
   padding: 20px 16px;
   display: flex;
-  height: 796px;
+  height: 770px;
+
   position: relative;
 
   img {
@@ -43,8 +44,8 @@ export const StyledUploadContents = styled.main`
 
   .campaign-img-label {
     position: absolute;
-    right: 0;
-    bottom: 20px;
+    right: 20px;
+    bottom: 16px;
     width: 50px;
     height: 50px;
     background-image: url(${iconimgbuttongreen});
