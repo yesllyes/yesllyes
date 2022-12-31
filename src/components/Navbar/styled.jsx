@@ -25,15 +25,16 @@ const StyledTopBasicNav = styled.nav`
     margin: 0px;
   }
   input {
+    display: block;
     width: 316px;
     height: 32px;
-    padding: 9px 16px;
+    margin: 8px 0px;
+    padding: 0px 16px;
     background-color: #f2f2f2;
     border: none;
     border-radius: 32px;
-    position: absolute;
-    left: 60px;
-    bottom: 8px;
+    background-color: ${({ theme }) => theme.colors.lightGreen};
+    font-size: ${({ theme }) => theme.fontSize.medium};
   }
   button {
     color: white;
