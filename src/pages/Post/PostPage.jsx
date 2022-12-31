@@ -13,8 +13,6 @@ export default function PostPage() {
   const [postData, setPostData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  console.log(postData);
-
   useEffect(() => {
     setLoading(true);
     fetch(`https://mandarin.api.weniv.co.kr/post/${postId}`, {
