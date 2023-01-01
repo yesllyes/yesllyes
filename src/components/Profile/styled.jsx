@@ -172,7 +172,7 @@ const StyledListWrapper = styled.section`
 const StyledAlbumWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
   align-items: center;
   padding: 16px;
 `;
