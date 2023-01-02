@@ -44,7 +44,6 @@ export const StyledCommentList = styled.ul`
   flex-direction: column;
   gap: 16px;
   padding: 20px 16px;
-  border-top: 1px solid #dbdbdb;
 
   .comment-info {
     display: flex;
@@ -91,12 +90,15 @@ export const StyledCommentList = styled.ul`
     height: 24px;
   }
 
-  .coment-cont {
+  .comment-cont {
     font-weight: 400;
     font-size: ${({ theme }) => theme.fontSize.medium};
     line-height: 17px;
   }
 `;
+
+export const StyledCommentli = styled.li``;
+
 export const Scrollwrap = styled.div`
   height: 760px;
   overflow-y: scroll;

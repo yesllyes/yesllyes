@@ -15,7 +15,7 @@ const CampaginList = ({ accountName }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://mandarin.api.weniv.co.kr/product/${accountName}`, {
+    fetch(`https://mandarin.api.weniv.co.kr/product/${accountName}?limit=999`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${auth.token}`,
