@@ -16,6 +16,7 @@ import ProfilePage from '../pages/Profile/ProfilePage';
 import FollowersPage from '../pages/Follow/FollowersPage';
 import SearchPage from '../pages/Search/SearchPage';
 import NotFoundPage from '../pages/NotFound/NotFoundPage';
+import CampaignEdit from '../pages/CampaignUpload/CampaignEdit';
 
 function Router() {
   return (
@@ -26,6 +27,8 @@ function Router() {
       <Route path="/profilesignup" element={<ProfileSignupPage />}></Route>
       <Route path="/homefeed" element={<HomeFeedPage />}></Route>
       <Route path="/campaignupload" element={<CampaignUploadPage />}></Route>
+      <Route path="/campaign/:campaignId/edit" element={<CampaignEdit />}></Route>
+      <Route path="/post/:postId" element={<PostPage />}></Route>
       <Route path="/post/:postId/" element={<Outlet />}>
         <Route path="" element={<PostPage />}></Route>
         <Route path="postedit" element={<PostEditPage />}></Route>
