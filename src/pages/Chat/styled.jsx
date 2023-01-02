@@ -15,10 +15,16 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
   margin-top: 10px;
   padding: 10px 20px;
   display: flex;
+  align-items: center;
+  /* text-decoration: none; */
   position: relative;
   box-sizing: border-box;
-  border-bottom: 0.5px solid #dbdbdb;
 
+  .chat-user-cont {
+    span {
+      margin-top: 4px;
+    }
+  }
   & > span {
     position: absolute;
     margin-top: 10px;
@@ -29,20 +35,20 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
     margin-top: 5px;
   }
 
-  .basic-profile {
-    width: 35px;
-    height: 35px;
-    padding: 2px;
-    border-radius: 50%;
+  .profile-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 70%;
+    overflow: hidden;
     border: 0.5px solid #dbdbdb;
-    margin-right: 5px;
+    .basic-profile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   div {
-    /* display: flex;
-    justify-content: space-between; */
-    margin: auto 0;
-
     div > h3 {
       padding-bottom: 5px;
     }
