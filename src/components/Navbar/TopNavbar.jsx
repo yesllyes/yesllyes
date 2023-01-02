@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import StyledTopBasicNav from './styled';
 import iconArrowLeft from '../../assets/icon/icon-arrow-left.svg';
 import iconMoreVerticalLarge from '../../assets/icon/icon-more-vertical-large.svg';
 import iconSearch from '../../assets/icon/icon-search.svg';
 import Button from '../Button/Button';
+import ModalButton from '../Modal/ModalButton';
 
 export function TopBasicNav(props) {
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
   };
-  const [modalToggle, setModalToggle] = useState(false);
 
   return (
     <StyledTopBasicNav>
@@ -20,15 +20,10 @@ export function TopBasicNav(props) {
       {props.value ? (
         <div></div>
       ) : (
-        <img
-          src={iconMoreVerticalLarge}
-          alt="메뉴"
-          onClick={() => {
-            setModalToggle(!modalToggle);
-          }}
-        />
+        <ModalButton modalType={'UserModal'}>
+          <img src={iconMoreVerticalLarge} alt="메뉴" />
+        </ModalButton>
       )}
-      {!modalToggle ? props.children : null}
     </StyledTopBasicNav>
   );
 }
