@@ -5,6 +5,7 @@ import { StyledPostMessage } from '../TextPost/styled';
 import StyledUserInfo from './../UserInfo/styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
+import ModalButton from '../Modal/ModalButton';
 
 export default function CommentList() {
   const { postId } = useParams();
@@ -85,10 +86,10 @@ export default function CommentList() {
                       comment.createdAt
                     )}`}</span>
                   </div>
-                  <button className="moreBtn">
-                    {/* // onClick={삭제, 신고모달 토글 }*/}
+
+                  <ModalButton modalType="CommentModal">
                     <img src={MoreVertical} alt="더보기 이미지" />
-                  </button>
+                  </ModalButton>
                 </div>
                 <StyledPostMessage key={comment.id}>
                   <div className="coment-cont">{comment.content}</div>
