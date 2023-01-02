@@ -4,12 +4,12 @@ import { StyledChatPage, StyledChatUserInfo } from './styled';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import TabMenu from './../../components/TabMenu/TabMenu';
 import BasicProfile from '../../assets/icon/icon-user.svg';
-import { UserModal } from '../../components/Modal/Modal';
+// import { UserModal } from '../../components/Modal/Modal';
 
 export default function ChatListPage() {
   return (
     <StyledChatPage>
-      <TopBasicNav >{UserModal}</TopBasicNav>
+      <TopBasicNav></TopBasicNav>
       <Link to="/chatroom">
         <StyledChatUserInfo>
           <img
