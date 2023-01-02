@@ -1,47 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import StyledModal from './styled';
 
-function UserModal(props) {
+import ModalPortal from './ModalPortal';
+import ChatRoomModal from './ModalType/ChatRoomModal';
+import CommentModal from './ModalType/CommentModal';
+import PostModal from './ModalType/PostModal';
+import UserModal from './ModalType/UserModal';
+import { StyledBox, StyledModal, StyledModalList } from './styled';
+
+export default function Modal({ handleCloseModal, modalType, postData }) {
+  const chooseModal = () => {
+    switch (modalType) {
+      case 'UserModal':
+        return <UserModal />;
+      case 'ChatRoomModal':
+        return <ChatRoomModal />;
+      case 'CommentModal':
+        return <CommentModal />;
+      case 'PostModal':
+        return <PostModal postData={postData} />;
+      default:
+        return <>잘못된 모달창입니다.</>;
+    }
+  };
+
   return (
-    <StyledModal>
-      <ul>
-        <li>
-          <Link to="/myprofile">설정 및 개인정보</Link>
-        </li>
-        <li>로그아웃</li>
-      </ul>
-    </StyledModal>
+    <ModalPortal handleCloseModal={handleCloseModal}>
+      <StyledModal>
+        <StyledBox />
+        <StyledModalList>{chooseModal()}</StyledModalList>
+      </StyledModal>
+    </ModalPortal>
   );
 }
-
-const ChatRoomModal = () => {
-  <StyledModal>
-    <ul>
-      <li>
-        <Link to="/chatlist">채팅방 나가기</Link>
-      </li>
-    </ul>
-  </StyledModal>;
-};
-
-const CommentModal = () => {
-  <StyledModal>
-    <ul>
-      <li>댓글 삭제</li>
-      <li>댓글 신고</li>
-    </ul>
-  </StyledModal>;
-};
-
-const PostModal = () => {
-  <StyledModal>
-    <ul>
-      <li>게시글 수정</li>
-      <li>게시글 삭제</li>
-      <li>게시글 신고</li>
-    </ul>
-  </StyledModal>;
-};
-
-export { UserModal, ChatRoomModal, CommentModal, PostModal };
