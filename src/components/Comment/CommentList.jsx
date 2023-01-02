@@ -35,6 +35,31 @@ export default function CommentList() {
     navigate(`/profile/${author}`);
   };
 
+  const getTimeGap = (time) => {
+    const timeValue = new Date(time);
+    const end = new Date();
+    const diff = Math.floor((end.getTime() - timeValue.getTime()) / 1000); // 경과 시간 (초로 계산)
+
+    // 60초 전
+    if (diff < 60) {
+      return '방금 전';
+      // 1시간 미만 (60초 * 60분)
+    } else if (diff < 3600) {
+      return `${Math.floor(diff / 60)}분 전`;
+      // 하루 미만 (24시간 -> 60초 * 60분 * 24시간)
+    } else if (diff < 86400) {
+      return `${Math.floor(diff / 3600)}시간 전`;
+      // 한달 미만 (대략 30일 -> 86400 * 30)
+    } else if (diff < 2592000) {
+      return `${Math.floor(diff / 86400)}일 전`;
+      // 1년 미만 (12달 -> 86400 * 30 * 12달)
+    } else if (diff < 31104000) {
+      return `${Math.floor(diff / 2592000)}달 전`;
+    } else {
+      return '오래 전';
+    }
+  };
+
   return (
     <Scrollwrap>
       <StyledCommentList>
@@ -56,10 +81,12 @@ export default function CommentList() {
                     <p onClick={() => goProfile(comment.author.accountname)}>
                       {comment.author.username}
                     </p>
-                    <span className="comment-time">· 댓글단시간</span>
+                    <span className="comment-time">{`· ${getTimeGap(
+                      comment.createdAt
+                    )}`}</span>
                   </div>
                   <button className="moreBtn">
-                    {/* // onClick={삭제, 신고모달 토글 */}
+                    {/* // onClick={삭제, 신고모달 토글 }*/}
                     <img src={MoreVertical} alt="더보기 이미지" />
                   </button>
                 </div>
