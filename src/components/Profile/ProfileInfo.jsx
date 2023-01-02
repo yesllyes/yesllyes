@@ -14,6 +14,8 @@ function ProfileInfo({ accountName }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const accountId = userInfo.accountname;
+
   useEffect(() => {
     setLoading(true);
 
@@ -75,7 +77,7 @@ function ProfileInfo({ accountName }) {
             <img src={Message} alt="메시지 보내기" />
           </CircleBtn>
         </Link>
-        <Link to="/profilemodify">
+        <Link to={`/profile/${accountId}/edit`}>
           <Button size="md" active={true}>
             프로필 수정
           </Button>
