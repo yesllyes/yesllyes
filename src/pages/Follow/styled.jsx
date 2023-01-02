@@ -4,6 +4,7 @@ const StyledFollowersWrapper = styled.section`
   position: relative;
   width: 390px;
   height: 820px;
+  border: 1px solid #dbdbdb;
 `;
 
 const StyledFollowersListWrapper = styled.div`
