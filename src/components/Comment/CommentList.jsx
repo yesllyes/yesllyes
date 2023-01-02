@@ -13,6 +13,8 @@ export default function CommentList() {
   const [commentData, setCommentData] = useState([]);
   const navigate = useNavigate();
 
+  const BASEURL = 'https://mandarin.api.weniv.co.kr';
+
   useEffect(() => {
     if (auth.accountName) {
       fetch(`https://mandarin.api.weniv.co.kr/post/${postId}/comments`, {
@@ -60,6 +62,44 @@ export default function CommentList() {
     }
   };
 
+  // 댓글 삭제 함수 (추후 모달로 옮김)
+  const commentDelete = async (commentId) => {
+    const CommentDeleteReq = await fetch(
+      `${BASEURL}/post/${postId}/comments/${commentId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
+    const result = await CommentDeleteReq.json();
+
+    alert(result.message);
+  };
+
+  // 댓글 신고 함수 (추후 모달로 옮김)
+  const commentReport = async (commentId) => {
+    const CommentReportReq = await fetch(
+      `${BASEURL}/post/${postId}/comments/${commentId}/report`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
+    const result = await CommentReportReq.json();
+
+    if (result.report) {
+      alert(`댓글 id:${result.report.comment}가 신고되었습니다.`);
+    } else {
+      alert(result.message);
+    }
+  };
+
   return (
     <Scrollwrap>
       <StyledCommentList>
@@ -86,8 +126,15 @@ export default function CommentList() {
                     )}`}</span>
                   </div>
                   <button className="moreBtn">
-                    {/* // onClick={삭제, 신고모달 토글 }*/}
-                    <img src={MoreVertical} alt="더보기 이미지" />
+                    <img
+                      src={MoreVertical}
+                      alt="더보기 이미지"
+                      // 댓글 삭제 함수(추후 모달로 옮김)
+                      onClick={() => commentDelete(comment.id)}
+
+                      // 댓글 신고 함수(추후 모달로 옮김)
+                      // onClick={() => commentReport(comment.id)}
+                    />
                   </button>
                 </div>
                 <StyledPostMessage key={comment.id}>
