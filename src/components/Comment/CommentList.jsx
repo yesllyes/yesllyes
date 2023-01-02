@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { StyledCommentList, Scrollwrap } from './styled';
+import { StyledCommentList, StyledCommentli, Scrollwrap } from './styled';
 import { StyledPostMessage } from '../TextPost/styled';
-import StyledUserInfo from './../UserInfo/styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
 
@@ -106,42 +105,40 @@ export default function CommentList() {
         {loading && <div>loading!!!</div>}
         {!loading && commentData !== undefined ? (
           commentData.map((comment) => (
-            <>
-              <li key={comment.id}>
-                <div className="comment-info">
-                  <div className="profile-box">
-                    <img
-                      src={comment.author.image}
-                      className="basic-profile"
-                      alt="유저프로필이미지"
-                      onClick={() => goProfile(comment.author.accountname)}
-                    />
-                  </div>
-                  <div className="user-name">
-                    <p onClick={() => goProfile(comment.author.accountname)}>
-                      {comment.author.username}
-                    </p>
-                    <span className="comment-time">{`· ${getTimeGap(
-                      comment.createdAt
-                    )}`}</span>
-                  </div>
-                  <button className="moreBtn">
-                    <img
-                      src={MoreVertical}
-                      alt="더보기 이미지"
-                      // 댓글 삭제 함수(추후 모달로 옮김)
-                      onClick={() => commentDelete(comment.id)}
-
-                      // 댓글 신고 함수(추후 모달로 옮김)
-                      // onClick={() => commentReport(comment.id)}
-                    />
-                  </button>
+            <StyledCommentli key={comment.id}>
+              <div className="comment-info">
+                <div className="profile-box">
+                  <img
+                    src={comment.author.image}
+                    className="basic-profile"
+                    alt="유저프로필이미지"
+                    onClick={() => goProfile(comment.author.accountname)}
+                  />
                 </div>
-                <StyledPostMessage key={comment.id}>
-                  <div className="coment-cont">{comment.content}</div>
-                </StyledPostMessage>
-              </li>
-            </>
+                <div className="user-name">
+                  <p onClick={() => goProfile(comment.author.accountname)}>
+                    {comment.author.username}
+                  </p>
+                  <span className="comment-time">{`· ${getTimeGap(
+                    comment.createdAt
+                  )}`}</span>
+                </div>
+                <button className="moreBtn">
+                  <img
+                    src={MoreVertical}
+                    alt="더보기 이미지"
+                    // 댓글 삭제 함수(추후 모달로 옮김)
+                    onClick={() => commentDelete(comment.id)}
+
+                    // 댓글 신고 함수(추후 모달로 옮김)
+                    // onClick={() => commentReport(comment.id)}
+                  />
+                </button>
+              </div>
+              <StyledPostMessage>
+                <div className="comment-cont">{comment.content}</div>
+              </StyledPostMessage>
+            </StyledCommentli>
           ))
         ) : (
           <div>loading!!!</div>
