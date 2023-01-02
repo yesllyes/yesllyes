@@ -16,13 +16,16 @@ export default function CommentList() {
 
   useEffect(() => {
     if (auth.accountName) {
-      fetch(`https://mandarin.api.weniv.co.kr/post/${postId}/comments`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-          'Content-type': 'application/json',
-        },
-      })
+      fetch(
+        `https://mandarin.api.weniv.co.kr/post/${postId}/comments?limit=999`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+            'Content-type': 'application/json',
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           setCommentData(res.comments);

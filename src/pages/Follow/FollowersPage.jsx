@@ -30,7 +30,7 @@ const FollowersPage = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://mandarin.api.weniv.co.kr/profile/${accountName}/follower`, {
+    fetch(`https://mandarin.api.weniv.co.kr/profile/${accountName}/follower?limit=999`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${auth.token}`,
