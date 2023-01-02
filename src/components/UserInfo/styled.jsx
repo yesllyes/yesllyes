@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 const StyledUserInfo = styled.article`
-  padding: 0px 16px;
   display: flex;
   font-size: ${({ theme }) => theme.fontSize.medium};
   gap: 12px;
-  width: 358px;
   height: 42px;
 
   .profile-box {

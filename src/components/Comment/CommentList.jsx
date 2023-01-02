@@ -29,10 +29,10 @@ export default function CommentList() {
         })
         .catch((e) => e);
     }
-  }, [auth]);
+  }, [auth.accountName, auth.token, postId]);
 
-  const goProfile = () => {
-    navigate('/profile');
+  const goProfile = (author) => {
+    navigate(`/profile/${author}`);
   };
 
   const getTimeGap = (time) => {
@@ -74,14 +74,16 @@ export default function CommentList() {
                       src={comment.author.image}
                       className="basic-profile"
                       alt="유저프로필이미지"
-                      onClick={goProfile}
+                      onClick={() => goProfile(comment.author.accountname)}
                     />
                   </div>
                   <div className="user-name">
-                    <p onClick={goProfile}>{comment.author.username}</p>
-                    <span className="comment-time">
-                      {`· ${getTimeGap(comment.createdAt)}`}
-                    </span>
+                    <p onClick={() => goProfile(comment.author.accountname)}>
+                      {comment.author.username}
+                    </p>
+                    <span className="comment-time">{`· ${getTimeGap(
+                      comment.createdAt
+                    )}`}</span>
                   </div>
                   <button className="moreBtn">
                     {/* // onClick={삭제, 신고모달 토글 }*/}

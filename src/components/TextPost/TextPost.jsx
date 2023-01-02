@@ -27,25 +27,23 @@ const TextPost = ({ postData }) => {
     <>
       <StyledTextPost>
         <UserPost>
-          <div className="upload-user-box">
-            <Link to={`/profile/${postData.author.accountname}`}>
-              <UserInfo user={postData.author} />
-            </Link>
-            <button onClick={handlePostModal} className="moreBtn">
-              <img
-                src={MoreVertical}
-                alt="더보기 이미지"
-                onClick={() => {
-                  navigate(`/post/${postId}/postedit`, {
-                    state: {
-                      content: postData.content,
-                      image: postData.image,
-                    },
-                  });
-                }}
-              />
-            </button>
-          </div>
+          <Link to={`/profile/${postData.author.accountname}`}>
+            <UserInfo user={postData.author} />
+          </Link>
+          <button onClick={handlePostModal} className="moreBtn">
+            <img
+              src={MoreVertical}
+              alt="더보기 이미지"
+              onClick={() => {
+                navigate(`/post/${postId}/postedit`, {
+                  state: {
+                    content: postData.content,
+                    image: postData.image,
+                  },
+                });
+              }}
+            />
+          </button>
         </UserPost>
         <StyledPostMessage>
           <StyledPostLink to={`/post/${postData.id}`}>
