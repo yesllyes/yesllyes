@@ -14,6 +14,7 @@ function ProfileInfo({ accountName }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const accountId = userInfo.accountname;
   const [isFollow, setIsFollow] = useState(undefined);
 
   useEffect(() => {
@@ -139,7 +140,7 @@ function ProfileInfo({ accountName }) {
       <div className="ProfileFooter">
         {auth.accountName === accountName ? (
           <>
-            <Link to="/profilemodify">
+            <Link to={`/profile/${accountId}/edit`}>
               <Button size="md" active={true}>
                 프로필 수정
               </Button>
