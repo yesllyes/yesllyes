@@ -35,6 +35,20 @@ const StyledFollowersList = styled.ul`
       height: 28px;
     }
   }
+
+  .non-post {
+    width: 390px;
+    /* height: 712px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    span {
+      margin: 20px;
+      font-size: ${({ theme }) => theme.fontSize.medium};
+      color: #767676;
+    }
+  }
 `;
 
 const TabMenuWrap = styled.div`
