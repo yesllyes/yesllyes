@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
@@ -14,6 +14,8 @@ function ProfileInfo({ accountName }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const [isFollow, setIsFollow] = useState(undefined);
+
   useEffect(() => {
     setLoading(true);
 
@@ -27,12 +29,63 @@ function ProfileInfo({ accountName }) {
       .then((res) => res.json())
       .then((res) => {
         setUserInfo(res.profile);
+        setIsFollow(res.profile.isfollow);
         setLoading(false);
       })
       .catch((e) => {
         setError(e);
       });
   }, [auth, accountName]);
+
+  const followAPI = useCallback(async () => {
+    try {
+      const res = await fetch(
+        `https://mandarin.api.weniv.co.kr/profile/${accountName}/follow`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+            'Content-type': 'application/json',
+          },
+        }
+      );
+      const result = await res.json();
+
+      setIsFollow((isfollow) => !isfollow);
+      return result;
+    } catch (e) {
+      return new Error(e);
+    }
+  }, [accountName, auth.token]);
+
+  const unFollowAPI = useCallback(async () => {
+    try {
+      const res = await fetch(
+        `https://mandarin.api.weniv.co.kr/profile/${accountName}/unfollow`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+            'Content-type': 'application/json',
+          },
+        }
+      );
+      const result = await res.json();
+
+      setIsFollow((isfollow) => !isfollow);
+      return result;
+    } catch (e) {
+      return new Error(e);
+    }
+  }, [accountName, auth.token]);
+
+  const handleFollowState = () => {
+    if (isFollow) {
+      unFollowAPI();
+    } else {
+      followAPI();
+    }
+  };
 
   if (loading) {
     return <div>Loading중입니다...</div>;
@@ -50,12 +103,11 @@ function ProfileInfo({ accountName }) {
   return (
     <StyledProfileInfo>
       <TopBasicNav />
-
       <div className="ProfileHeader">
         <p className="followers">
           <button
             onClick={() => {
-              navigate('./followers/', {
+              navigate('./followers', {
                 state: {
                   accountName,
                 },
@@ -85,24 +137,34 @@ function ProfileInfo({ accountName }) {
       </div>
 
       <div className="ProfileFooter">
-        <Link to="/chatlist">
-          <CircleBtn>
-            <img src={Message} alt="메시지 보내기" />
-          </CircleBtn>
-        </Link>
-        <Link to="/profilemodify">
-          <Button size="md" active={true}>
-            프로필 수정
-          </Button>
-        </Link>
-        <Link to="/campaignupload">
-          <Button size="md" active={true}>
-            활동 등록
-          </Button>
-        </Link>
-        <CircleBtn onClick={shareProfile}>
-          <img src={Share} alt="공유하기" />
-        </CircleBtn>
+        {auth.accountName === accountName ? (
+          <>
+            <Link to="/profilemodify">
+              <Button size="md" active={true}>
+                프로필 수정
+              </Button>
+            </Link>
+            <Link to="/campaignupload">
+              <Button size="md" active={true}>
+                활동 등록
+              </Button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/chatlist">
+              <CircleBtn>
+                <img src={Message} alt="메시지 보내기" />
+              </CircleBtn>
+            </Link>
+            <Button size="md" active={isFollow} onClick={handleFollowState}>
+              {isFollow ? '언팔로우' : '팔로우'}
+            </Button>
+            <CircleBtn onClick={shareProfile}>
+              <img src={Share} alt="공유하기" />
+            </CircleBtn>
+          </>
+        )}
       </div>
     </StyledProfileInfo>
   );

@@ -35,7 +35,7 @@ function Router() {
       <Route path="/chatroom" element={<ChatRoomPage />}></Route>
       <Route path="/profile/:userId/" element={<Outlet />}>
         <Route path="" element={<ProfilePage />} />
-        <Route path="followers/" element={<FollowersPage />} />
+        <Route path="followers" element={<FollowersPage />} />
       </Route>
       <Route path="/search" element={<SearchPage />}></Route>
       <Route path="*" element={<NotFoundPage />}></Route>

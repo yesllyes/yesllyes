@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import UserInfo from '../../components/UserInfo/UserInfo';
 import Button from '../../components/Button/Button';
@@ -8,7 +9,7 @@ function FollowItem({ user }) {
   const { auth } = useAuthContext();
   const [isFollow, setIsFollow] = useState(user.isfollow);
 
-  console.log(isFollow);
+  const loginAccountName = useLocation().state.accountName;
 
   const followAPI = useCallback(async () => {
     try {
@@ -62,10 +63,15 @@ function FollowItem({ user }) {
 
   return (
     <li>
-      <UserInfo user={user} />
-      <Button size="xsm" onClick={handleFollowState} active={isFollow}>
-        {isFollow ? '취소' : '팔로우'}
-      </Button>
+      <Link to={`/profile/${user.accountname}`}>
+        <UserInfo user={user} />
+      </Link>
+
+      {auth.accountName === loginAccountName ? (
+        <Button size="xsm" onClick={handleFollowState} active={isFollow}>
+          {isFollow ? '취소' : '팔로우'}
+        </Button>
+      ) : null}
     </li>
   );
 }
