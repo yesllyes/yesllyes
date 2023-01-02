@@ -71,7 +71,7 @@ function ProfileInfo({ accountName }) {
       <div className="ProfileMain">
         <p>
           {userInfo.username}
-          <span>@{userInfo.accountname}</span>
+          <span>@ {userInfo.accountname}</span>
         </p>
       </div>
 

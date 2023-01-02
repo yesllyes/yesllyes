@@ -21,7 +21,7 @@ function UserInfo({ user }) {
       </div>
       <div className="user-name">
         <h3>{user.username}</h3>
-        <span>{user.accountname}</span>
+        <span>@ {user.accountname}</span>
       </div>
     </StyledUserInfo>
   );
