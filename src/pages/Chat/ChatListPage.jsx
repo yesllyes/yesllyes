@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import { StyledChatPage, StyledChatUserInfo } from './styled';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import TabMenu from './../../components/TabMenu/TabMenu';
-import { UserModal } from '../../components/Modal/Modal';
-import BasicProfile from '../../assets/icon/icon-basic-profile-small.svg';
+import BasicProfile from '../../assets/icon/icon-user.svg';
 
 export default function ChatListPage() {
   return (
     <StyledChatPage>
-      <TopBasicNav>{UserModal}</TopBasicNav>
+      <TopBasicNav />
       <Link to="/chatroom">
         <StyledChatUserInfo>
           <div className="profile-box">

@@ -4,6 +4,7 @@ import { StyledCommentList, StyledCommentli, Scrollwrap } from './styled';
 import { StyledPostMessage } from '../TextPost/styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
+import ModalButton from '../Modal/ModalButton';
 
 export default function CommentList() {
   const { postId } = useParams();
@@ -126,17 +127,9 @@ export default function CommentList() {
                     comment.createdAt
                   )}`}</span>
                 </div>
-                <button className="moreBtn">
-                  <img
-                    src={MoreVertical}
-                    alt="더보기 이미지"
-                    // 댓글 삭제 함수(추후 모달로 옮김)
-                    onClick={() => commentDelete(comment.id)}
-
-                    // 댓글 신고 함수(추후 모달로 옮김)
-                    // onClick={() => commentReport(comment.id)}
-                  />
-                </button>
+                <ModalButton modalType="CommentModal">
+                  <img src={MoreVertical} alt="더보기 이미지" />
+                </ModalButton>
               </div>
               <StyledPostMessage>
                 <div className="comment-cont">{comment.content}</div>
