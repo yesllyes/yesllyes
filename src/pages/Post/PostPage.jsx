@@ -10,10 +10,8 @@ import useAuthContext from '../../hooks/useAuthContext';
 export default function PostPage() {
   const { postId } = useParams();
   const { auth } = useAuthContext();
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  console.log(postData);
 
   useEffect(() => {
     setLoading(true);
@@ -26,7 +24,7 @@ export default function PostPage() {
     })
       .then((res) => res.json())
       .then((res) => {
-        setPostData([res.post]);
+        setPostData(res.post);
         setLoading(false);
       })
       .catch((e) => new Error(e));
@@ -39,9 +37,9 @@ export default function PostPage() {
   return (
     <StyledWrapper>
       <TopBasicNav />
-      {postData.map((post) => (
-        <TextPost key={post.id} postData={post}></TextPost>
-      ))}
+      {postData ? (
+        <TextPost key={postData._id} postData={postData}></TextPost>
+      ) : null}
       <CommentList />
       <CommentInput />
     </StyledWrapper>

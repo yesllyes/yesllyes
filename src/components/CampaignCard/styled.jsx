@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 const CampaignCardWrapper = styled.li`
-  position: relative;
   cursor: pointer;
   width: 140px;
   list-style: none;
+  flex-shrink: 0;
+
+  a {
+    display: block;
+    width: 100%;
+  }
 
   img {
+    width: 100%;
     height: 90px;
     border: 0.5px solid #bdbdbd;
     border-radius: 8px;

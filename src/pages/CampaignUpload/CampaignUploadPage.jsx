@@ -130,7 +130,7 @@ export default function CampaignPage() {
       body: JSON.stringify(userData),
     });
 
-    navigate(`/myprofile`);
+    navigate(`/profile/${auth.accountName}`);
 
     const result = campaignUpload.json();
 

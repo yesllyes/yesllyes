@@ -14,6 +14,10 @@ const StyledCampaginWrapper = styled.div`
     margin: 22px 0px 16px;
     font-size: ${({ theme }) => theme.fontSize.large};
     line-height: 18px;
+    font-weight: 400;
+    strong {
+      font-size: ${({ theme }) => theme.fontSize.medium};
+    }
   }
 `;
 
@@ -79,6 +83,7 @@ const StyledProfileInfo = styled.div`
       width: 110px;
       height: 110px;
       border-radius: 50%;
+      object-fit: cover;
     }
   }
 
@@ -172,7 +177,7 @@ const StyledListWrapper = styled.section`
 const StyledAlbumWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
   align-items: center;
   padding: 16px;
 `;

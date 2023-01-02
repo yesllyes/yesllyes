@@ -44,7 +44,7 @@ function HomeFeedPage() {
           ))}
         </main>
       ) : (
-        <main>
+        <main className='non-post'>
           <img src={LogoGray} alt="회색이미지" />
           <span>유저를 검색해 팔로우 해보세요!</span>
           <Button size="md" onClick={goSearch}>

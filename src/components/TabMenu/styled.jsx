@@ -9,7 +9,7 @@ const StyledTabMenu = styled.article`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   border-top: 0.5px solid #dbdbdb;
 `;
 
