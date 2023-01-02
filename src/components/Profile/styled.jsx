@@ -14,6 +14,10 @@ const StyledCampaginWrapper = styled.div`
     margin: 22px 0px 16px;
     font-size: ${({ theme }) => theme.fontSize.large};
     line-height: 18px;
+    font-weight: 400;
+    strong {
+      font-size: ${({ theme }) => theme.fontSize.medium};
+    }
   }
 `;
 
