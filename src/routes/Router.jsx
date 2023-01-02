@@ -1,10 +1,11 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Outlet } from 'react-router-dom';
 
 import StartSplash from './../pages/Splash/StartSplash';
 import LoginPage from '../pages/Login/LoginPage';
 import SignupPage from '../pages/Signup/SignupPage';
 import ProfileSignupPage from '../pages/ProfileSignup/ProfileSignupPage';
+import ProfileEditPage from '../pages/ProfileEdit/ProfileEdit';
 import HomeFeedPage from '../pages/HomeFeed/HomeFeedPage';
 import CampaignUploadPage from '../pages/CampaignUpload/CampaignUploadPage';
 import PostPage from './../pages/Post/PostPage';
@@ -29,7 +30,10 @@ function Router() {
       <Route path="/postupload" element={<PostUploadPage />}></Route>
       <Route path="/chatlist" element={<ChatListPage />}></Route>
       <Route path="/chatroom" element={<ChatRoomPage />}></Route>
-      <Route path="/profile/:userId" element={<ProfilePage />}></Route>
+      <Route path="/profile/:userId/" element={<ProfilePage />}></Route>
+      <Route path="/profile/:userId/" element={<Outlet />}>
+        <Route path="edit" element={<ProfileEditPage />}></Route>
+      </Route>
       <Route path="/followers" element={<FollowersPage />}></Route>
       <Route path="/search" element={<SearchPage />}></Route>
       <Route path="*" element={<NotFoundPage />}></Route>
