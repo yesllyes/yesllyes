@@ -11,6 +11,8 @@ import {
   StyledFollowersList,
   TabMenuWrap,
 } from './styled';
+import LogoGray from '../../assets/image/full-logo-gray.svg';
+import Button from '../../components/Button/Button';
 
 const FollowersPage = () => {
   const [loading, setLoading] = useState(false);
@@ -21,10 +23,14 @@ const FollowersPage = () => {
   const { auth } = useAuthContext();
   const accountName = location.state.accountName;
 
+  const goSearch = () => {
+    window.location.href = '/search';
+  };
+
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://mandarin.api.weniv.co.kr/profile/${accountName}/follower`, {
+    fetch(`https://mandarin.api.weniv.co.kr/profile/${accountName}/follower?limit=999`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${auth.token}`,
@@ -57,7 +63,13 @@ const FollowersPage = () => {
       <StyledFollowersListWrapper>
         <StyledFollowersList>
           {!followers || followers.length === 0 ? (
-            <li>팔로우 목록이 존재하지 않습니다.</li>
+            <main className="non-post">
+              <img src={LogoGray} alt="회색이미지" />
+              <span>팔로우 목록이 존재하지 않습니다.</span>
+              <Button size="md" onClick={goSearch}>
+                검색하기
+              </Button>
+            </main>
           ) : (
             followers.map((follower) => (
               <FollowItem user={follower} key={follower._id} />

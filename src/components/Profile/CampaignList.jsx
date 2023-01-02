@@ -6,8 +6,8 @@ import { StyledCampaginWrapper, StyledCampaginList } from './styled';
 
 const CampaginList = ({ accountName }) => {
   const { auth } = useAuthContext();
-  const [campaigns, setCampagins] = useState([]);
-  const [campaignsCount, setCampaginsCount] = useState(null);
+  const [campaigns, setCampaigns] = useState([]);
+  const [campaignsCount, setCampaignsCount] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -15,7 +15,7 @@ const CampaginList = ({ accountName }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://mandarin.api.weniv.co.kr/product/${accountName}`, {
+    fetch(`https://mandarin.api.weniv.co.kr/product/${accountName}?limit=999`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${auth.token}`,
@@ -24,8 +24,8 @@ const CampaginList = ({ accountName }) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        setCampaginsCount(res.data);
-        setCampagins(res.product);
+        setCampaignsCount(res.data);
+        setCampaigns(res.product);
         setLoading(false);
       })
       .catch((e) => setError(e));
@@ -42,7 +42,7 @@ const CampaginList = ({ accountName }) => {
   return (
     <StyledCampaginWrapper>
       <h3 className="title">
-        참여한 캠페인 목록<strong>{`(${campaignsCount}개)`}</strong>
+        참여한 캠페인<strong> {`(${campaignsCount}개)`}</strong>
       </h3>
       <StyledCampaginList>
         {campaigns.map((campaign) => (

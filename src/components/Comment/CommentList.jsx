@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { StyledCommentList, Scrollwrap } from './styled';
+import { StyledCommentList, StyledCommentli, Scrollwrap } from './styled';
 import { StyledPostMessage } from '../TextPost/styled';
-import StyledUserInfo from './../UserInfo/styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import MoreVertical from '../../assets/icon/icon-more-vertical-small.svg';
 import ModalButton from '../Modal/ModalButton';
@@ -14,15 +13,20 @@ export default function CommentList() {
   const [commentData, setCommentData] = useState([]);
   const navigate = useNavigate();
 
+  const BASEURL = 'https://mandarin.api.weniv.co.kr';
+
   useEffect(() => {
     if (auth.accountName) {
-      fetch(`https://mandarin.api.weniv.co.kr/post/${postId}/comments`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${auth.token}`,
-          'Content-type': 'application/json',
-        },
-      })
+      fetch(
+        `https://mandarin.api.weniv.co.kr/post/${postId}/comments?limit=999`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${auth.token}`,
+            'Content-type': 'application/json',
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           setCommentData(res.comments);
@@ -61,41 +65,76 @@ export default function CommentList() {
     }
   };
 
+  // 댓글 삭제 함수 (추후 모달로 옮김)
+  const commentDelete = async (commentId) => {
+    const CommentDeleteReq = await fetch(
+      `${BASEURL}/post/${postId}/comments/${commentId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
+    const result = await CommentDeleteReq.json();
+
+    alert(result.message);
+  };
+
+  // 댓글 신고 함수 (추후 모달로 옮김)
+  const commentReport = async (commentId) => {
+    const CommentReportReq = await fetch(
+      `${BASEURL}/post/${postId}/comments/${commentId}/report`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
+    const result = await CommentReportReq.json();
+
+    if (result.report) {
+      alert(`댓글 id:${result.report.comment}가 신고되었습니다.`);
+    } else {
+      alert(result.message);
+    }
+  };
+
   return (
     <Scrollwrap>
       <StyledCommentList>
         {loading && <div>loading!!!</div>}
         {!loading && commentData !== undefined ? (
           commentData.map((comment) => (
-            <>
-              <li key={comment.id}>
-                <div className="comment-info">
-                  <div className="profile-box">
-                    <img
-                      src={comment.author.image}
-                      className="basic-profile"
-                      alt="유저프로필이미지"
-                      onClick={() => goProfile(comment.author.accountname)}
-                    />
-                  </div>
-                  <div className="user-name">
-                    <p onClick={() => goProfile(comment.author.accountname)}>
-                      {comment.author.username}
-                    </p>
-                    <span className="comment-time">{`· ${getTimeGap(
-                      comment.createdAt
-                    )}`}</span>
-                  </div>
-
-                  <ModalButton modalType="CommentModal">
-                    <img src={MoreVertical} alt="더보기 이미지" />
-                  </ModalButton>
+            <StyledCommentli key={comment.id}>
+              <div className="comment-info">
+                <div className="profile-box">
+                  <img
+                    src={comment.author.image}
+                    className="basic-profile"
+                    alt="유저프로필이미지"
+                    onClick={() => goProfile(comment.author.accountname)}
+                  />
                 </div>
-                <StyledPostMessage key={comment.id}>
-                  <div className="coment-cont">{comment.content}</div>
-                </StyledPostMessage>
-              </li>
-            </>
+                <div className="user-name">
+                  <p onClick={() => goProfile(comment.author.accountname)}>
+                    {comment.author.username}
+                  </p>
+                  <span className="comment-time">{`· ${getTimeGap(
+                    comment.createdAt
+                  )}`}</span>
+                </div>
+                <ModalButton modalType="CommentModal">
+                  <img src={MoreVertical} alt="더보기 이미지" />
+                </ModalButton>
+              </div>
+              <StyledPostMessage>
+                <div className="comment-cont">{comment.content}</div>
+              </StyledPostMessage>
+            </StyledCommentli>
           ))
         ) : (
           <div>loading!!!</div>

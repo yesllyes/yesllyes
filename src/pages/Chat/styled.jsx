@@ -15,10 +15,25 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
   margin-top: 10px;
   padding: 10px 20px;
   display: flex;
+  align-items: center;
+  /* text-decoration: none; */
   position: relative;
   box-sizing: border-box;
-  border-bottom: 0.5px solid #dbdbdb;
 
+  .chat-user-cont {
+    span {
+      margin-top: 4px;
+    }
+  }
+  .new-chat {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    right: 55px;
+    bottom: 15px;
+    border-radius: 70%;
+    background-color: ${({ theme }) => theme.colors.Green};
+  }
   & > span {
     position: absolute;
     margin-top: 10px;
@@ -29,20 +44,21 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
     margin-top: 5px;
   }
 
-  .basic-profile {
-    width: 35px;
-    height: 35px;
-    padding: 2px;
-    border-radius: 50%;
+  .profile-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 70%;
+    overflow: hidden;
     border: 0.5px solid #dbdbdb;
-    margin-right: 5px;
+
+    .basic-profile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   div {
-    /* display: flex;
-    justify-content: space-between; */
-    margin: auto 0;
-
     div > h3 {
       padding-bottom: 5px;
     }
@@ -54,10 +70,29 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
 `;
 
 export const StyledChatRoomInput = styled(StyledCommentInput)`
-  width: 389px;
   position: absolute;
   bottom: 0;
-  padding: 0;
-  margin: 0;
   border-top: none;
+  width: 100%;
+  height: 61px;
+  border-top: 0.5px solid #dbdbdb;
+  display: flex;
+  vertical-align: center;
+  justify-content: space-between;
+
+  img {
+    width: 36px;
+    height: 36px;
+  }
+
+  input {
+    border: none;
+    line-height: 14px;
+    font-size: ${({ theme }) => theme.fontSize.medium};
+
+    ::placeholder {
+      font-size: ${({ theme }) => theme.fontSize.small};
+      color: #c4c4c4;
+    }
+  }
 `;

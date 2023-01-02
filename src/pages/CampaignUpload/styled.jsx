@@ -37,6 +37,7 @@ const StyledCampaignInput = styled.main`
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   .campaign-img-label::after {
@@ -57,8 +58,9 @@ const StyledCampaignInput = styled.main`
     color: #dbdbdb;
   }
 
-  .error-message {
+  .error-msg {
     color: ${({ theme }) => theme.colors.Orange};
+    height: 12px;
   }
 `;
 

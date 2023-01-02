@@ -14,6 +14,7 @@ function ProfileInfo({ accountName }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const accountId = userInfo.accountname;
   const [isFollow, setIsFollow] = useState(undefined);
 
   useEffect(() => {
@@ -95,6 +96,11 @@ function ProfileInfo({ accountName }) {
     return <div>Error메세지: {error}</div>;
   }
 
+  const shareProfile = (event) => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('주소가 복사되었습니다!');
+  };
+
   return (
     <StyledProfileInfo>
       <TopBasicNav />
@@ -123,7 +129,7 @@ function ProfileInfo({ accountName }) {
       <div className="ProfileMain">
         <p>
           {userInfo.username}
-          <span>@{userInfo.accountname}</span>
+          <span>@ {userInfo.accountname}</span>
         </p>
       </div>
 
@@ -134,7 +140,7 @@ function ProfileInfo({ accountName }) {
       <div className="ProfileFooter">
         {auth.accountName === accountName ? (
           <>
-            <Link to="/profilemodify">
+            <Link to={`/profile/${accountId}/edit`}>
               <Button size="md" active={true}>
                 프로필 수정
               </Button>
@@ -147,7 +153,7 @@ function ProfileInfo({ accountName }) {
           </>
         ) : (
           <>
-            <Link to="DM창">
+            <Link to="/chatlist">
               <CircleBtn>
                 <img src={Message} alt="메시지 보내기" />
               </CircleBtn>
@@ -155,7 +161,7 @@ function ProfileInfo({ accountName }) {
             <Button size="md" active={isFollow} onClick={handleFollowState}>
               {isFollow ? '언팔로우' : '팔로우'}
             </Button>
-            <CircleBtn>
+            <CircleBtn onClick={shareProfile}>
               <img src={Share} alt="공유하기" />
             </CircleBtn>
           </>

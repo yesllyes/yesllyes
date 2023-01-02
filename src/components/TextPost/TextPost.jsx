@@ -10,13 +10,37 @@ import UserPost from '../UserPost/UserPost';
 import LikeCommentButton from '../LikeCommentButton/LikeCommentButton';
 import changeDate from '../../services/changeDate';
 import ModalButton from '../Modal/ModalButton';
+// import useAuthContext from '../../hooks/useAuthContext';
 
 const TextPost = ({ postData }) => {
+  // const BASEURL = 'https://mandarin.api.weniv.co.kr';
+
   const newDate = changeDate(postData.createdAt);
+  // const { auth } = useAuthContext();
 
   const handleImage = useCallback((e) => {
     e.target.src = ImageError;
   }, []);
+
+  // 게시글 신고 함수 (추후 모달로 옮김)
+  // const postReport = async () => {
+  //   const PostReportreq = await fetch(`${BASEURL}/post/${postId}/report`, {
+  //     method: 'POST',
+  //     headers: {
+  //       Authorization: `Bearer ${auth.token}`,
+  //       'Content-type': 'application/json',
+  //     },
+  //   });
+  //   const result = await PostReportreq.json();
+
+  //   console.log(result);
+
+  //   if (result.report) {
+  //     alert(`게시물 id:${result.report.post}가 신고되었습니다.`);
+  //   } else {
+  //     alert(result.message);
+  //   }
+  // };
 
   return (
     <>

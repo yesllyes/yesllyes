@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
 import { StyledCampaignInput } from './styled';
@@ -7,9 +7,13 @@ import useAuthContext from '../../hooks/useAuthContext';
 
 const BASEURL = 'https://mandarin.api.weniv.co.kr';
 
-export default function CampaignPage() {
+export default function CampaignEdit() {
+  const location = useLocation();
+  const campaignId = location.state.id;
+
   const [files, setFiles] = useState(null);
-  const [campaignId, setCampaignId] = useState('');
+  const [productId, setProductId] = useState('');
+  const [accountName, setAccountName] = useState('');
   const [campaignName, setCampaignName] = useState('');
   const [campaignPeople, setCampaignPeople] = useState('');
   const [campaignLink, setCampaignLink] = useState('');
@@ -27,10 +31,29 @@ export default function CampaignPage() {
   const { auth } = useAuthContext();
 
   const passed =
-    isVaildCampignImg &&
-    isValidCampaignName &&
-    isValidCampaignLink &&
-    isValidCampaignPeople;
+    isValidCampaignName && isValidCampaignLink && isValidCampaignPeople;
+
+  useEffect(() => {
+    if (auth) {
+      fetch(`${BASEURL}/product/detail/${campaignId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          setProductId(res.product.id);
+          setAccountName(res.product.author.accountname);
+          setCampaignName(res.product.itemName);
+          setCampaignPeople(res.product.price);
+          setCampaignLink(res.product.link);
+          setFiles(res.product.itemImage);
+          // console.log(res);
+        });
+    }
+  }, [auth, campaignId]);
 
   const handleCampaignImg = (e) => {
     const file = e.target.files[0];
@@ -120,20 +143,20 @@ export default function CampaignPage() {
   };
 
   const onSubmit = async () => {
-    const userData = { product: data };
+    const productData = { product: data };
 
-    const campaignUpload = await fetch(`${BASEURL}/product`, {
-      method: 'POST',
+    const campaignUpload = await fetch(`${BASEURL}/product/${productId}`, {
+      method: 'PUT',
       headers: {
         Authorization: `Bearer ${auth.token}`,
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(userData),
+      body: JSON.stringify(productData),
     });
 
-    const result = campaignUpload.json();
+    navigate(`/profile/${accountName}`);
 
-    navigate(`/profile/${auth.accountName}`);
+    const result = campaignUpload.json();
 
     if (result.status === 422) {
       console.log(result.message);

@@ -31,13 +31,16 @@ function PostList({ accountName }) {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://mandarin.api.weniv.co.kr/post/${accountName}/userpost`, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${auth.token}`,
-        'Content-type': 'application/json',
-      },
-    })
+    fetch(
+      `https://mandarin.api.weniv.co.kr/post/${accountName}/userpost?limit=999`,
+      {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         setPostData(res.post);
