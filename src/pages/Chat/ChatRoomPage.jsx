@@ -2,17 +2,20 @@ import React from 'react';
 import { StyledChatPage, StyledChatRoomInput } from './styled';
 import { TopBasicNav } from '../../components/Navbar/TopNavbar';
 import CommentInput from './../../components/Comment/CommentInput';
+import Button from '../../components/Button/Button';
 
-import basicimg from '../../assets/icon/icon-post-album-off.svg';
+import uploadImg from '../../assets/icon/icon-img-button-gray.svg';
 
 export default function ChatRoomPage() {
   return (
     <StyledChatPage>
-      <TopBasicNav value="멋사칭구1" />
+      <TopBasicNav value="Chat" />
       <StyledChatRoomInput>
-        <CommentInput>
-          <img src={basicimg} alt="" />
-        </CommentInput>
+        <img src={uploadImg} alt="" />
+        <input type="text" placeholder="메시지 입력하기..." />
+        <Button size="xsm" disabled>
+          전송
+        </Button>
       </StyledChatRoomInput>
     </StyledChatPage>
   );

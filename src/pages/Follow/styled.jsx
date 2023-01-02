@@ -4,6 +4,7 @@ const StyledFollowersWrapper = styled.section`
   position: relative;
   width: 390px;
   height: 820px;
+  border: 1px solid #dbdbdb;
 `;
 
 const StyledFollowersListWrapper = styled.div`
@@ -37,12 +38,14 @@ const StyledFollowersList = styled.ul`
   }
 
   .non-post {
-    width: 390px;
-    /* height: 712px; */
+    margin-top: 220px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
+    justify-content: center;
+
     span {
       margin: 20px;
       font-size: ${({ theme }) => theme.fontSize.medium};

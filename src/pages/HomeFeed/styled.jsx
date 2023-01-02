@@ -20,7 +20,7 @@ const StyledHomeFeedPage = styled.div`
     }
   }
   .non-post {
-    padding-top: 220px;
+    margin-top: 200px;
   }
   span {
     /* display: block; */
