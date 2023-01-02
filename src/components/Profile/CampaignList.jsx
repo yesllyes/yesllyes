@@ -6,8 +6,8 @@ import { StyledCampaginWrapper, StyledCampaginList } from './styled';
 
 const CampaginList = ({ accountName }) => {
   const { auth } = useAuthContext();
-  const [campaigns, setCampagins] = useState([]);
-  const [campaignsCount, setCampaginsCount] = useState(null);
+  const [campaigns, setCampaigns] = useState([]);
+  const [campaignsCount, setCampaignsCount] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -24,8 +24,8 @@ const CampaginList = ({ accountName }) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        setCampaginsCount(res.data);
-        setCampagins(res.product);
+        setCampaignsCount(res.data);
+        setCampaigns(res.product);
         setLoading(false);
       })
       .catch((e) => setError(e));
