@@ -42,6 +42,11 @@ function ProfileInfo({ accountName }) {
     return <div>Error메세지: {error}</div>;
   }
 
+  const shareProfile = (event) => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('주소가 복사되었습니다!');
+  };
+
   return (
     <StyledProfileInfo>
       <TopBasicNav />
@@ -95,7 +100,7 @@ function ProfileInfo({ accountName }) {
             활동 등록
           </Button>
         </Link>
-        <CircleBtn>
+        <CircleBtn onClick={shareProfile}>
           <img src={Share} alt="공유하기" />
         </CircleBtn>
       </div>
