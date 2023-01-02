@@ -85,7 +85,7 @@ function ProfileInfo({ accountName }) {
       </div>
 
       <div className="ProfileFooter">
-        <Link to="DM창">
+        <Link to="/chatlist">
           <CircleBtn>
             <img src={Message} alt="메시지 보내기" />
           </CircleBtn>
