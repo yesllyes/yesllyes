@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
-import { StyledCampaignHeader, StyledCampaignInput } from './styled';
+import { StyledCampaignInput } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 
 const BASEURL = 'https://mandarin.api.weniv.co.kr';
 
 export default function CampaignPage() {
   const [files, setFiles] = useState(null);
+  const [campaignId, setCampaignId] = useState('');
   const [campaignName, setCampaignName] = useState('');
   const [campaignPeople, setCampaignPeople] = useState('');
   const [campaignLink, setCampaignLink] = useState('');
@@ -130,9 +131,9 @@ export default function CampaignPage() {
       body: JSON.stringify(userData),
     });
 
-    navigate(`/myprofile`);
-
     const result = campaignUpload.json();
+
+    navigate(`/profile/${auth.accountName}`);
 
     if (result.status === 422) {
       console.log(result.message);
@@ -165,7 +166,7 @@ export default function CampaignPage() {
             placeholder="2~10자 이내여야 합니다"
             required
           />
-          <p className="error-message">{checkCampaignNameMsg}</p>
+          <p className="error-msg">{checkCampaignNameMsg}</p>
           <TextInput
             label="인원"
             id="campaign-people"
@@ -175,7 +176,7 @@ export default function CampaignPage() {
             placeholder="ex) 00 명"
             required
           />
-          <p className="error-message">{checkCampaignPeopleMsg}</p>
+          <p className="error-msg">{checkCampaignPeopleMsg}</p>
           <TextInput
             label="상세정보"
             id="campaign-link"
@@ -185,7 +186,7 @@ export default function CampaignPage() {
             placeholder="URL을 입력해 주세요"
             required
           />
-          <p className="error-message">{checkCampaignLinkMsg}</p>
+          <p className="error-msg">{checkCampaignLinkMsg}</p>
         </form>
       </StyledCampaignInput>
     </>
