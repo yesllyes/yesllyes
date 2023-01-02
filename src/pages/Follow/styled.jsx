@@ -1,21 +1,12 @@
 import styled from 'styled-components';
 
-const FollowerWrap = styled.section`
+const StyledFollowersWrapper = styled.section`
   position: relative;
   width: 390px;
   height: 820px;
 `;
 
-const FollowerTit = styled.h2`
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-`;
-
-const FollowerList = styled.div`
+const StyledFollowersListWrapper = styled.div`
   padding: 24px 0;
   overflow: scroll;
   ::-webkit-scrollbar {
@@ -24,7 +15,7 @@ const FollowerList = styled.div`
   height: 712px;
 `;
 
-const List = styled.ul`
+const StyledFollowersList = styled.ul`
   margin: 0 16px;
   display: flex;
   flex-direction: column;
@@ -38,12 +29,24 @@ const List = styled.ul`
     justify-content: space-between;
 
     Button {
-      background-color: ${({ theme }) => theme.colors.Green};
-      color: white;
       position: absolute;
       right: 0px;
-      margin: 11px 0px;
+      margin: 4px 0px;
       height: 28px;
+    }
+  }
+
+  .non-post {
+    width: 390px;
+    /* height: 712px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    span {
+      margin: 20px;
+      font-size: ${({ theme }) => theme.fontSize.medium};
+      color: #767676;
     }
   }
 `;
@@ -52,4 +55,9 @@ const TabMenuWrap = styled.div`
   bottom: 0px;
 `;
 
-export { FollowerWrap, FollowerTit, FollowerList, List, TabMenuWrap };
+export {
+  StyledFollowersWrapper,
+  StyledFollowersListWrapper,
+  StyledFollowersList,
+  TabMenuWrap,
+};

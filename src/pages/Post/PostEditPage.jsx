@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import useAuthContext from '../../hooks/useAuthContext';
 import {
@@ -10,21 +10,26 @@ import {
 
 const BASEURL = 'https://mandarin.api.weniv.co.kr';
 
-function PostUploadPage() {
-  const [postContent, setPostContent] = useState('');
-  const [postImg, setPostImg] = useState(null);
+function PostEditPage() {
+  const { state } = useLocation();
+
+  const [postContent, setPostContent] = useState(state.content);
+  const [postImg, setPostImg] = useState(state.image);
 
   // onSubmit 전에 passed 체크 (빈 게시물이면 전송불가)
   const [isValidPostContent, setIsValidPostContent] = useState(false);
   const [isValidPostImg, setIsValidPostImg] = useState(false);
 
   // 유효성검사 (content: 1자 이상, img: 유효한 확장자만 허용)
-  const [checkPostContent, setCheckPostContent] = useState(0);
-  const [checkPostImg, setCheckPostImg] = useState(false);
+  const [checkPostContent, setCheckPostContent] = useState(
+    state.content.length
+  );
+  const [checkPostImg, setCheckPostImg] = useState(state.image);
 
   const navigate = useNavigate();
   const countRef = useRef();
   const { auth } = useAuthContext();
+  const { postId } = useParams();
   const passed =
     (isValidPostContent && checkPostContent) ||
     (isValidPostImg && checkPostImg);
@@ -85,8 +90,8 @@ function PostUploadPage() {
       },
     };
 
-    const PostUpload = await fetch(`${BASEURL}/post`, {
-      method: 'POST',
+    const PostUpload = await fetch(`${BASEURL}/post/${postId}`, {
+      method: 'PUT',
       headers: {
         Authorization: `Bearer ${auth.token}`,
         'Content-type': 'application/json',
@@ -153,4 +158,4 @@ function PostUploadPage() {
   );
 }
 
-export default PostUploadPage;
+export default PostEditPage;

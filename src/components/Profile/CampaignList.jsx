@@ -42,7 +42,7 @@ const CampaginList = ({ accountName }) => {
   return (
     <StyledCampaginWrapper>
       <h3 className="title">
-        참여한 캠페인 목록<strong>{`(${campaignsCount}개)`}</strong>
+        참여한 캠페인<strong> {`(${campaignsCount}개)`}</strong>
       </h3>
       <StyledCampaginList>
         {campaigns.map((campaign) => (

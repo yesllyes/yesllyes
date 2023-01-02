@@ -26,6 +26,10 @@ const StyledProfilePage = styled.section`
   button {
     margin-top: 30px;
   }
+
+  p {
+    height: 12px;
+  }
 `;
 
 const StyledImg = styled.div`
@@ -57,6 +61,7 @@ const StyledTxt = styled.div`
     font-size: ${({ theme }) => theme.fontSize.small};
     text-align: left;
   }
+
   margin-top: 30px;
   margin-right: 34px;
   margin-left: 34px;
