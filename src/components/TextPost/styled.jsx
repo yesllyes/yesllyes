@@ -13,15 +13,14 @@ export const StyledTextPost = styled.section`
 
 export const StyledPostMessage = styled.section`
   padding-left: 54px;
+  margin-bottom: 20px;
 `;
 
 export const StyledPostLink = styled(Link)`
-  box-sizing: border-box;
-  display: block;
   width: 100%;
   margin-top: 16px;
   p {
-    margin-top: 16px;
+    margin: 16px 0px;
     font-size: ${({ theme }) => theme.fontSize.medium};
   }
   & > img {
@@ -33,9 +32,7 @@ export const StyledPostLink = styled(Link)`
     object-fit: cover;
     text-align: center;
     border: 0.5px solid #dbdbdb;
-    border-radius: 4px;
-    /* padding: 15px 0px;
-    margin-left: -54px; */
+    border-radius: 10px;
   }
 `;
 
@@ -48,7 +45,6 @@ export const StyledHeartChat = styled.div`
 
   div {
     img {
-      vertical-align: middle;
       margin-right: 8px;
     }
     span {

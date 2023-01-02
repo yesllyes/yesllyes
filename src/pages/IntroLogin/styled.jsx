@@ -10,6 +10,7 @@ const StyledIntroLoginPage = styled.main`
   position: relative;
 
   h1 img {
+    filter: drop-shadow(2px 2px 4px #5f5f5fbe);
     position: absolute;
     margin: auto;
     top: 180px;

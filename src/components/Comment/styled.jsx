@@ -40,18 +40,67 @@ export const StyledCommentInput = styled.section`
 `;
 
 export const StyledCommentList = styled.ul`
-  width: 100%;
-  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 16px;
+  border-top: 1px solid #dbdbdb;
 
-  li {
-    width: 358px;
-    margin: 0 auto;
+  .comment-info {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .profile-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 70%;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+  }
+  .basic-profile {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+  }
 
-    span {
-      font-size: ${({ theme }) => theme.fontSize.xsmall};
-      color: ${({ theme }) => theme.colors.lightGray};
-    }
+  .user-name {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 6px;
+    font-weight: 500;
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    line-height: 18px;
+    cursor: pointer;
+  }
+
+  .comment-time {
+    margin-left: 6px;
+    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSize.xsmall};
+    line-height: 13px;
+    color: ${({ theme }) => theme.colors.lightGray};
+  }
+
+  .moreBtn {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+  }
+
+  .coment-cont {
+    font-weight: 400;
+    font-size: ${({ theme }) => theme.fontSize.medium};
+    line-height: 17px;
+  }
+`;
+export const Scrollwrap = styled.div`
+  height: 760px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
   }
 `;

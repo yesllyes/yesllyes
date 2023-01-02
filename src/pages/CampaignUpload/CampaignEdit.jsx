@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
-import { StyledCampaignHeader, StyledCampaignInput } from './styled';
+import { StyledCampaignInput } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 
 const BASEURL = 'https://mandarin.api.weniv.co.kr';
 
-export default function CampaignPage() {
+export default function CampaignEdit() {
+  const location = useLocation();
+  const campaignId = location.state.id;
+
   const [files, setFiles] = useState(null);
+  const [productId, setProductId] = useState('');
+  const [accountName, setAccountName] = useState('');
   const [campaignName, setCampaignName] = useState('');
   const [campaignPeople, setCampaignPeople] = useState('');
   const [campaignLink, setCampaignLink] = useState('');
@@ -26,10 +31,29 @@ export default function CampaignPage() {
   const { auth } = useAuthContext();
 
   const passed =
-    isVaildCampignImg &&
-    isValidCampaignName &&
-    isValidCampaignLink &&
-    isValidCampaignPeople;
+    isValidCampaignName && isValidCampaignLink && isValidCampaignPeople;
+
+  useEffect(() => {
+    if (auth) {
+      fetch(`${BASEURL}/product/detail/${campaignId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          setProductId(res.product.id);
+          setAccountName(res.product.author.accountname);
+          setCampaignName(res.product.itemName);
+          setCampaignPeople(res.product.price);
+          setCampaignLink(res.product.link);
+          setFiles(res.product.itemImage);
+          // console.log(res);
+        });
+    }
+  }, [auth, campaignId]);
 
   const handleCampaignImg = (e) => {
     const file = e.target.files[0];
@@ -119,18 +143,18 @@ export default function CampaignPage() {
   };
 
   const onSubmit = async () => {
-    const userData = { product: data };
+    const productData = { product: data };
 
-    const campaignUpload = await fetch(`${BASEURL}/product`, {
-      method: 'POST',
+    const campaignUpload = await fetch(`${BASEURL}/product/${productId}`, {
+      method: 'PUT',
       headers: {
         Authorization: `Bearer ${auth.token}`,
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(userData),
+      body: JSON.stringify(productData),
     });
 
-    navigate(`/profile/${auth.accountName}`);
+    navigate(`/profile/${accountName}`);
 
     const result = campaignUpload.json();
 
@@ -165,7 +189,7 @@ export default function CampaignPage() {
             placeholder="2~10자 이내여야 합니다"
             required
           />
-          <p className="error-message">{checkCampaignNameMsg}</p>
+          <p className="error-msg">{checkCampaignNameMsg}</p>
           <TextInput
             label="인원"
             id="campaign-people"
@@ -175,7 +199,7 @@ export default function CampaignPage() {
             placeholder="ex) 00 명"
             required
           />
-          <p className="error-message">{checkCampaignPeopleMsg}</p>
+          <p className="error-msg">{checkCampaignPeopleMsg}</p>
           <TextInput
             label="상세정보"
             id="campaign-link"
@@ -185,7 +209,7 @@ export default function CampaignPage() {
             placeholder="URL을 입력해 주세요"
             required
           />
-          <p className="error-message">{checkCampaignLinkMsg}</p>
+          <p className="error-msg">{checkCampaignLinkMsg}</p>
         </form>
       </StyledCampaignInput>
     </>

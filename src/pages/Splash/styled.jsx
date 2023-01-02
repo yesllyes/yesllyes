@@ -15,11 +15,13 @@ const StyledSplashPage = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
   .main-logo img {
     margin-top: 254px;
     width: 144px;
     height: 144px;
+    filter: drop-shadow(2px 2px 4px #5f5f5fbe);
   }
   .main-logo,
   .main-logo img {

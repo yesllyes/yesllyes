@@ -59,7 +59,6 @@ function Search() {
         inputtype="text"
         onChange={(e) => {
           setKeyword(e.target.value);
-          console.log('as');
         }}
       />
       <main className="searchMain">

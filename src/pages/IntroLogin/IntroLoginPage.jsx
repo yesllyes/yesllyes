@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FullLogoShadow from '../../assets/image/full-logo-shadow.svg';
+import fullLogo from '../../assets/image/full-logo.svg';
 import StyledIntroLoginPage from './styled';
 
 function IntroLoginPage() {
@@ -8,7 +8,7 @@ function IntroLoginPage() {
     <StyledIntroLoginPage>
       <div>
         <h1>
-          <img src={FullLogoShadow} alt="" />
+          <img src={fullLogo} alt="" />
         </h1>
         <section className="login-join-section">
           <ul className="sns-login">
