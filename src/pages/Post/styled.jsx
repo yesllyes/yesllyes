@@ -18,6 +18,8 @@ export const StyledUploadContents = styled.main`
   img {
     width: 42px;
     height: 42px;
+    border-radius: 70%;
+    object-fit: cover;
   }
 
   .post-write {
