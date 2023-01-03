@@ -148,17 +148,19 @@ const StyledPostList = styled.section`
   }
 
   section {
-    margin-bottom: 44px;
+    margin-bottom: 60px;
   }
 `;
 
 const StyledSelectDisplay = styled.div`
   padding: 0.5rem 1.6rem 1.4rem 1.6rem;
   border-bottom: 0.5px solid #dbdbdb;
-  margin-bottom: 1.6rem;
 `;
 
 const StyledListWrapper = styled.section`
+  section:first-child {
+    margin-top: 1.6rem;
+  }
   height: 443px;
   overflow-y: scroll;
   &::-webkit-scrollbar {

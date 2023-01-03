@@ -12,7 +12,7 @@ function AlbumPost({ postData }) {
   return (
     <StyledAlbumCard>
       <h3 className="ir">앨범형 이미지</h3>
-      <Link>
+      <Link to={`/post/${postData.id}`}>
         <img src={postData.image} alt="포스트 이미지" onError={handleImage} />
       </Link>
     </StyledAlbumCard>
