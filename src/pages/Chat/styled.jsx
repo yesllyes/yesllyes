@@ -8,6 +8,10 @@ export const StyledChatPage = styled.div`
   border: 0.5px solid #dbdbdb;
   display: flex;
   flex-direction: column;
+
+  button {
+    position: static;
+  }
 `;
 
 export const StyledChatUserInfo = styled(StyledUserInfo)`
@@ -16,7 +20,6 @@ export const StyledChatUserInfo = styled(StyledUserInfo)`
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  /* text-decoration: none; */
   position: relative;
   box-sizing: border-box;
 
