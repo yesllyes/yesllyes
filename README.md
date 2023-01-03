@@ -25,26 +25,57 @@
 - 한상혁(팀원)
 
 ### 2-1.역할 분담
+(슬기님 마인드맵 참고)
 
 ## 3. 요구사항
-- 계정 
-  - 로그인/로그아웃
-  - 회원가입
-  - 회원 정보 수정
-  - 사용자 정보 등록
-  
-- 피드 
-  -
-- 댓글 
-  -
-- 검색 
-  -
-- 팔로우 
-  -
-- 좋아요 
-  -
-- 상품 
-  -
+<details>
+<summary>Account</summary>
+<div markdown="1">
+  - 유효성 평가, 로그인/로그아웃, 회원가입, 프로필 정보 설정
+</div>
+</details>
+
+  <details>
+  <summary>Post </summary>
+<div markdown="1">
+   - 모달창, 등록/수정/삭제, 이미지 업로드
+</div>
+</details>
+
+<details>
+  <summary>Commemt</summary>
+<div markdown="1">
+ - 등록/삭제/수정
+</div>
+</details>
+<details>
+<summary>Search </summary>
+<div markdown="1">
+ - 유저 검색
+</div>
+</details>
+
+  <details>
+    <summary>Follow  </summary>
+<div markdown="1">
+   - 팔로우/언팔로우, 팔로우/팔로잉 리스트
+</div>
+</details> 
+
+ <details>
+  <summary> Like </summary>
+<div markdown="1">
+   - 게시물 좋아요 및 취소
+</div>
+</details>
+
+<details>
+  <summary> Campaign </summary>
+<div markdown="1">
+- 캠페인 등록, 인원, 현재 참여 상태 여부, URL 해당 링크 연결
+</div>
+</details>
+
 
 ## 4. 기능 UI
 (선영님의 GIF)
