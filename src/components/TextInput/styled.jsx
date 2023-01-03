@@ -41,9 +41,10 @@ const StyledInput = styled.div`
       font-family: inherit;
     }
 
-    &.error {
+    /* 이메일 회원가입에서 인풋창 포커싱 하면 border색상이 오류 색상이 됨  */
+    /* &.error {
       border-color: ${({ theme }) => theme.colors.Orange};
-    }
+    } */
   }
 `;
 
