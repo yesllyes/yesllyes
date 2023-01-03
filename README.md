@@ -1,6 +1,5 @@
 # 버드나다 Budnada
  <strong>'버드나다'는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. </strong>
-
  <details>
   <summary>목차</summary>
 
@@ -15,7 +14,7 @@
   9. [계획 및 후기](#plan)
 </div>
 </details>
-<br>
+
 
 ## 1. <span id = "intro"> 프로젝트 소개 </span>
 (배포 URl)
@@ -24,13 +23,14 @@
   - ID : prugioh@likelion.org
   - PW : vnfmwl5!! (푸르지5!!)
 
-(이미지 및 QR코드 생성)
+![ScreenImage](https://user-images.githubusercontent.com/62597615/210389928-cbe89d1d-8499-47a5-a550-35a5ed641bda.png)
+
 
 - ### 🖥️개발 일정 : 2022.12.01 ~ 2023.01.06
 
 
 ### 1-1. 개요
-```
+
 🌏 `버드나다` 는 환경보호에 관심이 많으며 제로웨이스트를 직접 실천하고 싶은 사람들이 모인 온라인 플랫폼입니다. 
 
 🙌 직접 캠페인을 만들어 홍보하거나 참여하여 다른 사람들과 친환경 정보를 공유할 수 있습니다.
@@ -38,14 +38,17 @@
 🌳 사용자들에게 자신이 실천했던 환경 운동을 공유하거나 직접 만든 천연 키트를 판매할 수 있는 서비스를 제공합니다.
 
 🌻 다른 사람들과의 채팅을 통해 상품 거래 및 캠페인 참여 의향 여부를 소통할 수 있습니다.
-```
+
 
 ### 1-2. 개발 환경
 
-FrontEnd: React, React-router, Styled-Components
-<br/>
-BackEnd: 제공된 API 사용
-<br/>
+|구분|설명|
+|------|---|
+|FrontEnd|<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/styledcomponents-CC6699?style=for-the-badge&logo=styledcomponents&logoColor=white"> <img src="https://img.shields.io/badge/ESLint-E33332?style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">|
+|BackEnd|제공된 API 사용|
+|협업도구|<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"> <img src="https://img.shields.io/badge/Trello-3776AB?style=for-the-badge&logo=Trello&logoColor=white">|
+
+
 Version:
 ```
 react: `^18.2.0`
@@ -55,20 +58,6 @@ styled-reset: `^4.4.4`
 prettier: `2.8.1`
 ```
 <br/>
-<div align=left>
- <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> 
- <img src="https://img.shields.io/badge/styledcomponents-CC6699?style=for-the-badge&logo=styledcomponents&logoColor=white">
- <img src="https://img.shields.io/badge/ESLint-E33332?style=for-the-badge&logo=ESLint&logoColor=white">
- <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">
-</div>
-</br>
-<div align=left>
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
-<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">
-<img src="https://img.shields.io/badge/Trello-3776AB?style=for-the-badge&logo=Trello&logoColor=white">
-<div/>
-</br>
 
  [버드나다 GitHub](https://github.com/yesllyes/yesllyes)
  <br/>

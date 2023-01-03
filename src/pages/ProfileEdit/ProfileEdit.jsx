@@ -1,6 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import StyledWrapper from '../../components/Wrapper/StyledWrapper';
 import { TopUploadNav } from '../../components/Navbar/TopNavbar';
 import TextInput from '../../components/TextInput/TextInput';
 import {
@@ -158,57 +157,55 @@ export default function ProfileEditPage() {
   };
 
   return (
-    <StyledWrapper>
+    <StyledProfilePage>
       <TopUploadNav disabled={!passed} onClick={onSubmit} value="저장" />
-      <StyledProfilePage>
-        <StyledImg action="post">
-          <img src={preImage || IconBasicProfile} alt="미리보기 이미지" />
-          <label htmlFor="imgupload" />
-          <input
-            className="ir"
-            type="file"
-            accept="image/*"
-            id="imgupload"
-            onChange={handleChangeImg}
-          />
-        </StyledImg>
-        <StyledTxt>
-          <TextInput
-            // 마크업, 스타일링에 필요한 속성
-            label="사용자 이름"
-            id="user"
-            placeholder="2~10자 이내로 작성해주세요."
-            // API 통신, 로직에 필요한 속성
-            name="username"
-            value={username}
-            onChange={handleChangeUserName}
-            // validation 에 필요한 속성 (로직 추가후 삭제예정)
-            type="text"
-            required
-          />
-          <p className="error-msg">{checkUserNameMsg}</p>
-          <TextInput
-            label="계정 ID"
-            id="user"
-            placeholder="영문, 숫자, 특수문자(., _)만 사용 가능합니다."
-            name="accountname"
-            value={accountname}
-            onChange={handleChangeAccountName}
-            type="text"
-            required
-          />
-          <p className="error-msg">{checkAccountNameMsg}</p>
-          <TextInput
-            label="소개"
-            id="user"
-            placeholder="자유롭게 자신을 소개해주세요!"
-            name="intro"
-            value={intro}
-            onChange={handleChangeIntro}
-            type="text"
-          />
-        </StyledTxt>
-      </StyledProfilePage>
-    </StyledWrapper>
+      <StyledImg action="post">
+        <img src={preImage || IconBasicProfile} alt="미리보기 이미지" />
+        <label htmlFor="imgupload" />
+        <input
+          className="ir"
+          type="file"
+          accept="image/*"
+          id="imgupload"
+          onChange={handleChangeImg}
+        />
+      </StyledImg>
+      <StyledTxt>
+        <TextInput
+          // 마크업, 스타일링에 필요한 속성
+          label="사용자 이름"
+          id="user"
+          placeholder="2~10자 이내로 작성해주세요."
+          // API 통신, 로직에 필요한 속성
+          name="username"
+          value={username}
+          onChange={handleChangeUserName}
+          // validation 에 필요한 속성 (로직 추가후 삭제예정)
+          type="text"
+          required
+        />
+        <p className="error-msg">{checkUserNameMsg}</p>
+        <TextInput
+          label="계정 ID"
+          id="user"
+          placeholder="영문, 숫자, 특수문자(., _)만 사용 가능합니다."
+          name="accountname"
+          value={accountname}
+          onChange={handleChangeAccountName}
+          type="text"
+          required
+        />
+        <p className="error-msg">{checkAccountNameMsg}</p>
+        <TextInput
+          label="소개"
+          id="user"
+          placeholder="자유롭게 자신을 소개해주세요!"
+          name="intro"
+          value={intro}
+          onChange={handleChangeIntro}
+          type="text"
+        />
+      </StyledTxt>
+    </StyledProfilePage>
   );
 }
