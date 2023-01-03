@@ -20,14 +20,14 @@ export default function PostAlert({ handleCloseAlert, postId }) {
   };
 
   const postDelete = async () => {
-    const PostDeletereq = await fetch(`${BASEURL}/post/${postId}`, {
+    const PostDeleteReq = await fetch(`${BASEURL}/post/${postId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${auth.token}`,
         'Content-type': 'application/json',
       },
     });
-    const result = await PostDeletereq.json();
+    const result = await PostDeleteReq.json();
 
     if (result.message === '삭제되었습니다.') {
       if (currentLocation.pathname === `/post/${postId}`) {
