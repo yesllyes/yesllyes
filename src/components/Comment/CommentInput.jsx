@@ -5,15 +5,13 @@ import { StyledCommentInput } from './styled';
 import Button from '../Button/Button';
 import useAuthContext from './../../hooks/useAuthContext';
 
-export default function CommentInput() {
+export default function CommentInput({ updateCommentData }) {
   const { postId } = useParams();
   const { auth } = useAuthContext();
-  const [loading, setLoading] = useState(true);
   const [commentValue, setCommentValue] = useState('');
 
   const handleCommentChange = (event) => {
     setCommentValue(event.target.value);
-    // console.log(commentValue);
   };
 
   const onSubmit = (event) => {
@@ -34,7 +32,7 @@ export default function CommentInput() {
         .then((res) => res.json())
         .then((res) => {
           setCommentValue('');
-          setLoading(false);
+          updateCommentData();
           console.log(res);
         })
         .catch((e) => e);
