@@ -4,6 +4,7 @@ import iconimgbutton from '../../assets/icon/icon-img-button-gray.svg';
 const StyledCampaignHeader = styled.header``;
 
 const StyledCampaignInput = styled.main`
+  height: 820px;
   border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
 
   #campaignImg {

@@ -3,6 +3,7 @@ import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
 
 const StyledProfilePage = styled.section`
   width: 390px;
+  height: 820px;
   border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
 
   h3 {
