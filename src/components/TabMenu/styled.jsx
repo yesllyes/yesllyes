@@ -23,9 +23,11 @@ const StlyedNavLink = styled(NavLink)`
     height: 20px;
     margin-top: 6px;
   }
+
   p {
-    font-size: ${({ theme }) => theme.fontSize.medium};
-    margin-top: 6px;
+    font-size: ${({ theme }) => theme.fontSize.small};
+    margin: 6px;
+    color: #767676;
   }
 
   &.active {
