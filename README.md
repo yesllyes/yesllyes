@@ -31,11 +31,11 @@
 
 ### 1-1. 개요
 ```
-🌏 '버드나다' 는 환경보호에 관심이 많으며 제로웨이스트에 직접 실천하고 싶은 사람들이 모안 온라인 플랫폼입니다. 
+🌏 `버드나다` 는 환경보호에 관심이 많으며 제로웨이스트를 직접 실천하고 싶은 사람들이 모인 온라인 플랫폼입니다. 
 
-🙌 직접 캠패인을 홍보하거나 참여하여 다른 사람들과 친환경 정보를 공유할 수 있습니다.
+🙌 직접 캠페인을 만들어 홍보하거나 참여하여 다른 사람들과 친환경 정보를 공유할 수 있습니다.
 
-🌳 사용자들은 자신이 실천했던 환경 운동과 직접 만든 천연 키트를 판매할 수 있는 서비스를 제공합니다.
+🌳 사용자들에게 자신이 실천했던 환경 운동을 공유하거나 직접 만든 천연 키트를 판매할 수 있는 서비스를 제공합니다.
 
 🌻 다른 사람들과의 채팅을 통해 상품 거래 및 캠페인 참여 의향 여부를 소통할 수 있습니다.
 ```
@@ -50,7 +50,8 @@
 - 한상혁(팀원)
 
 ### 2-1.역할 분담
-(슬기님 마인드맵 참고)
+![image](https://user-images.githubusercontent.com/85055608/210366562-56bd00ae-cc02-494e-870e-cc144cc89738.png)
+
 
 ## 3. <span id = "requirement">요구사항</span>
 
@@ -96,6 +97,51 @@
 ## 6. <span id = "code">주요코드</code>
 
 ## 7. <span id = "tree">폴더 트리</span>
+```bash
+├── 🗻public
+└── 🗻src
+    ├── 🌲assets
+    │   ├──🌿icon
+    │   └──🌿image
+    ├── 🌲components
+    │   ├── ☘️AlbumPost
+    │   ├── ☘️Button
+    │   ├── ☘️CampaignCard
+    │   ├── ☘️Comment
+    │   ├── ☘️LikeCommentButton
+    │   ├── ☘️Modal
+    │   │   ├── 🍀Alert
+    │   │   └── 🍀ModalType
+    │   ├── ☘️Navbar
+    │   ├── ☘️Profile
+    │   ├── ☘️TabMenu
+    │   ├── ☘️TextInput
+    │   ├── ☘️TextPost
+    │   ├── ☘️UserInfo
+    │   ├── ☘️UserList
+    │   ├── ☘️UserPost
+    │   └── ☘️Wrapper
+    ├── 🌲context
+    ├── 🌲hooks
+    ├── 🌲pages
+    │   ├── 🍃CampaignUpload
+    │   ├── 🍃Chat
+    │   ├── 🍃Follow
+    │   ├── 🍃HomeFeed
+    │   ├── 🍃IntroLogin
+    │   ├── 🍃Login
+    │   ├── 🍃NotFound
+    │   ├── 🍃Post
+    │   ├── 🍃Profile
+    │   ├── 🍃ProfileEdit
+    │   ├── 🍃ProfileSignup
+    │   ├── 🍃Search
+    │   ├── 🍃Signup
+    │   └── 🍃Splash
+    ├── 🌲routes
+    ├── 🌲services
+    └── 🌲styles
+```
 
 ## 8. <span id = "truble">트러블 슈팅</span> 
 (문제 / 해결 세션)
