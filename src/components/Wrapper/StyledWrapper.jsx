@@ -10,8 +10,7 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   padding-right: calc(${Gutter.X} * 0.5);
   padding-left: calc(${Gutter.X} * 0.5);
-  /* background-color: #d1c7c7; */
-  border: 1px solid black;
+  border: 1px solid ${({ theme }) => theme.colors.ActiveborderColor}; ;
 `;
 
 export default StyledWrapper;
