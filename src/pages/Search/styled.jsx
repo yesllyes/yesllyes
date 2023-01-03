@@ -4,7 +4,7 @@ const StyledSearch = styled.section`
   width: 390px;
   height: 820px;
   position: relative;
-  border: 1px solid black;
+  border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
   .searchMain {
     display: flex;
     flex-direction: column;

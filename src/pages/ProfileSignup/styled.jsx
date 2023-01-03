@@ -3,7 +3,8 @@ import IconImgButton from '../../assets/icon/icon-img-button-green.svg';
 
 const StyledProfilePage = styled.section`
   width: 390px;
-  margin: 0 auto;
+  border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
+
   h3 {
     text-align: center;
     font-size: ${({ theme }) => theme.fontSize.xxlarge};

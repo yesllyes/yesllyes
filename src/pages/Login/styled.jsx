@@ -2,11 +2,7 @@ import styled from 'styled-components';
 
 const StyledLoginPage = styled.section`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 35px;
+  border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
 
   h1 {
     font-weight: 400;
