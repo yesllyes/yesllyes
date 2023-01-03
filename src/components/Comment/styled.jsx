@@ -50,6 +50,7 @@ export const StyledCommentList = styled.ul`
     align-items: center;
     gap: 12px;
     width: 100%;
+    margin-bottom: 5px;
   }
   .profile-box {
     width: 42px;
@@ -69,7 +70,7 @@ export const StyledCommentList = styled.ul`
     display: flex;
     align-items: center;
     align-self: flex-start;
-    margin-top: 6px;
+    margin-top: 12px;
     font-weight: 500;
     font-size: ${({ theme }) => theme.fontSize.medium};
     line-height: 18px;
@@ -97,7 +98,12 @@ export const StyledCommentList = styled.ul`
   }
 `;
 
-export const StyledCommentli = styled.li``;
+export const StyledCommentli = styled.li`
+  button {
+    flex-grow: 1;
+    text-align: right;
+  }
+`;
 
 export const Scrollwrap = styled.div`
   height: 760px;
