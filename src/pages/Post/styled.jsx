@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 import iconimgbuttongreen from '../../assets/icon/icon-img-button-green.svg';
+import StyledWrapper from './../../components/Wrapper/StyledWrapper';
+import StyledTopBasicNav from './../../components/Navbar/styled';
+import {
+  StyledCommentInput,
+} from './../../components/Comment/styled';
+import { StyledPostMessage } from '../../components/TextPost/styled';
 
 export const StyledPostUploadPage = styled.div`
   border: 0.5px solid #dbdbdb;
@@ -77,4 +83,31 @@ export const StyledUploadImg = styled.div`
       border-radius: 8px;
     }
   }
+`;
+
+export const StyledPostWrapper = styled(StyledWrapper)`
+  padding: 0;
+  width: 100%;
+  height: 820px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledPostNav = styled(StyledTopBasicNav)`
+  margin-bottom: 10px;
+  padding: 0;
+`;
+
+export const StyledPostText = styled(StyledPostMessage)`
+  padding: 0;
+  margin-bottom: 10px;
+`;
+
+export const StyledPostCommentInp = styled(StyledCommentInput)`
+  padding: 0;
+  border: none;
+  position: absolute;
+  bottom: 0;
 `;

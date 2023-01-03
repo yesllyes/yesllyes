@@ -106,9 +106,19 @@ export const StyledCommentli = styled.li`
 `;
 
 export const Scrollwrap = styled.div`
-  height: 760px;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
+  border-top: 0.5px solid #dbdbdb;
+  margin-bottom: 61px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.lightGreen};
+    border-radius: 10px;
   }
 `;
