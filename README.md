@@ -25,7 +25,8 @@
 - 한상혁(팀원)
 
 ### 2-1.역할 분담
-(슬기님 마인드맵 참고)
+![image](https://user-images.githubusercontent.com/85055608/210310105-2fe83b8c-541b-4a63-849b-057f1d11888c.png)
+
 
 ## 3. 요구사항
 <details>
