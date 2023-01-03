@@ -11,6 +11,10 @@ const StyledSplashPage = styled.main`
   font-size: 35px;
   font-family: 'HambakSnow';
 
+  h1 {
+    text-shadow: 2px 2px 4px #5f5f5fbe;
+  }
+
   .main-logo {
     display: flex;
     flex-direction: column;
