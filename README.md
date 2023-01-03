@@ -1,5 +1,5 @@
 # 버드나다 Budnada
-## 버드나다는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. 
+ <strong>'버드나다'는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. </strong>
 
  <details>
   <summary>목차</summary>
@@ -40,14 +40,49 @@
 🌻 다른 사람들과의 채팅을 통해 상품 거래 및 캠페인 참여 의향 여부를 소통할 수 있습니다.
 ```
 
-### 1-2. 개발환경
+### 1-2. 개발 환경
 
+FrontEnd: React, React-router, Styled-Components
+<br/>
+BackEnd: 제공된 API 사용
+<br/>
+Version:
+```
+react: `^18.2.0`
+react-router-dom: `^6.4.5`
+styled-components: `^5.3.6`
+styled-reset: `^4.4.4`
+prettier: `2.8.1`
+```
+<br/>
+<div align=left>
+ <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> 
+ <img src="https://img.shields.io/badge/styled-components-CC6699?style=for-the-badge&logo=styled-components&logoColor=white">
+ <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">
+ <img src="https://img.shields.io/badge/ESLint-E33332?style=for-the-badge&logo=ESLint&logoColor=white">
+</div>
+</br>
+<div align=left>
+ <img src="https://img.shields.io/badge/Trello-3776AB?style=for-the-badge&logo=Trello&logoColor=white">
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
+<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white">
+<div/>
+</br>
+
+ [버드나다 GitHub](https://github.com/yesllyes/yesllyes)
+ <br/>
+ [버드나다 Trello](https://trello.com/b/KqnPxQjc/yes11yes) 
+ <br/>
+ [버드나다 Figma](https://www.figma.com/file/nBS6UPDFpRCPL3PghkKA19/11%EC%A1%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%94%EC%9D%B4%ED%8C%85-%EC%96%8D?node-id=0%3A1) 
 
 ## 2. <span id = "members">팀원 소개</span>
-- 윤슬기(팀장)
-- 박선영(팀원)
-- 이정호(팀원)
-- 한상혁(팀원)
+
+| 박선영| 윤슬기| 이정호| 한상혁| 
+|--|--|--|--|
+|<img src= "https://user-images.githubusercontent.com/62597615/210385080-3542da71-595d-47db-b4dc-b746c2b7b815.png" height=180 width=180> | <img src="https://user-images.githubusercontent.com/62597615/210387976-caeac61e-367d-4f65-9d4a-13215b7c2dba.png" height=180 width=180>  | <img src="https://user-images.githubusercontent.com/62597615/210386762-cc51917d-868c-4cf8-8ca9-f144a67d9fc2.png" height=180 width=180>  | <img src="https://user-images.githubusercontent.com/62597615/210388190-3f3a880e-90ab-4b0b-81bb-9e6b9454bddb.png" height=180 width=180>|
+| 🔗 [GitHub](https://github.com/syoungp273), 팀원 | 🔗 [GitHub](https://github.com/icstuckyi), 팀장 | 🔗 [GitHub](https://github.com/LeeJeongHooo), 팀원 | 🔗 [GitHub](https://github.com/Han-Sang), 팀원 |
+
 
 ### 2-1.역할 분담
 ![image](https://user-images.githubusercontent.com/85055608/210366562-56bd00ae-cc02-494e-870e-cc144cc89738.png)
@@ -148,13 +183,6 @@
 
 ## 9. <span id = "plan">계획 및 후기</span>
 
-### 좋았던 점
--
-- 매일 마지막 1~2시간씩 각자 기능을 구현한 후 코드 리뷰를 통한 회고 과정 
-
-### 아쉬운 점
-- 프로젝트 초반 나왔던 추가 기능을 기간 내 미구현 
--
 ### 추후 계획
 - 
 -
