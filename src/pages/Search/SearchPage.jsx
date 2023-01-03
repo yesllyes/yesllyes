@@ -45,7 +45,7 @@ function Search() {
       if (keyword !== '' && !keyword.startsWith(' ')) {
         Search();
       }
-    }, 300);
+    }, 1000);
 
     return () => {
       clearTimeout(loading);
