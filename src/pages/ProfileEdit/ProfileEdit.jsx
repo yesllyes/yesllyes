@@ -145,6 +145,14 @@ export default function ProfileEditPage() {
       setCheckAccountNameMsg(result.message);
       setIsValidAccountName(false);
     } else {
+      const localData = {
+        token: auth.token,
+        accountName: result.user.accountname,
+        image: result.user.image,
+      };
+
+      localStorage.setItem('data', JSON.stringify(localData));
+      auth.accountName = result.user.accountname;
       navigate(`/profile/${result.user.accountname}`);
     }
   };
