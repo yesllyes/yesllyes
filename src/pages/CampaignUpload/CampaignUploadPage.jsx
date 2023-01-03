@@ -68,10 +68,10 @@ export default function CampaignPage() {
 
     setCampaignName(e.target.value);
     if (
-      targetName.length > 10 ||
+      targetName.length > 15 ||
       (targetName.length < 2 && targetName !== '')
     ) {
-      setCheckCampaignNameMsg('2자~10자 이내여야 합니다.');
+      setCheckCampaignNameMsg('2자~15자 이내여야 합니다.');
       setIsValidCampaignName(false);
     } else {
       setCheckCampaignNameMsg('');
