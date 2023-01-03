@@ -7,11 +7,13 @@ const StyledProfileWrapper = styled.div`
 
 const StyledCampaginWrapper = styled.div`
   width: 390px;
-  height: 208px;
+  height: 170px;
   padding-left: 16px;
+  z-index: 10;
+  position: relative;
 
   .title {
-    margin: 22px 0px 16px;
+    margin-bottom: 11px;
     font-size: ${({ theme }) => theme.fontSize.large};
     line-height: 18px;
     font-weight: 400;
@@ -41,12 +43,13 @@ const StyledCampaginList = styled.ul`
 `;
 
 const StyledProfileInfo = styled.div`
-  height: 362px;
+  height: 310px;
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border-bottom: 0.5px solid #dbdbdb; */
 
   .ProfileHeader {
     display: flex;
@@ -54,7 +57,7 @@ const StyledProfileInfo = styled.div`
     align-items: center;
     max-width: 390px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 10px;
     gap: 35px;
 
     span {
@@ -88,7 +91,7 @@ const StyledProfileInfo = styled.div`
   }
 
   .ProfileMain {
-    margin: 18px 0px;
+    margin: 15px 0px;
     font-size: ${({ theme }) => theme.fontSize.large};
 
     p {
@@ -116,7 +119,7 @@ const StyledProfileInfo = styled.div`
   }
 
   .ProfileFooter {
-    margin: 25px 0px;
+    margin: 15px 0px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -155,13 +158,33 @@ const StyledPostList = styled.section`
 const StyledSelectDisplay = styled.div`
   padding: 0.5rem 1.6rem 1.4rem 1.6rem;
   border-bottom: 0.5px solid #dbdbdb;
+  height: 50px;
+  position: relative;
+
+  button:first-child {
+    img {
+      position: absolute;
+      right: 30px;
+      bottom: 3px;
+      width: 20px;
+    }
+  }
+
+  button:last-child {
+    img {
+      position: absolute;
+      bottom: 3px;
+      right: 7px;
+      width: 20px;
+    }
+  }
 `;
 
 const StyledListWrapper = styled.section`
   section:first-child {
     margin-top: 1.6rem;
   }
-  height: 443px;
+  height: 229px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 10px;

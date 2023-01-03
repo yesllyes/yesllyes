@@ -141,12 +141,12 @@ function ProfileInfo({ accountName }) {
         {auth.accountName === accountName ? (
           <>
             <Link to={`/profile/${accountId}/edit`}>
-              <Button size="md" active={true}>
+              <Button size="sm" active={true}>
                 프로필 수정
               </Button>
             </Link>
             <Link to="/campaignupload">
-              <Button size="md" active={true}>
+              <Button size="sm" active={true}>
                 활동 등록
               </Button>
             </Link>
