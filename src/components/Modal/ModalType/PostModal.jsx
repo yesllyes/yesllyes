@@ -4,6 +4,8 @@ import useAuthContext from '../../../hooks/useAuthContext';
 
 import PostAlert from '../Alert/PostAlert';
 
+const BASEURL = 'https://mandarin.api.weniv.co.kr';
+
 function PostModal({ postData }) {
   const { auth } = useAuthContext();
   const [isOpenAlert, setIsOpenAlert] = useState(false);
@@ -13,6 +15,30 @@ function PostModal({ postData }) {
   };
   const handleCloseAlert = () => {
     setIsOpenAlert(false);
+  };
+
+  const handlePostDeclaration = () => {
+    postDeclaration();
+  };
+
+  const postDeclaration = async () => {
+    const PostDeclarationReq = await fetch(
+      `${BASEURL}/post/${postData.id}/report`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${auth.token}`,
+          'Content-type': 'application/json',
+        },
+      }
+    );
+    const result = await PostDeclarationReq.json();
+
+    if (result.report) {
+      alert(`게시물 id:${result.report.post}가 신고되었습니다.`);
+    } else {
+      alert(result.message);
+    }
   };
 
   return (
@@ -33,7 +59,9 @@ function PostModal({ postData }) {
         </>
       ) : null}
 
-      <li>게시글 신고</li>
+      <li>
+        <button onClick={handlePostDeclaration}>게시글 신고</button>
+      </li>
       {isOpenAlert && (
         <PostAlert handleCloseAlert={handleCloseAlert} postId={postData.id} />
       )}

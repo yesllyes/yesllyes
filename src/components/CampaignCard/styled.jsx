@@ -6,15 +6,11 @@ const CampaignCardWrapper = styled.li`
   list-style: none;
   flex-shrink: 0;
 
-  a {
-    display: block;
-    width: 100%;
-  }
-
   img {
-    width: 100%;
+    object-fit: cover;
+    width: 140px;
     height: 90px;
-    border: 0.5px solid #bdbdbd;
+    border: 0.5px solid ${({ theme }) => theme.colors.ActiveborderColor};
     border-radius: 8px;
   }
 

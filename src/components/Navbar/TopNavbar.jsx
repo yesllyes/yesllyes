@@ -28,6 +28,23 @@ export function TopBasicNav(props) {
   );
 }
 
+export function TopChatNav(props) {
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
+  return (
+    <StyledTopBasicNav>
+      <img src={iconArrowLeft} alt="뒤로가기" onClick={handleGoBack} />
+      <span>{props.value}</span>
+      <ModalButton modalType={'ChatRoomModal'}>
+        <img src={iconMoreVerticalLarge} alt="메뉴" />
+      </ModalButton>
+    </StyledTopBasicNav>
+  );
+}
+
 export function TopSearchNav({ onChange, value }) {
   const navigate = useNavigate();
   const handleGoBack = () => {
