@@ -13,6 +13,7 @@ import {
 } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
 import AlbumPost from '../AlbumPost/AlbumPost';
+import { SkeletonPost } from '../Skelton/Skeleton';
 
 function PostList({ accountName }) {
   const [showDisplay, setShowDisplay] = useState('list');
@@ -49,9 +50,9 @@ function PostList({ accountName }) {
       .catch((e) => setError(e));
   }, [accountName, auth.token]);
 
-  if (loading) {
-    return <div>Loading중입니다..</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading중입니다..</div>;
+  // }
 
   if (error) {
     return <div>Error메세지: {error}</div>;
@@ -75,18 +76,25 @@ function PostList({ accountName }) {
         </button>
       </StyledSelectDisplay>
 
-      {!loading && showDisplay === 'list' ? (
-        <StyledListWrapper>
-          {postData.map((post) => (
-            <TextPost key={post.id} postData={post} />
-          ))}
-        </StyledListWrapper>
+      {loading ? (
+        <SkeletonPost />
       ) : (
-        <StyledAlbumWrapper>
-          {postData.map(
-            (post) => post.image && <AlbumPost key={post.id} postData={post} />
+        <>
+          {showDisplay === 'list' ? (
+            <StyledListWrapper>
+              {postData.map((post) => (
+                <TextPost key={post.id} postData={post} />
+              ))}
+            </StyledListWrapper>
+          ) : (
+            <StyledAlbumWrapper>
+              {postData.map(
+                (post) =>
+                  post.image && <AlbumPost key={post.id} postData={post} />
+              )}
+            </StyledAlbumWrapper>
           )}
-        </StyledAlbumWrapper>
+        </>
       )}
     </StyledPostList>
   );

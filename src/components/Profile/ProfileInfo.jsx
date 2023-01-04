@@ -6,6 +6,7 @@ import Share from '../../assets/icon/icon-share.svg';
 import Message from '../../assets/icon/icon-message-small.svg';
 import { StyledProfileInfo, CircleBtn } from './styled';
 import useAuthContext from '../../hooks/useAuthContext';
+import { SkeletonProfile } from '../Skelton/Skeleton';
 
 function ProfileInfo({ accountName }) {
   const { auth } = useAuthContext();
@@ -91,15 +92,11 @@ function ProfileInfo({ accountName }) {
     }
   };
 
-  if (loading) {
-    return <div>Loading중입니다...</div>;
-  }
-
   if (error) {
     return <div>Error메세지: {error}</div>;
   }
 
-  const shareProfile = (event) => {
+  const shareProfile = () => {
     navigator.clipboard.writeText(window.location.href);
     alert('주소가 복사되었습니다!');
   };
@@ -107,40 +104,46 @@ function ProfileInfo({ accountName }) {
   return (
     <StyledProfileInfo>
       <TopBasicNav />
-      <div className="ProfileHeader">
-        <p className="followers">
-          <button
-            onClick={() => {
-              navigate('./followers', {
-                state: {
-                  accountName,
-                },
-              });
-            }}
-          >
-            {followersCount === undefined
-              ? userInfo.followerCount
-              : followersCount}
-          </button>
-          <span>followers</span>
-        </p>
-        <img src={userInfo.image} alt="프로필 사진" />
-        <p className="followings">
-          {userInfo.followingCount}
-          <span>followings</span>
-        </p>
-      </div>
 
-      <div className="ProfileMain">
-        <p>
-          {userInfo.username}
-          <span>@ {userInfo.accountname}</span>
-        </p>
-      </div>
-
-      <div className="ProfileSub">
-        <p>{userInfo.intro}</p>
-      </div>
+      {loading ? (
+        <SkeletonProfile />
+      ) : (
+        <>
+          {' '}
+          <div className="ProfileHeader">
+            <p className="followers">
+              <button
+                onClick={() => {
+                  navigate('./followers', {
+                    state: {
+                      accountName,
+                    },
+                  });
+                }}
+              >
+                {followersCount === undefined
+                  ? userInfo.followerCount
+                  : followersCount}
+              </button>
+              <span>followers</span>
+            </p>
+            <img src={userInfo.image} alt="프로필 사진" />
+            <p className="followings">
+              {userInfo.followingCount}
+              <span>followings</span>
+            </p>
+          </div>
+          <div className="ProfileMain">
+            <p>
+              {userInfo.username}
+              <span>@ {userInfo.accountname}</span>
+            </p>
+          </div>
+          <div className="ProfileSub">
+            <p>{userInfo.intro}</p>
+          </div>
+        </>
+      )}
 
       <div className="ProfileFooter">
         {auth.accountName === accountName ? (
