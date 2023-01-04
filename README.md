@@ -118,7 +118,180 @@ prettier: `2.8.1`
 
 ## 5.<span id = "convention"> 컨벤션</span>
 
+
+### 5.1 코딩 컨벤션
+
+- 가장 대표적인 **네이버코딩컨벤션** 사용
+
+1. 코드의 가독성을 높이기 위해
+2. 코드의 유지보수성을 높이기 위해
+3. 팀원들간의 코드의 컨벤션의 일관성을 가지기 위해
+
+
+package.json파일
+```json
+"devDependencies": {
+  "eslint-config-naver": "^2.1.0",
+  "eslint-config-prettier": "^8.5.0",
+  "prettier": "2.8.1"
+}
+```
+
+- 폴더이름
+  - 폴더구조 asset,components등의 상위폴더 소문자로 작성
+  - jsx파일이 들어간 폴더 대문자로 작성
+
+### 5.2 Git & GitHub컨벤션
+
+- 효율적인 커밋메시지를 관리하기 위해서 .gitmessage.txt 템플릿을 제작
+- vscode 터미널창에서 git commit 입력 시 아래의 템플릿을 확인 후 커밋메시지를 작성할 수 있도록 설정
+
+
+템플릿 등록 후 커밋메시지 vscode에서 사용하기 위해 config설정 커멘드
+```bash
+git config commit.template .gitmessage.txt
+git config core.editor "code --wait"
+```
+
+
 ## 6. <span id = "code">주요코드</code>
+
+
+### 6.1 Context API
+
+- Context API를 사용하여 props drilling을 해결할 수 있었고, 전역으로 객체를 사용 가능
+
+<br>
+
+- context 폴더구조
+
+```bash
+.
+├── ActionTypes.js
+├── Auth.jsx
+└── AuthReducer.js
+```
+
+3가지로 파일을 구분해서 dispatch, reducer의 가독성을 높여주도록 구현
+
+<br>
+
+- **ActionTypes.js**
+
+ActionType 상수를 만들어서 dispatch, reducer의 ActionType명의 유지보수성을 증가시킴
+
+```js
+const ActionTypes = {
+  LOGIN: 'login',
+  LOGOUT: 'logout',
+};
+```
+
+<br>
+
+- **Auth.jsx**
+
+새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 localStorage에서 가져오게 설정하였으며, useReducer 훅과 함께 사용하여 조금 더 쉽게 전역에서 객체를 관리할 수 있게 설정
+
+```jsx
+const authContext = createContext();
+
+const initFunction = () => {
+  const localData = JSON.parse(localStorage.getItem('data'));
+
+  if (localData) {
+    return {
+      token: localData.token,
+      accountName: localData.accountName,
+      image: localData.image,
+      isUser: true,
+    };
+  }
+  return { token: null, accountName: '', image: '', isUser: false };
+};
+
+function AuthContextProvider({ children }) {
+  const [auth, authDispatch] = useReducer(AuthReducer, initFunction());
+
+  const value = useMemo(
+    () => ({
+      auth,
+      login: (token, accountName, image) => {
+        authDispatch({
+          type: ActionTypes.LOGIN,
+          payload: { token, accountName, image },
+        });
+      },
+      logout: () => {
+        authDispatch({ type: ActionTypes.LOGOUT });
+      },
+    }),
+    [auth]
+  );
+
+  return <authContext.Provider value={value}>{children}</authContext.Provider>;
+}
+```
+<br>
+
+- **AuthReducer.js**
+
+실제 외부에서 dispatch함수를 통해 호출되서 객체를 변화시키는 역할을 담당하며
+LOGIN, LOGOUT이 되었을 경우 각각의 맞는 상황에서의 객체의 데이터 설정
+
+```js
+const AuthReducer = (state, action) => {
+  switch (action.type) {
+    case ActionTypes.LOGIN:
+      return {
+        isUser: true,
+        token: action.payload.token,
+        accountName: action.payload.accountName,
+        image: action.payload.image,
+      };
+    case ActionTypes.LOGOUT:
+      return { isUser: false, token: null, accountName: '', image: '' };
+    default:
+      return state;
+  }
+};
+```
+
+Context API 편하게 사용하기 위해 useAuthCustom훅 생성
+
+<br>
+
+- **useAUthContext**
+
+```jsx
+import { useContext } from 'react';
+import { authContext } from '../context/Auth';
+
+const useAuthContext = () => {
+  const { auth, login, logout } = useContext(authContext);
+
+  return { auth, login, logout };
+};
+
+export default useAuthContext;
+```
+
+사용예시
+
+useAuthCustom훅을 활용하여 login 후 API통신 후 login콜백함수를 통하여 내부적으로 Dispatch함수를 호출하여 전역에서 관리하고 있는 유저정보를 편리하게 업데이트 시킴
+
+<br>
+
+- **LoginPage.jsx**
+
+```jsx
+const { login } = useAuthContext();
+
+...
+
+localStorage.setItem('data', JSON.stringify(localData));
+login(user.token, user.accountname, user.image);
+
 
 ## 7. <span id = "tree">폴더 트리</span>
 ```bash
