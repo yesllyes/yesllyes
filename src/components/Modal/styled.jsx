@@ -44,7 +44,7 @@ export const StyledModalList = styled.ul`
     margin-bottom: 15px;
   }
 
-  li:last-child {
+  li:last-of-type {
     margin-bottom: 30px;
   }
 `;
