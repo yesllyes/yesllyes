@@ -135,17 +135,17 @@ prettier: 2.8.1
 ```
 
 - 폴더 이름
-  - assets, components 등의 상위 폴더는 소문자로 작성
-  - jsx 파일이 들어간 하위 폴더는 대문자로 작성
+  - `assets`, `components` 등의 상위 폴더는 소문자로 작성
+  - `jsx` 파일이 들어간 하위 폴더는 대문자로 작성
 
 ### 5.2 Git & GitHub컨벤션
 
-- 효율적인 커밋 메시지를 관리하기 위해서 .gitmessage.txt 템플릿을 제작
-- vscode 터미널창에서 git commit 입력 시 아래의 템플릿을 확인 후 커밋메시지를 작성할 수 있도록 설정
+- 효율적인 커밋 메시지를 관리하기 위해서 `.gitmessage.txt` 템플릿을 제작
+- vscode 터미널창에서 `git commit` 입력 시 템플릿을 확인하며 커밋메시지를 작성할 수 있도록 설정
 
 <br>
 
-템플릿 등록 후 vscode에서 커밋 메시지를 작성하기 위한 config 커맨드 사용
+템플릿 등록 후 vscode에서 커밋 메시지를 작성하기 위한 `git config` 커맨드 사용
 ```bash
 git config commit.template .gitmessage.txt
 git config core.editor "code --wait"
@@ -157,7 +157,7 @@ git config core.editor "code --wait"
 
 ### 6.1 Context API
 
-Context API를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
+`Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
 
 - context 폴더 구조
 ```bash
@@ -166,13 +166,13 @@ Context API를 사용하여 props drilling을 해결할 수 있고, 전역으로
 └── AuthReducer.js
 ```
 
-파일을 3개로 구분해서 dispatch, reducer의 가독성을 높여주도록 구현
+파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성을 높여주도록 구현
 
 <br>
 
-- **ActionTypes.js**
+**1. ActionTypes.js**
 
-ActionType 상수를 만들어서 dispatch, reducer의 ActionType의 유지보수성을 증가시킴
+`ActionType` 상수를 만들어서 `dispatch`, `reducer`의 `ActionType` 유지보수성을 증가시킴
 
 ```js
 const ActionTypes = {
@@ -183,9 +183,9 @@ const ActionTypes = {
 
 <br>
 
-- **Auth.jsx**
+**2. Auth.jsx**
 
-새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 localStorage에서 가져오게 설정하였으며, useReducer 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 설정
+새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 `localStorage`에서 가져오게 설정하였으며, `useReducer` 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 설정
 
 ```jsx
 const authContext = createContext();
@@ -223,9 +223,9 @@ function AuthContextProvider({ children }) {
 ```
 <br>
 
-- **AuthReducer.js**
+**3. AuthReducer.js**
 
-실제 외부에서 dispatch함수를 통해 호출되서 객체를 변화시키는 역할을 담당하며, 
+실제 외부에서 `dispatch`함수를 통해 호출되서 객체를 변화시키는 역할을 담당하며, 
 LOGIN, LOGOUT이 되었을 경우 각각의 맞는 상황에서의 객체의 데이터 설정
 
 ```js
@@ -246,11 +246,11 @@ const AuthReducer = (state, action) => {
 };
 ```
 
-Context API를 편하게 사용하기 위한 useAuthContext 커스텀 훅 생성
+`Context API`를 편하게 사용하기 위한 `useAuthContext` 커스텀 훅 생성
 
 <br>
 
-- **useAUthContext**
+- **useAuthContext**
 
 ```jsx
 import { useContext } from 'react';
@@ -264,9 +264,9 @@ export default useAuthContext;
 
 <br>
 
-AuthContext와 useAuthContext 훅 사용예시
+`AuthContext`와 `useAuthContext` 훅 사용예시
 
-useAuthContext 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 Dispatch함수를 호출하여 전역에서 관리하고 있는 유저정보를 편리하게 업데이트 시킴
+`useAuthContext` 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 `Dispatch`함수를 호출하여 전역에서 관리하고 있는 유저 정보를 편리하게 업데이트
 
 
 - **LoginPage.jsx**
