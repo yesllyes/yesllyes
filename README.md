@@ -28,14 +28,14 @@
 ![ScreenImage](https://user-images.githubusercontent.com/62597615/210389928-cbe89d1d-8499-47a5-a550-35a5ed641bda.png)
 
 
-### 1-1. 개요
+### 1.1 개요
 - 🌏 `버드나다` 는 환경보호에 관심이 많으며 제로웨이스트를 직접 실천하고 싶은 사람들이 모인 온라인 플랫폼입니다.  
 - 🙌 직접 캠페인을 만들어 홍보하거나 참여하여 다른 사람들과 친환경 정보를 공유할 수 있습니다.  
 - 🌳 사용자들에게 자신이 실천했던 환경 운동을 공유하거나 직접 만든 천연 키트를 판매할 수 있는 서비스를 제공합니다.  
 - 🌻 다른 사람들과의 채팅을 통해 상품 거래 및 캠페인 참여 의향 여부를 소통할 수 있습니다.  
 
 
-### 1-2. 개발 환경
+### 1.2 개발 환경
 
 |구분|설명|
 |------|---|
@@ -43,7 +43,7 @@
 |BackEnd|제공된 API 사용|
 |협업 도구|<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Trello-3776AB?style=for-the-badge&logo=Trello&logoColor=white"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"> |
 
-### 1-3. Version
+### 1.3 Version
 ```
 react: ^18.2.0
 react-router-dom: ^6.4.5
@@ -53,7 +53,7 @@ eslint-config-naver: ^2.1.0
 eslint-config-prettier: ^8.5.0
 prettier: 2.8.1
 ```
-### 1-4. Link
+### 1.4 Link
 | 구분 | 설명 |
 |------|---|
 | 🔗 [GitHub](https://github.com/yesllyes/yesllyes) | 설명 |
@@ -74,7 +74,7 @@ prettier: 2.8.1
 | 디자인 및 피그마 제작 | 프로젝트 기획 및 진행, 문서화 | 기술 문제 해결과 최적화 집중 | 유효성 검사 및 UI 집중 개선 |
 
 
-### 2-1. 역할 분담
+### 2.1 역할 분담
 ![image](https://user-images.githubusercontent.com/85055608/210366562-56bd00ae-cc02-494e-870e-cc144cc89738.png)
 <br/>
 <br/>
