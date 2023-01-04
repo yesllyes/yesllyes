@@ -146,8 +146,9 @@ package.json파일
 - 효율적인 커밋메시지를 관리하기 위해서 .gitmessage.txt 템플릿을 제작
 - vscode 터미널창에서 git commit 입력 시 아래의 템플릿을 확인 후 커밋메시지를 작성할 수 있도록 설정
 
+<br>
 
-템플릿 등록 후 커밋메시지 vscode에서 사용하기 위해 config설정 커멘드
+템플릿 등록 후 vscode에서 커밋메시지 작성을 하기위해 config설정 커멘드
 ```bash
 git config commit.template .gitmessage.txt
 git config core.editor "code --wait"
@@ -159,7 +160,7 @@ git config core.editor "code --wait"
 
 ### 6.1 Context API
 
-- Context API를 사용하여 props drilling을 해결할 수 있었고, 전역으로 객체를 사용 가능
+Context API를 사용하여 props drilling을 해결할 수 있었고, 전역으로 객체를 사용 가능
 
 <br>
 
@@ -276,11 +277,12 @@ const useAuthContext = () => {
 export default useAuthContext;
 ```
 
-사용예시
+<br>
+
+AuthContex와 useAuthCustom훅 사용예시
 
 useAuthCustom훅을 활용하여 login 후 API통신 후 login콜백함수를 통하여 내부적으로 Dispatch함수를 호출하여 전역에서 관리하고 있는 유저정보를 편리하게 업데이트 시킴
 
-<br>
 
 - **LoginPage.jsx**
 
