@@ -291,6 +291,7 @@ const { login } = useAuthContext();
 
 localStorage.setItem('data', JSON.stringify(localData));
 login(user.token, user.accountname, user.image);
+```
 
 
 ## 7. <span id = "tree">폴더 트리</span>
