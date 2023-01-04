@@ -25,7 +25,7 @@
   - `ID` : prugioh@likelion.org
   - `PW` : vnfmwl5!! (푸르지5!!)
  - ### 🖥️개발 일정 : 2022.12.01 ~ 2023.01.06
-![ScreenImage](https://user-images.githubusercontent.com/62597615/210389928-cbe89d1d-8499-47a5-a550-35a5ed641bda.png)
+![Final ScreenImage](https://user-images.githubusercontent.com/112460306/210586178-f56ed39e-c6ae-4cc2-b0b6-4a6ea412afcc.png)
 
 
 ### 1.1 개요
