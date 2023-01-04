@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAuthContext from '../../../hooks/useAuthContext';
 import {
   StyledAlertButtons,
   StyledAlertTextButton,
@@ -7,9 +8,11 @@ import {
 } from './styled';
 
 export default function LogoutAlert({ handleCloseAlert }) {
+  const { logout } = useAuthContext();
   const navigate = useNavigate();
   const handleLogout = () => {
     window.localStorage.clear();
+    logout();
     navigate('/login', { replace: true });
   };
 
