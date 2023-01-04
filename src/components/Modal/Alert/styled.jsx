@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  z-index: 20;
+  bottom: 380px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 252px;

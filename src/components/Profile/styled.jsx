@@ -142,6 +142,12 @@ const CircleBtn = styled.button`
 
 // PostList 스타일
 const StyledPostList = styled.section`
+  & {
+    height: 229px;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+
   > div {
     display: flex;
     align-items: center;
@@ -185,7 +191,7 @@ const StyledListWrapper = styled.section`
     margin-top: 1.6rem;
   }
   height: 229px;
-  overflow-y: scroll;
+  overflow-y: auto;
   &::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -202,9 +208,23 @@ const StyledListWrapper = styled.section`
 const StyledAlbumWrapper = styled.section`
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
   align-items: center;
-  padding: 16px;
+  padding: 16px 0 0 16px;
+  height: 229px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: rgb(236, 236, 236);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.lightGreen};
+    border-radius: 10px;
+  }
 `;
 
 export {

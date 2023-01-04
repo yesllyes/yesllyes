@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const StyledAlbumCard = styled.article`
   > a {
     display: block;
-    width: 114px;
-    height: 114px;
+    width: 115px;
+    height: 115px;
     border: 1px solid ${({ theme }) => theme.colors.ActiveborderColor};
     overflow: hidden;
     border-radius: 4px;
