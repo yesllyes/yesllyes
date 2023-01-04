@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useAuthContext from '../../../hooks/useAuthContext';
 import LogoutAlert from '../Alert/LogoutAlert';
 
 function UserModal() {
+  const { auth } = useAuthContext();
   const [isOpenAlert, setIsOpenAlert] = useState(false);
 
   const handleOpenAlert = () => {
@@ -15,7 +17,7 @@ function UserModal() {
   return (
     <>
       <li>
-        <Link to="프로필수정">설정 및 개인정보</Link>
+        <Link to={`/profile/${auth.accountName}/edit`}>설정 및 개인정보</Link>
       </li>
       <li>
         <button onClick={handleOpenAlert}>로그아웃</button>
