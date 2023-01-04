@@ -13,6 +13,7 @@ function ProfileInfo({ accountName }) {
   const [userInfo, setUserInfo] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [followersCount, setFollowersCount] = useState(undefined);
 
   const accountId = userInfo.accountname;
   const [isFollow, setIsFollow] = useState(undefined);
@@ -53,6 +54,7 @@ function ProfileInfo({ accountName }) {
       const result = await res.json();
 
       setIsFollow((isfollow) => !isfollow);
+      setFollowersCount(result.profile.followerCount);
       return result;
     } catch (e) {
       return new Error(e);
@@ -74,6 +76,7 @@ function ProfileInfo({ accountName }) {
       const result = await res.json();
 
       setIsFollow((isfollow) => !isfollow);
+      setFollowersCount(result.profile.followerCount);
       return result;
     } catch (e) {
       return new Error(e);
@@ -115,7 +118,9 @@ function ProfileInfo({ accountName }) {
               });
             }}
           >
-            {userInfo.followerCount}
+            {followersCount === undefined
+              ? userInfo.followerCount
+              : followersCount}
           </button>
           <span>followers</span>
         </p>
