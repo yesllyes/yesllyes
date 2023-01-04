@@ -116,7 +116,42 @@ prettier: 2.8.1
 <br/>
 
 ## 4.<span id = "ui">기능 UI</span>
-(선영님의 GIF)
+- ### Splash, 회원가입, 로그인
+
+|Splash|회원가입|프로필 설정|로그인| 
+|:--:|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210581438-458252a1-f68a-4258-b728-0cc58282b6b9.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210581469-6ad66b6b-a69f-4b02-a0be-d876a6dd5530.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210581448-dd066ad0-1d90-4969-99cf-75b32c3884f8.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210581510-1ddc59dc-1b12-4aba-86c2-6a57265a58a8.gif" height=462 width=220>|
+
+- ### 게시글
+
+|게시글 등록|게시글 수정|게시글 삭제|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210581849-3416db63-d9fe-4969-abdc-93e100cb8e1c.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210581838-ff842d32-d6f4-4f01-99a7-f33a8fa01857.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210581921-63a73630-1ca8-4b19-8633-d5847bee0317.gif" height=462 width=220>  |
+
+- ### 캠페인
+
+|캠페인 등록|캠페인 수정|캠페인 삭제|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210582657-2503ac74-9846-405b-ab23-e4e09f98a64a.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210582663-8f335544-7f98-412f-a63b-3a18ac68c138.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210585205-f06568c2-5efa-4076-9d49-d41750cf7906.gif" height=462 width=220>  |
+
+- ### 댓글
+
+|댓글 등록|댓글 신고|댓글 삭제|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210582821-818de7fa-be2e-4ded-a35d-0d7e43720769.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210582837-78abe03c-6db2-427a-9858-f49695f2ac15.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210582839-4f257d54-dbfd-4add-b38d-4c1196da08c8.gif" height=462 width=220>  |
+
+- ### 프로필 수정, 다른 유저와 프로필 화면 차이
+
+|프로필 수정|나의 프로필|다른 유저의 프로필|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210582987-ea3d9eb0-6efa-401b-9af1-50b42f6d6eed.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583001-4f3a6ce8-a7d9-4c6c-b14a-0029b72222fa.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583008-9749636f-0dc0-4483-8926-e3ff5c042622.gif" height=462 width=220>  |
+
+- ### 채팅, NotFound 페이지, 로그아웃
+
+|채팅|NotFound 페이지|로그아웃|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210583156-527a18f4-4e66-47a4-9e1c-f0ff9b64b427.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583128-7487da53-7e60-4120-8c2f-4bb48478510c.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583189-b35f889a-a546-424d-a9b6-146c102c607c.gif" height=462 width=220>  |
+
 <br/>
 <br/>
 
