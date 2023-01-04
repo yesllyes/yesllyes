@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import HeartIcon from '../../assets/icon/icon-heart.svg';
 import HeartOnIcon from '../../assets/icon/icon-heart-on.svg';
@@ -10,6 +11,8 @@ function LikeCommentButton({ postData }) {
   const { auth } = useAuthContext();
   const [isLike, setIsLike] = useState(postData.hearted);
   const [likeCount, setLikeCount] = useState(postData.heartCount);
+
+  const navigate = useNavigate();
 
   const LikeAPI = useCallback(async () => {
     try {
@@ -64,22 +67,16 @@ function LikeCommentButton({ postData }) {
           DelLikeAPI();
         }
       } else {
-        // comment 페이지로 이동
-        // navigate("/구체적인 프로필로 이동")
+        navigate(`/post/${postData.id}`);
       }
     },
-    [isLike, LikeAPI, DelLikeAPI]
+    [isLike, LikeAPI, DelLikeAPI, postData, navigate]
   );
 
   return (
     <StyledLikeCommentWrapper>
       <div>
         <button name="like" onClick={handleClickCount}>
-          {/* {isLike ? (
-            <img src={HeartOnIcon} alt="좋아요버튼이미지" />
-          ) : (
-            <img src={HeartIcon} alt="좋아요버튼이미지" />
-          )} */}
           <img src={isLike ? HeartOnIcon : HeartIcon} alt="좋아요버튼이미지" />
         </button>
         <span>{likeCount}</span>
