@@ -1,5 +1,5 @@
 # 버드나다 Budnada
- <strong>'버드나다'는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. </strong>
+ <strong> <span style='background-color:#dcffe4'>'버드나다'</span>는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. </strong>
  <details>
   <summary>목차</summary>
 
@@ -18,15 +18,15 @@
 
 ## 1. <span id = "intro"> 프로젝트 소개 </span>
 (배포 URl)
- 
+
 - ### 🌱 대표 ID 및 Password
   - ID : prugioh@likelion.org
   - PW : vnfmwl5!! (푸르지5!!)
-
+ - ### 🖥️개발 일정 : 2022.12.01 ~ 2023.01.06
 ![ScreenImage](https://user-images.githubusercontent.com/62597615/210389928-cbe89d1d-8499-47a5-a550-35a5ed641bda.png)
 
 
-- ### 🖥️개발 일정 : 2022.12.01 ~ 2023.01.06
+
 
 
 ### 1-1. 개요
@@ -59,11 +59,11 @@ prettier: `2.8.1`
 ```
 <br/>
 
- [버드나다 GitHub](https://github.com/yesllyes/yesllyes)
+ 🔗[버드나다 GitHub](https://github.com/yesllyes/yesllyes)
  <br/>
- [버드나다 Trello](https://trello.com/b/KqnPxQjc/yes11yes) 
+ 🔗[버드나다 Trello](https://trello.com/b/KqnPxQjc/yes11yes) 
  <br/>
- [버드나다 Figma](https://www.figma.com/file/nBS6UPDFpRCPL3PghkKA19/11%EC%A1%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%94%EC%9D%B4%ED%8C%85-%EC%96%8D?node-id=0%3A1) 
+ 🔗[버드나다 Figma](https://www.figma.com/file/nBS6UPDFpRCPL3PghkKA19/11%EC%A1%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%94%EC%9D%B4%ED%8C%85-%EC%96%8D?node-id=0%3A1) 
 
 ## 2. <span id = "members">팀원 소개</span>
 
