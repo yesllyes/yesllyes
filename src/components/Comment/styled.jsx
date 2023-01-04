@@ -13,6 +13,7 @@ export const StyledCommentInput = styled.section`
   img {
     width: 36px;
     height: 36px;
+    border-radius: 50%;
     position: absolute;
     top: 13px;
     left: 16px;

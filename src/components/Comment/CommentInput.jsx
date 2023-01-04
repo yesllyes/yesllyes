@@ -41,7 +41,7 @@ export default function CommentInput({ updateCommentData }) {
 
   return (
     <StyledCommentInput>
-      <img src={iconBasicProfileSmall} alt="" />
+      <img src={auth.image} alt="" />
       <input
         type="text"
         placeholder="댓글 입력하기..."
