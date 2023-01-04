@@ -8,6 +8,7 @@ const StyledUserList = styled.article`
     img {
       width: 42px;
       height: 42px;
+      border-radius: 50%;
     }
   }
   .userInfo {

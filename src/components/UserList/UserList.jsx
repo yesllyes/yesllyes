@@ -1,6 +1,8 @@
-import React, { Link } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 import StyledUserList from './styled';
+import BasicProfile from '../../assets/icon/icon-basic-profile-small.svg';
 
 function UserList({
   searchList,
@@ -12,11 +14,15 @@ function UserList({
 }) {
   const newaccountname = accountname.slice(2);
 
+  const handleImage = useCallback((e) => {
+    e.target.src = BasicProfile;
+  }, []);
+
   return (
     <StyledUserList>
       <Link to={`/profile/${newaccountname}`}>
         <li className="userList" key={userkey}>
-          <img src={image} alt="" />
+          <img src={image} alt="" onError={handleImage} />
           <div className="userInfo">
             {username.includes(keyword) ? (
               <p className="username">
