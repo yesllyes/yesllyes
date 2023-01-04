@@ -3,7 +3,8 @@
  
  <details>
   <summary>목차</summary>
-  1. [프로젝트 소개](#intro) 
+  
+  1. [프로젝트 소개](#intro)   
   2. [팀원 소개](#members)
   3. [요구사항](#requirement)
   4. [기능 UI](#ui)
