@@ -1,5 +1,6 @@
 # 버드나다 Budnada
  <strong> <span style='background-color:#dcffe4'>'버드나다'</span>는 새봄에 새순(Bud)이 자라 울창한 나무가 되는 것처럼 작은 실천을 모아 공유하고자 하는 환경운동 SNS입니다. </strong>
+ 
  <details>
   <summary>목차</summary>
   1. [프로젝트 소개](#intro) 
@@ -13,6 +14,7 @@
   9. [계획 및 후기](#plan)
 </div>
 </details>
+
 <br/>
 
 ## 1. <span id = "intro"> 프로젝트 소개 </span>
@@ -156,23 +158,18 @@ git config core.editor "code --wait"
 ## 6. <span id = "code">주요 코드</code>
 
 ### 6.1 Context API
-
-`Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
-
-- context 폴더 구조
+- `Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
+- 파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성을 높여주도록 구현  
 ```bash
+# context 폴더 구조
 ├── ActionTypes.js
 ├── Auth.jsx
 └── AuthReducer.js
 ```
-
-파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성을 높여주도록 구현
-
 <br>
 
 **1. ActionTypes.js**
-
-`ActionType` 상수를 만들어서 `dispatch`, `reducer`의 `ActionType` 유지보수성을 증가시킴
+- `ActionType` 상수를 만들어서 `dispatch`, `reducer`의 `ActionType` 유지보수성을 증가시킴
 
 ```js
 const ActionTypes = {
@@ -184,8 +181,7 @@ const ActionTypes = {
 <br>
 
 **2. Auth.jsx**
-
-새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 `localStorage`에서 가져오게 설정하였으며, `useReducer` 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 설정
+- 새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 `localStorage`에서 가져오게 설정하였으며, `useReducer` 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 함
 
 ```jsx
 const authContext = createContext();
@@ -224,9 +220,8 @@ function AuthContextProvider({ children }) {
 <br>
 
 **3. AuthReducer.js**
-
-실제 외부에서 `dispatch`함수를 통해 호출되서 객체를 변화시키는 역할을 담당하며, 
-LOGIN, LOGOUT이 되었을 경우 각각의 맞는 상황에서의 객체의 데이터 설정
+- 실제 외부에서 `dispatch`함수를 통해 호출되어 객체를 변화시키는 역할을 담당하며, 
+LOGIN, LOGOUT이 되었을 경우 각 상황에서 객체의 데이터를 설정
 
 ```js
 const AuthReducer = (state, action) => {
@@ -245,12 +240,11 @@ const AuthReducer = (state, action) => {
   }
 };
 ```
-
-`Context API`를 편하게 사용하기 위한 `useAuthContext` 커스텀 훅 생성
-
 <br>
 
-- **useAuthContext**
+- **useAuthContext**  
+
+  +  `Context API`를 편리하게 사용하기 위한 `useAuthContext` 커스텀 훅 생성
 
 ```jsx
 import { useContext } from 'react';
@@ -261,17 +255,14 @@ const useAuthContext = () => {
 };
 export default useAuthContext;
 ```
-
 <br>
 
-`AuthContext`와 `useAuthContext` 훅 사용예시
+- **LoginPage.jsx**  
 
-`useAuthContext` 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 `Dispatch`함수를 호출하여 전역에서 관리하고 있는 유저 정보를 편리하게 업데이트
-
-
-- **LoginPage.jsx**
+  + `useAuthContext` 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 `Dispatch`함수를 호출하여 전역에서 관리하고 있는 유저 정보를 편리하게 업데이트
 
 ```jsx
+// AuthContext, useAuthContext 훅 사용예시
 const { login } = useAuthContext();
 ...
 localStorage.setItem('data', JSON.stringify(localData));
