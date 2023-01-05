@@ -10,9 +10,9 @@
   4. [기능 UI](#ui)
   5. [컨벤션](#convention)
   6. [주요 코드](#code)
-  7. [폴더 트리](#tree)
-  8. [트러블 슈팅](#truble)
-  9. [계획 및 후기](#plan)
+  7. [트러블 슈팅](#truble)
+  8. [추후 계획](#plan)
+  9. [폴더 트리](#tree)
 </div>
 </details>
 
@@ -24,7 +24,7 @@
 - ### 🌱 대표 ID 및 Password
   - `ID` : prugioh@likelion.org
   - `PW` : vnfmwl5!! (푸르지5!!)
- - ### 🖥️개발 일정 : 2022.12.01 ~ 2023.01.06
+  
 ![Final ScreenImage](https://user-images.githubusercontent.com/112460306/210586178-f56ed39e-c6ae-4cc2-b0b6-4a6ea412afcc.png)
 
 
@@ -38,7 +38,7 @@
 ### 1.2 개발 환경
 
 |구분|설명|
-|------|---|
+|:------:|---|
 |FrontEnd|<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"> <img src="https://img.shields.io/badge/styledcomponents-CC6699?style=for-the-badge&logo=styledcomponents&logoColor=white"> <img src="https://img.shields.io/badge/ESLint-E33332?style=for-the-badge&logo=ESLint&logoColor=white"> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white">|
 |BackEnd|제공된 API 사용|
 |협업 도구|<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"> <img src="https://img.shields.io/badge/Trello-3776AB?style=for-the-badge&logo=Trello&logoColor=white"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"> |
@@ -55,10 +55,16 @@ prettier: 2.8.1
 ```
 ### 1.4 Link
 | 구분 | 설명 |
-|------|---|
-| 🔗 [GitHub](https://github.com/yesllyes/yesllyes) | 설명 |
-| 🔗 [Trello](https://trello.com/b/KqnPxQjc/yes11yes) | 설명 |
-| 🔗 [Figma](https://www.figma.com/file/nBS6UPDFpRCPL3PghkKA19/11%EC%A1%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%94%EC%9D%B4%ED%8C%85-%EC%96%8D?node-id=0%3A1) | 설명 |
+|:------:|---|
+| 🔗 [GitHub](https://github.com/yesllyes/yesllyes) | 본 프로젝트 깃허브 링크입니다.  |
+| 🔗 [Trello](https://trello.com/b/KqnPxQjc/yes11yes) | 프로젝트 진행 상황과 개발 중 발생한 이슈를 공유하고 해결할 수 있는 칸반 보드를 활용했습니다.  |
+| 🔗 [Figma](https://www.figma.com/file/nBS6UPDFpRCPL3PghkKA19/11%EC%A1%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%94%EC%9D%B4%ED%8C%85-%EC%96%8D?node-id=0%3A1) | 프로젝트 UI 개발에 활용한 피그마 파일입니다. |
+
+### 1.5 개발 일정 (2022.12.09 ~ 2023.01.04)
+- 12.09 ~ 12.16 : 프로젝트 기본 세팅 및 공통 컴포넌트, UI 제작
+- 12.17 ~ 12.25 : UI 제작 마무리 및 Context API 도입
+- 12.26 ~ 01.01 : 주요 기능 개발
+- 01.02 ~ 01.04 : 버그 픽스 및 1차 마무리
 <br/>
 <br/>
 
@@ -176,18 +182,16 @@ prettier: 2.8.1
   - `assets`, `components` 등의 상위 폴더는 소문자로 작성
   - `jsx` 파일이 들어간 하위 폴더는 대문자로 작성
 
-### 5.2 Git & GitHub컨벤션
+### 5.2 Git & GitHub 컨벤션
 
 - 효율적인 커밋 메시지를 관리하기 위해서 `.gitmessage.txt` 템플릿을 제작
-- vscode 터미널창에서 `git commit` 입력 시 템플릿을 확인하며 커밋메시지를 작성할 수 있도록 설정
+- vscode 터미널창에서 `git commit` 입력 시 템플릿을 확인하며 커밋 메시지를 작성할 수 있도록 설정
 
-<br>
-
-템플릿 등록 후 vscode에서 커밋 메시지를 작성하기 위한 `git config` 커맨드 사용
 ```bash
 git config commit.template .gitmessage.txt
 git config core.editor "code --wait"
 ```
+
 <br/>
 <br/>
 
@@ -196,6 +200,7 @@ git config core.editor "code --wait"
 ### 6.1 Context API
 - `Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
 - 파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성을 높여주도록 구현  
+
 ```bash
 # context 폴더 구조
 ├── ActionTypes.js
@@ -307,7 +312,17 @@ login(user.token, user.accountname, user.image);
 <br/>
 <br/>
 
-## 7. <span id = "tree">폴더 트리</span>
+## 7. <span id = "truble">트러블 슈팅</span> 
+[GitHub wiki](https://github.com/yesllyes/yesllyes/wiki)
+<br/>
+<br/>
+
+## 8. <span id = "plan">추후 계획</span>
+- 
+<br/>
+<br/>
+
+## 9. <span id = "tree">폴더 트리</span>
 
 ```bash
 ├── 🗻public
@@ -354,19 +369,3 @@ login(user.token, user.accountname, user.image);
     ├── 🌲services
     └── 🌲styles
 ```
-
-<br/>
-<br/>
-
-## 8. <span id = "truble">트러블 슈팅</span> 
-(문제 / 해결 세션)
-<br/>
-<br/>
-
-## 9. <span id = "plan">계획 및 후기</span>
-<br/>
-<br/>
-
-### 추후 계획
-- 
--
