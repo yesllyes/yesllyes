@@ -146,11 +146,11 @@ prettier: 2.8.1
 |:--:|:--:|:--:|
 |<img src= "https://user-images.githubusercontent.com/112460306/210582821-818de7fa-be2e-4ded-a35d-0d7e43720769.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210582837-78abe03c-6db2-427a-9858-f49695f2ac15.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210582839-4f257d54-dbfd-4add-b38d-4c1196da08c8.gif" height=462 width=220>  |
 
-- ### 프로필 수정, 다른 유저와 프로필 화면 차이
+- ### 프로필 수정, 다른 유저와 프로필 화면 차이, 유저 프로필 주소 공유
 
-|프로필 수정|나의 프로필|다른 유저의 프로필|
-|:--:|:--:|:--:|
-|<img src= "https://user-images.githubusercontent.com/112460306/210582987-ea3d9eb0-6efa-401b-9af1-50b42f6d6eed.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583001-4f3a6ce8-a7d9-4c6c-b14a-0029b72222fa.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583008-9749636f-0dc0-4483-8926-e3ff5c042622.gif" height=462 width=220>  |
+|프로필 수정|나의 프로필|다른 유저의 프로필|프로필 주소 공유|
+|:--:|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210582987-ea3d9eb0-6efa-401b-9af1-50b42f6d6eed.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583001-4f3a6ce8-a7d9-4c6c-b14a-0029b72222fa.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583008-9749636f-0dc0-4483-8926-e3ff5c042622.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210680399-da925910-dd0e-4690-85f3-f2a3b2939c0a.gif" height=462 width=220>  |
 
 - ### 채팅, NotFound 페이지, 로그아웃
 
