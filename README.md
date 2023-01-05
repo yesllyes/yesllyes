@@ -146,11 +146,11 @@ prettier: 2.8.1
 |:--:|:--:|:--:|
 |<img src= "https://user-images.githubusercontent.com/112460306/210582821-818de7fa-be2e-4ded-a35d-0d7e43720769.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210582837-78abe03c-6db2-427a-9858-f49695f2ac15.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210582839-4f257d54-dbfd-4add-b38d-4c1196da08c8.gif" height=462 width=220>  |
 
-- ### 프로필 수정, 다른 유저와 프로필 화면 차이, 유저 프로필 주소 공유
+- ### 프로필 수정, 다른 유저와 프로필 화면 차이
 
-|프로필 수정|나의 프로필|다른 유저의 프로필|프로필 주소 공유|
-|:--:|:--:|:--:|:--:|
-|<img src= "https://user-images.githubusercontent.com/112460306/210582987-ea3d9eb0-6efa-401b-9af1-50b42f6d6eed.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583001-4f3a6ce8-a7d9-4c6c-b14a-0029b72222fa.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583008-9749636f-0dc0-4483-8926-e3ff5c042622.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210680399-da925910-dd0e-4690-85f3-f2a3b2939c0a.gif" height=462 width=220>  |
+|프로필 수정|나의 프로필|다른 유저의 프로필|
+|:--:|:--:|:--:|
+|<img src= "https://user-images.githubusercontent.com/112460306/210582987-ea3d9eb0-6efa-401b-9af1-50b42f6d6eed.gif" height=462 width=220> | <img src="https://user-images.githubusercontent.com/112460306/210583001-4f3a6ce8-a7d9-4c6c-b14a-0029b72222fa.gif" height=462 width=220>  | <img src="https://user-images.githubusercontent.com/112460306/210583008-9749636f-0dc0-4483-8926-e3ff5c042622.gif" height=462 width=220>  |
 
 - ### 채팅, NotFound 페이지, 로그아웃
 
@@ -199,7 +199,7 @@ git config core.editor "code --wait"
 
 ### 6.1 Context API
 - `Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
-- 파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성을 높여주도록 구현  
+- `Context API`와 `useReducer`를 함께 사용하여 파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성과 유지보수성을 높여주도록 구현  
 
 ```bash
 # context 폴더 구조
@@ -210,7 +210,7 @@ git config core.editor "code --wait"
 <br>
 
 **1. ActionTypes.js**
-- `ActionType` 상수를 만들어서 `dispatch`, `reducer`의 `ActionType` 유지보수성을 증가시킴
+- `ActionType` Constant로 만들어서 `dispatch`, `reducer`의 타입명을 입력할 때 `ActionType`의 변수만 수정하면 되도록 유지보수성을 증가시킴
 
 ```js
 const ActionTypes = {
@@ -222,7 +222,7 @@ const ActionTypes = {
 <br>
 
 **2. Auth.jsx**
-- 새로고침이 발생한 경우 전역으로 관리되고 있는 객체가 없어지기 때문에 초기 유저정보를 `localStorage`에서 가져오게 설정하였으며, `useReducer` 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 함
+- 새로고침이 발생한 경우 전역으로 관리되고 있는 데이터가 없어지기 때문에 초기 유저정보를 `localStorage`에서 가져오게 설정하였으며, `useReducer` 훅과 함께 사용하여 전역에서 객체를 쉽게 관리할 수 있도록 구현
 
 ```jsx
 const authContext = createContext();
@@ -261,8 +261,8 @@ function AuthContextProvider({ children }) {
 <br>
 
 **3. AuthReducer.js**
-- 실제 외부에서 `dispatch`함수를 통해 호출되어 객체를 변화시키는 역할을 담당하며, 
-LOGIN, LOGOUT이 되었을 경우 각 상황에서 객체의 데이터를 설정
+- 실제 외부에서 `dispatch`가 포함된 콜백함수를 통해 호출되어 객체를 변화시키는 역할을 담당하며, 
+LOGIN, LOGOUT이 되었을 경우 각 상황에서 데이터를 변경하도록 구현
 
 ```js
 const AuthReducer = (state, action) => {
@@ -300,7 +300,7 @@ export default useAuthContext;
 
 - **LoginPage.jsx**  
 
-  + `useAuthContext` 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 `Dispatch`함수를 호출하여 전역에서 관리하고 있는 유저 정보를 편리하게 업데이트
+  + `useAuthContext` 훅을 활용하여 login시 API통신 후 login콜백함수를 통하여 내부적으로 `dispatch`함수를 호출하여 전역에서 관리하고 있는 유저 정보를 편리하게 업데이트
 
 ```jsx
 // AuthContext, useAuthContext 훅 사용예시
