@@ -27,18 +27,15 @@ function Search() {
           );
           const result = await response.json();
 
-          console.log(result);
-
           setSearchList(result);
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       };
 
-      console.log('as');
       GetUserInfo();
     }
-  }, [keyword]);
+  }, [auth.token, keyword]);
 
   useEffect(() => {
     const loading = setTimeout(() => {
