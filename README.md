@@ -19,13 +19,13 @@
 <br/>
 
 ## 1. <span id = "intro"> 프로젝트 소개 </span>
-(배포 URI)
+🔗 [배포 URI](https://budnada.netlify.app/)
 
 - ### 🌱 대표 ID 및 Password
   - `ID` : prugioh@likelion.org
   - `PW` : vnfmwl5!! (푸르지5!!)
-  
-![Final ScreenImage](https://user-images.githubusercontent.com/112460306/210586178-f56ed39e-c6ae-4cc2-b0b6-4a6ea412afcc.png)
+
+![screenshotImage](https://user-images.githubusercontent.com/112460306/211807452-4d6bd1dc-d39c-4cb3-ad12-e6bc045ac078.png)
 
 
 ### 1.1 개요
