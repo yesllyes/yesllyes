@@ -19,7 +19,7 @@
 <br/>
 
 ## 1. <span id = "intro"> 프로젝트 소개 </span>
-(배포 URI)
+🔗 [배포 URI](https://budnada.netlify.app/)
 
 - ### 🌱 대표 ID 및 Password
   - `ID` : prugioh@likelion.org
