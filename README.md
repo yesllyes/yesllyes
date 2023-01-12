@@ -11,8 +11,7 @@
   5. [컨벤션](#convention)
   6. [주요 코드](#code)
   7. [트러블 슈팅](#truble)
-  8. [추후 계획](#plan)
-  9. [폴더 트리](#tree)
+  8. [폴더 트리](#tree)
 </div>
 </details>
 
@@ -29,7 +28,7 @@
 
 
 ### 1.1 개요
-- 🌏 `버드나다` 는 환경보호에 관심이 많으며 제로웨이스트를 직접 실천하고 싶은 사람들이 모인 온라인 플랫폼입니다.  
+- 🌏 `버드나다` 는 환경 보호에 관심이 많으며 다양한 환경 운동을 직접 실천하고 싶은 사람들이 모인 온라인 플랫폼입니다.  
 - 🙌 직접 캠페인을 만들어 홍보하거나 참여하여 다른 사람들과 친환경 정보를 공유할 수 있습니다.  
 - 🌳 사용자들에게 자신이 실천했던 환경 운동을 공유하거나 직접 만든 천연 키트를 판매할 수 있는 서비스를 제공합니다.  
 - 🌻 다른 사람들과의 채팅을 통해 상품 거래 및 캠페인 참여 의향 여부를 소통할 수 있습니다.  
@@ -163,14 +162,12 @@ prettier: 2.8.1
 
 ## 5.<span id = "convention"> 컨벤션</span>
 
-- EsLint **네이버 코딩 컨벤션** 사용
-
-1. 코드의 가독성을 높이기 위해
-2. 코드의 유지보수성을 높이기 위해
-3. 팀원들 간 코드 컨벤션의 일관성을 유지하기 위해
+- 프로젝트 초기에 ESLint, Prettier 도입하여 사용
+  1. 코드의 가독성을 높이기 위해
+  2. 코드의 유지보수성을 높이기 위해
+  3. 팀원들 간 코드 컨벤션의 일관성을 유지하기 위해
 
 ```json
-// package.json
 "devDependencies": {
   "eslint-config-naver": "^2.1.0",
   "eslint-config-prettier": "^8.5.0",
@@ -198,7 +195,7 @@ git config core.editor "code --wait"
 ## 6. <span id = "code">주요 코드</code>
 
 ### 6.1 Context API
-- `Context API`를 사용하여 props drilling을 해결할 수 있고, 전역으로 객체를 사용할 수 있음  
+- `Context API`를 사용하여 props drilling을 해결하고, 전역으로 객체를 사용할 수 있음  
 - `Context API`와 `useReducer`를 함께 사용하여 파일을 3개로 구분해서 `dispatch`, `reducer`의 가독성과 유지보수성을 높여주도록 구현  
 
 ```bash
@@ -210,7 +207,7 @@ git config core.editor "code --wait"
 <br>
 
 **1. ActionTypes.js**
-- `ActionType` Constant로 만들어서 `dispatch`, `reducer`의 타입명을 입력할 때 `ActionType`의 변수만 수정하면 되도록 유지보수성을 증가시킴
+- `ActionType` 을 Constant로 만들어서 `dispatch`, `reducer`의 타입명을 입력할 때 `ActionType`의 변수만 수정하면 되도록 유지보수성을 증가시킴
 
 ```js
 const ActionTypes = {
@@ -317,12 +314,7 @@ login(user.token, user.accountname, user.image);
 <br/>
 <br/>
 
-## 8. <span id = "plan">추후 계획</span>
-- 
-<br/>
-<br/>
-
-## 9. <span id = "tree">폴더 트리</span>
+## 8. <span id = "tree">폴더 트리</span>
 
 ```bash
 ├── 🗻public
